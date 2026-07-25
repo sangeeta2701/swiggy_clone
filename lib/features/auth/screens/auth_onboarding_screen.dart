@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
-
+import 'package:swiggy_clone/core/widgets/app_theme_button.dart';
+import 'package:swiggy_clone/features/auth/screens/phone_login_screen.dart';
 
 class AuthOnboardingScreen extends StatelessWidget {
   const AuthOnboardingScreen({super.key});
@@ -23,18 +24,20 @@ class AuthOnboardingScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                
                     // Dynamic Hero Header Title
                     height20,
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 32.w,
+                        vertical: 16.h,
+                      ),
                       child: Text(
                         'One app for food,\ngrocery, dining\nand more in mins!',
                         textAlign: TextAlign.center,
                         style: AppTextStyles.heroTitle,
                       ),
                     ),
-                
+
                     // Header Food Image Placement Holder
                     Expanded(
                       child: Align(
@@ -74,25 +77,15 @@ class AuthOnboardingScreen extends StatelessWidget {
                   height8,
 
                   // Login Button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 52.h,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // TODO: Open Phone Number Input Screen / Sheet
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primaryOrange,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12.r),
+                  AppThemeButton(
+                    text: 'LOGIN',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const PhoneLoginScreen(),
                         ),
-                        elevation: 0,
-                      ),
-                      child: Text(
-                        'Login',
-                        style: AppTextStyles.buttonText,
-                      ),
-                    ),
+                      );
+                    },
                   ),
 
                   height16,
