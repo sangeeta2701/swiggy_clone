@@ -8,13 +8,14 @@ class AppColors {
   // Background Colors
   static const Color white = Color(0xffFFFFFF);
   static const Color backgroundGrey = Color(0xffF4F4F5); 
+  static const Color headerBackground = Color(0xffF2F4F9); // Top banner header background
   static const Color dividerGrey = Color(0xffE2E2E7);
   
   // Text Colors
-  static const Color textPrimary = Color(0xff1A1D26); // Dark headings
-  static const Color textSecondary = Color(0xff686B78); // Subtitles 
-  static const Color textHint = Color(0xff93959F); // Placeholders
-  static const Color textLink = Color(0xff1A1D26); // Clickable terms 
+  static const Color textPrimary = Color(0xff1A1D26);
+  static const Color textSecondary = Color(0xff686B78); 
+  static const Color textHint = Color(0xff93959F); 
+  static const Color textLink = Color(0xff1A1D26); 
   
   // Border & Status Colors
   static const Color borderGrey = Color(0xffD4D5D9);

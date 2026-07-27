@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/core/widgets/app_theme_button.dart';
+import 'package:swiggy_clone/features/auth/screens/otp_verification_screen.dart';
 import 'package:swiggy_clone/features/auth/widgets/phone_input_field.dart';
 import 'package:swiggy_clone/features/auth/widgets/terms_legal_footer.dart';
 
@@ -87,7 +88,7 @@ class _PhoneLoginSheetState extends State<PhoneLoginSheet> {
                 text: 'CONTINUE',
                 isEnabled: _isButtonEnabled,
                 onPressed: () {
-                  // Handle phone submission / OTP trigger
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpVerificationScreen(phoneNumber: _phoneController.text)));
                 },
               ),
               height20,
