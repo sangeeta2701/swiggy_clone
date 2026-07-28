@@ -5,10 +5,19 @@ class AppColors {
   static const Color primaryOrange = Color(0xffFC8019); 
   static const Color primaryOrangeLight = Color(0xffFFCA9B); 
 
+  // Purple Home Theme Shades
+  static const Color homePurple = Color(0xff3B115A);
+  static const Color homePurpleDark = Color(0xff2A0A43);
+  static const Color homePurpleTabSelected = Color(0xff571988);
+
+  // Quick Promo Shades
+  static const Color promoGreen = Color(0xffA6FF38);
+  static const Color vegGreen = Color(0xff008000);
+
   // Background Colors
   static const Color white = Color(0xffFFFFFF);
   static const Color backgroundGrey = Color(0xffF4F4F5); 
-  static const Color headerBackground = Color(0xffF2F4F9); // Top banner header background
+  static const Color headerBackground = Color(0xffF2F4F9); 
   static const Color dividerGrey = Color(0xffE2E2E7);
   
   // Text Colors

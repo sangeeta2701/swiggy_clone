@@ -1,4 +1,3 @@
-// lib/features/auth/screens/otp_verification_screen.dart
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +6,7 @@ import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/core/widgets/app_theme_button.dart';
 import 'package:swiggy_clone/features/auth/widgets/otp_input_fields.dart';
+import 'package:swiggy_clone/features/home/screen/home_screen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   final String phoneNumber;
@@ -56,10 +56,41 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
   bool get _isOtpValid => _otpCode.trim().length == 6;
 
-  void _verifyOtp() {
-    if (!_isOtpValid) return;
+  bool _isLoading = false;
 
+void _verifyOtp() async {
+  if (!_isOtpValid || _isLoading) return;
+
+  setState(() {
+    _isLoading = true;
+  });
+
+  try {
+    // Simulate API or Firebase OTP verification delay
+    await Future.delayed(const Duration(seconds: 1));
+
+    if (!mounted) return;
+
+    // Navigate to Home and clear auth stack
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      ),
+      (route) => false,
+    );
+  } catch (e) {
+    // Handle verification error (e.g., show a SnackBar)
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Invalid OTP. Please try again.')),
+    );
+  } finally {
+    if (mounted) {
+      setState(() {
+        _isLoading = false;
+      });
+    }
   }
+}
 
   @override
   Widget build(BuildContext context) {

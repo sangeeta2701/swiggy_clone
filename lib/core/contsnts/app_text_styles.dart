@@ -10,6 +10,42 @@ class AppTextStyles {
         height: 1.2,
       );
 
+  static TextStyle get locationTitle => TextStyle(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColors.white,
+      );
+
+  static TextStyle get locationSubtitle => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w400,
+        color: AppColors.white.withOpacity(0.8),
+      );
+
+  static TextStyle get categoryTab => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w600,
+        color: AppColors.white,
+      );
+
+  static TextStyle get searchHint => TextStyle(
+        fontSize: 14.sp,
+        color: AppColors.textHint,
+      );
+
+  static TextStyle get bannerTitle => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w900,
+        color: AppColors.white,
+        letterSpacing: 0.5,
+      );
+
+  static TextStyle get restaurantTitle => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColors.textPrimary,
+      );
+
   static TextStyle get screenTitle => TextStyle(
         fontSize: 20.sp,
         fontWeight: FontWeight.bold,
