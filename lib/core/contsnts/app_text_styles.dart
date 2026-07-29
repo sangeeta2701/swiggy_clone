@@ -99,4 +99,11 @@ class AppTextStyles {
         fontSize: 12.sp,
         color: AppColors.textSecondary,
       );
+  static TextStyle get sectionHeader => TextStyle(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w800,
+        color: AppColors.textPrimary,
+        letterSpacing: -0.3,
+      );
 }
+

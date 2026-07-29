@@ -1,4 +1,3 @@
-// lib/features/home/screens/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,9 +6,11 @@ import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/home/widgets/custom_bottom_nav.dart';
 import 'package:swiggy_clone/features/home/widgets/home_location_header.dart';
 import 'package:swiggy_clone/features/home/widgets/home_search_bar.dart';
+import 'package:swiggy_clone/features/home/widgets/jain_vegan_section.dart';
 import 'package:swiggy_clone/features/home/widgets/offer_promos_scroll.dart';
 import 'package:swiggy_clone/features/home/widgets/restaurant_horizontal_list.dart';
 import 'package:swiggy_clone/features/home/widgets/top_services_bar.dart';
+import 'package:swiggy_clone/features/home/widgets/whats_on_your_mind.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -58,7 +59,21 @@ class HomeScreen extends ConsumerWidget {
             // Lower White Body Section
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: const RestaurantHorizontalList(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Interactive Reorder / 15-Mins List
+                  const RestaurantHorizontalList(),
+                  height24,
+
+                  // What's on your mind Section
+                  const WhatsOnYourMindSection(),
+                  height24,
+
+                  // Jain & Vegan Filtered Section
+                  const JainVeganSection(),
+                ],
+              ),
             ),
             height30,
           ],

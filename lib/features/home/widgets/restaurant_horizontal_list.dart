@@ -1,36 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/home/provider/home_providers.dart';
 
-class RestaurantHorizontalList extends StatelessWidget {
+
+class RestaurantHorizontalList extends ConsumerWidget {
   const RestaurantHorizontalList({super.key});
 
-  final List<Map<String, String>> items = const [
+  final List<Map<String, dynamic>> reorderItems = const [
+    {
+      'name': 'Haldiram\'s Sweets',
+      'offer': 'ITEMS AT ₹69',
+      'rating': '4.5',
+      'time': '45-50 mins',
+      'cuisine': 'Sweets',
+      'imageUrl': 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=500',
+    },
     {
       'name': 'Bakingo',
       'offer': 'ITEMS AT ₹69',
-      'imageUrl': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500', // Cake / Bakery
+      'rating': '4.6',
+      'time': '30-35 mins',
+      'cuisine': 'Bakery',
+      'imageUrl': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500',
     },
     {
-      'name': "Domino's Pizza",
-      'offer': 'ITEMS AT ₹75',
-      'imageUrl': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500', // Pizza
+      'name': 'ITC Aashirvaad',
+      'offer': '67% OFF UPTO ₹120',
+      'rating': '4.4',
+      'time': '30-40 mins',
+      'cuisine': 'Indian',
+      'imageUrl': 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500',
+    },
+  ];
+
+  final List<Map<String, dynamic>> fastItems = const [
+    {
+      'name': 'Manjushree Veg',
+      'offer': 'ITEMS AT ₹69',
+      'rating': '4.5',
+      'time': '10-15 mins',
+      'cuisine': 'Chinese',
+      'imageUrl': 'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=500',
     },
     {
-      'name': 'Meghana Foods',
-      'offer': 'ITEMS AT ₹120',
-      'imageUrl': 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500', // Biryani
+      'name': 'Faasos - Wraps',
+      'offer': 'BUY1 GET1',
+      'rating': '4.1',
+      'time': '10-15 mins',
+      'cuisine': 'Wraps',
+      'imageUrl': 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500',
+    },
+    {
+      'name': 'Burritos By Pronto',
+      'offer': 'ITEMS AT ₹69',
+      'rating': '4.5',
+      'time': '10-15 mins',
+      'cuisine': 'Salads',
+      'imageUrl': 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500',
     },
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final activeTab = ref.watch(topPillTabProvider);
+    final currentList = activeTab == 0 ? reorderItems : fastItems;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Quick Toggle Pill Tabs
+        // 1. Toggle Pill Tabs
         Container(
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
@@ -40,32 +82,47 @@ class RestaurantHorizontalList extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 8.h),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'REORDER',
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.successGreen,
+                child: GestureDetector(
+                  onTap: () => ref.read(topPillTabProvider.notifier).state = 0,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
+                    decoration: BoxDecoration(
+                      color: activeTab == 0 ? AppColors.white : Colors.transparent,
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'TOP RATED',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          color: activeTab == 0 ? AppColors.successGreen : AppColors.textSecondary,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
               Expanded(
-                child: Center(
-                  child: Text(
-                    'FOOD IN 15 MINS',
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.textSecondary,
+                child: GestureDetector(
+                  onTap: () => ref.read(topPillTabProvider.notifier).state = 1,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
+                    decoration: BoxDecoration(
+                      color: activeTab == 1 ? AppColors.white : Colors.transparent,
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'FOOD IN 15 MINS',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          color: activeTab == 1 ? AppColors.successGreen : AppColors.textSecondary,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -75,113 +132,125 @@ class RestaurantHorizontalList extends StatelessWidget {
         ),
         height16,
 
-        // Food Items Grid/Horizontal Cards
+        // 2. Horizontal Restaurant List
         SizedBox(
-          height: 160.h,
+          height: 185.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemCount: items.length,
+            itemCount: currentList.length,
             separatorBuilder: (_, __) => width12,
             itemBuilder: (context, index) {
-              final res = items[index];
-              return Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: SizedBox(
-                  width: 120.w,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Stack(
-                        children: [
-                          // Restaurant Image with Rounded Corners
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(16.r),
-                            child: Container(
-                              height: 110.h,
-                              width: 120.w,
-                              color: AppColors.borderGrey.withOpacity(0.3),
-                              child: Image.network(
-                                res['imageUrl']!,
-                                fit: BoxFit.cover,
-                                loadingBuilder: (context, child, loadingProgress) {
-                                  if (loadingProgress == null) return child;
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 20.w,
-                                      height: 20.h,
-                                      child: const CircularProgressIndicator(
-                                        strokeWidth: 2,
-                                      ),
-                                    ),
-                                  );
-                                },
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: AppColors.borderGrey,
-                                    child: Icon(
-                                      Icons.fastfood,
-                                      size: 30.sp,
-                                      color: AppColors.white,
-                                    ),
-                                  );
-                                },
+              final res = currentList[index];
+              return SizedBox(
+                width: 125.w,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Card Image Stack
+                    Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(16.r),
+                          child: Container(
+                            height: 115.h,
+                            width: 125.w,
+                            color: AppColors.borderGrey.withOpacity(0.3),
+                            child: Image.network(
+                              res['imageUrl']!,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        // Dark Gradient Overlay
+                        Positioned.fill(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16.r),
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Colors.transparent,
+                                  Colors.black.withOpacity(0.75),
+                                ],
+                                stops: const [0.4, 1.0],
                               ),
                             ),
                           ),
-                
-                          // Dark Gradient Overlay to make bottom offer text pop
-                          Positioned.fill(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16.r),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Colors.transparent,
-                                    Colors.black.withOpacity(0.7),
-                                  ],
-                                  stops: const [0.5, 1.0],
-                                ),
-                              ),
-                            ),
+                        ),
+                        // Favorite Icon
+                        Positioned(
+                          right: 8.w,
+                          top: 8.h,
+                          child: Icon(
+                            Icons.favorite_border,
+                            color: AppColors.white,
+                            size: 18.sp,
                           ),
-                
-                          // Favorite Icon
-                          Positioned(
-                            right: 6.w,
-                            top: 6.h,
-                            child: Icon(
-                              Icons.favorite_border,
+                        ),
+                        // Offer Text
+                        Positioned(
+                          bottom: 8.h,
+                          left: 8.w,
+                          child: Text(
+                            res['offer']!,
+                            style: TextStyle(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
                               color: AppColors.white,
-                              size: 18.sp,
                             ),
                           ),
-                
-                          // Offer Text
-                          Positioned(
-                            bottom: 6.h,
-                            left: 6.w,
-                            child: Text(
-                              res['offer']!,
-                              style: TextStyle(
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.white,
-                              ),
-                            ),
+                        ),
+                      ],
+                    ),
+                    height8,
+
+                    // Title
+                    Text(
+                      res['name']!,
+                      style: AppTextStyles.restaurantTitle,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    height4,
+
+                    // Rating & Delivery Time
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(2.r),
+                          decoration: const BoxDecoration(
+                            color: AppColors.successGreen,
+                            shape: BoxShape.circle,
                           ),
-                        ],
-                      ),
-                      height8,
-                      Text(
-                        res['name']!,
-                        style: AppTextStyles.restaurantTitle,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                      ),
-                    ],
-                  ),
+                          child: Icon(
+                            Icons.star,
+                            color: AppColors.white,
+                            size: 10.sp,
+                          ),
+                        ),
+                        width4,
+                        Expanded(
+                          child: Text(
+                            "${res['rating']} • ${res['time']}",
+                            style: AppTextStyles.caption.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // Cuisine
+                    Text(
+                      res['cuisine']!,
+                      style: AppTextStyles.caption,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ),
               );
             },
