@@ -22,7 +22,7 @@ class TopServicesBar extends ConsumerWidget {
     final selectedIdx = ref.watch(selectedCategoryIndexProvider);
 
     return SizedBox(
-      height: 72.h,
+      height: 84.h, 
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
@@ -36,20 +36,22 @@ class TopServicesBar extends ConsumerWidget {
                 ref.read(selectedCategoryIndexProvider.notifier).state = index,
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+              width: 68.w, // Giving fixed width ensures balanced item scaling
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
               decoration: BoxDecoration(
                 color: isSelected
                     ? AppColors.homePurpleTabSelected
                     : AppColors.white.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(16.r),
                 border: isSelected
-                    ? Border.all(color: AppColors.primaryOrangeLight, width: 1)
+                    ? Border.all(color: AppColors.primaryOrangeLight, width: 1.5)
                     : null,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (category.containsKey('badge'))
+                  if (category.containsKey('badge')) ...[
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 4.w,
@@ -68,9 +70,17 @@ class TopServicesBar extends ConsumerWidget {
                         ),
                       ),
                     ),
-                  Text(category['icon']!, style: TextStyle(fontSize: 20.sp)),
+                  ] else ...[
+                    SizedBox(height: 10.h), // Placeholder balance when no badge
+                  ],
+                  Text(category['icon']!, style: TextStyle(fontSize: 18.sp)),
                   height4,
-                  Text(category['title']!, style: AppTextStyles.categoryTab),
+                  Text(
+                    category['title']!,
+                    style: AppTextStyles.categoryTab,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ],
               ),
             ),

@@ -1,4 +1,4 @@
-// lib/features/home/widgets/offer_promos_scroll.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
@@ -10,8 +10,8 @@ class OfferPromosScroll extends StatelessWidget {
 
   final List<Map<String, dynamic>> offers = const [
     {'title': 'Min.\n₹200 OFF', 'sub': '%%'},
-    {'title': 'Dishes Starting\nAt ₹29', 'sub': 'PRICE\nDROP'},
-    {'title': 'Deal\nFeast', 'sub': 'GET 70%\nOFF'},
+    {'title': 'Dishes Starting\nAt ₹29', 'sub': 'PRICE DROP'},
+    {'title': 'Deal\nFeast', 'sub': 'GET 70% OFF'},
     {'title': 'Top Brands\nTop Deals', 'sub': 'FLAT ₹100'},
   ];
 
@@ -19,7 +19,6 @@ class OfferPromosScroll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Title divider
         Row(
           children: [
             Expanded(child: Divider(color: AppColors.white.withOpacity(0.2))),
@@ -39,51 +38,55 @@ class OfferPromosScroll extends StatelessWidget {
         ),
         height12,
 
-        // Offer Cards
         SizedBox(
-          height: 120.h,
+          height: 130.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: offers.length,
             separatorBuilder: (_, __) => width12,
             itemBuilder: (context, index) {
               final offer = offers[index];
-              return Container(
-                width: 100.w,
-                padding: EdgeInsets.all(10.w),
-                decoration: BoxDecoration(
-                  color: AppColors.promoGreen,
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      offer['title'],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(6.w),
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryOrange,
-                        borderRadius: BorderRadius.circular(8.r),
-                      ),
-                      child: Text(
-                        offer['sub'],
+              return Padding(
+                padding: const EdgeInsets.only(right:  8.0),
+                child: Container(
+                  width: 105.w,
+                  padding: EdgeInsets.all(8.w),
+                  decoration: BoxDecoration(
+                    color: AppColors.promoGreen,
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        offer['title'],
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: AppColors.white,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textPrimary,
+                          height: 1.2,
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 4.w),
+                        decoration: BoxDecoration(
+                          color: AppColors.primaryOrange,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Text(
+                          offer['sub'],
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
