@@ -1,10 +1,9 @@
 
 import 'package:flutter_riverpod/legacy.dart';
 
-// Bottom Navigation Index State
 final bottomNavIndexProvider = StateProvider<int>((ref) => 0);
 
-// Selected Top Category (Food, Instamart, Dineout, etc.)
+// Selected Top Category (0: Food, 1: Instamart, 2: Dineout, 3: Giftables)
 final selectedCategoryIndexProvider = StateProvider<int>((ref) => 0);
 
 // Veg Switch State
