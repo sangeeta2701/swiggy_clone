@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:swiggy_clone/features/home/provider/home_providers.dart';
+import 'package:swiggy_clone/features/home/providers/home_providers.dart';
 import 'package:swiggy_clone/features/home/screen/home_screen.dart';
 import 'package:swiggy_clone/features/home/widgets/custom_bottom_nav.dart';
+import 'package:swiggy_clone/features/instamart/screens/instamart_screen.dart';
 
 class MainContainerScreen extends ConsumerWidget {
   const MainContainerScreen({super.key});
@@ -12,24 +13,14 @@ class MainContainerScreen extends ConsumerWidget {
     final bottomIndex = ref.watch(bottomNavIndexProvider);
     final topCategoryIndex = ref.watch(selectedCategoryIndexProvider);
 
+    // Check if Instamart is selected from top categories or bottom nav
+    final isInstamartSelected = (bottomIndex == 0 && topCategoryIndex == 1);
+
     Widget getBody() {
-      //If bottom navigation is set to "Food" (index 0)
-      if (bottomIndex == 0) {
-        switch (topCategoryIndex) {
-          case 0:
-            return const HomeScreen(); // Your Main Food Feed
-          case 1:
-            return const Center(child: Text("Instamart Category Screen"));
-          case 2:
-            return const Center(child: Text("Dineout Category Screen"));
-          case 3:
-            return const Center(child: Text("Giftables Category Screen"));
-          default:
-            return const HomeScreen();
-        }
+      if (isInstamartSelected) {
+        return const InstamartScreen();
       }
 
-      // Otherwise switch based on bottom nav bar options
       switch (bottomIndex) {
         case 1:
           return const Center(child: Text("Bolt (15 Mins) Screen"));
@@ -46,7 +37,8 @@ class MainContainerScreen extends ConsumerWidget {
 
     return Scaffold(
       body: getBody(),
-      bottomNavigationBar: const CustomBottomNav(),
+      // HIDE main bottom nav when on Instamart screen
+      bottomNavigationBar: isInstamartSelected ? null : const CustomBottomNav(),
     );
   }
 }

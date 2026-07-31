@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart'; // Note: check spelling 'contsnts' vs 'constants'
-import 'package:swiggy_clone/features/home/provider/home_providers.dart';
+import 'package:swiggy_clone/features/home/providers/home_providers.dart';
 
 class TopServicesBar extends ConsumerWidget {
   const TopServicesBar({super.key});

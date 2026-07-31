@@ -30,4 +30,11 @@ class AppColors {
   static const Color borderGrey = Color(0xffD4D5D9);
   static const Color successGreen = Color(0xff60B246);
   static const Color errorRed = Color(0xffE23744);
+
+
+  // Instamart Specific Colors
+static const Color instamartBlue = Color(0xFF0052FF);
+static const Color instamartLightBlue = Color(0xFFEBF2FF);
+static const Color instamartBadgeYellow = Color(0xFFFFC72C);
+static const Color instamartDiscountBg = Color(0xFFE8F5E9);
 }

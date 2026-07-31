@@ -105,5 +105,25 @@ class AppTextStyles {
         color: AppColors.textPrimary,
         letterSpacing: -0.3,
       );
+
+
+  static TextStyle get instamartSectionHeader => TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w800,
+      color: AppColors.textPrimary,
+    );
+
+static TextStyle get instamartItemTitle => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w600,
+      color: AppColors.textPrimary,
+      height: 1.2,
+    );
+
+static TextStyle get instamartCartText => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.bold,
+      color: AppColors.white,
+    );
 }
 

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
-import 'package:swiggy_clone/features/home/provider/home_providers.dart';
+import 'package:swiggy_clone/features/home/providers/home_providers.dart';
 
 
 class HomeSearchBar extends ConsumerWidget {
