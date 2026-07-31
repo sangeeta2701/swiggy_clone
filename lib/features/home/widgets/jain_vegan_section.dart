@@ -138,72 +138,75 @@ class JainVeganSection extends ConsumerWidget {
             separatorBuilder: (_, __) => width12,
             itemBuilder: (context, index) {
               final item = currentList[index];
-              return SizedBox(
-                width: 120.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(16.r),
-                          child: Container(
-                            height: 110.h,
-                            width: 120.w,
-                            color: AppColors.borderGrey.withOpacity(0.3),
-                            child: Image.network(
-                              item['imageUrl']!,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.r),
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Colors.transparent,
-                                  Colors.black.withOpacity(0.7),
-                                ],
-                                stops: const [0.5, 1.0],
+              return Padding(
+                padding:  EdgeInsets.only(right:  8.0.w),
+                child: SizedBox(
+                  width: 120.w,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Stack(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(16.r),
+                            child: Container(
+                              height: 110.h,
+                              width: 120.w,
+                              color: AppColors.borderGrey.withOpacity(0.3),
+                              child: Image.network(
+                                item['imageUrl']!,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          right: 6.w,
-                          top: 6.h,
-                          child: Icon(
-                            Icons.favorite_border,
-                            color: AppColors.white,
-                            size: 18.sp,
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 6.h,
-                          left: 6.w,
-                          child: Text(
-                            item['offer']!,
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.white,
+                          Positioned.fill(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16.r),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.black.withOpacity(0.7),
+                                  ],
+                                  stops: const [0.5, 1.0],
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    height8,
-                    Text(
-                      item['name']!,
-                      style: AppTextStyles.restaurantTitle,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-                  ],
+                          Positioned(
+                            right: 6.w,
+                            top: 6.h,
+                            child: Icon(
+                              Icons.favorite_border,
+                              color: AppColors.white,
+                              size: 18.sp,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 6.h,
+                            left: 6.w,
+                            child: Text(
+                              item['offer']!,
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      height8,
+                      Text(
+                        item['name']!,
+                        style: AppTextStyles.restaurantTitle,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

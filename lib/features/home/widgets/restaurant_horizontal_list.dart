@@ -141,116 +141,119 @@ class RestaurantHorizontalList extends ConsumerWidget {
             separatorBuilder: (_, __) => width12,
             itemBuilder: (context, index) {
               final res = currentList[index];
-              return SizedBox(
-                width: 125.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Card Image Stack
-                    Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(16.r),
-                          child: Container(
-                            height: 115.h,
-                            width: 125.w,
-                            color: AppColors.borderGrey.withOpacity(0.3),
-                            child: Image.network(
-                              res['imageUrl']!,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        // Dark Gradient Overlay
-                        Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.r),
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Colors.transparent,
-                                  Colors.black.withOpacity(0.75),
-                                ],
-                                stops: const [0.4, 1.0],
+              return Padding(
+                padding:  EdgeInsets.only(right:  8.0.w),
+                child: SizedBox(
+                  width: 125.w,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Card Image Stack
+                      Stack(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(16.r),
+                            child: Container(
+                              height: 115.h,
+                              width: 125.w,
+                              color: AppColors.borderGrey.withOpacity(0.3),
+                              child: Image.network(
+                                res['imageUrl']!,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ),
-                        // Favorite Icon
-                        Positioned(
-                          right: 8.w,
-                          top: 8.h,
-                          child: Icon(
-                            Icons.favorite_border,
-                            color: AppColors.white,
-                            size: 18.sp,
+                          // Dark Gradient Overlay
+                          Positioned.fill(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16.r),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.black.withOpacity(0.75),
+                                  ],
+                                  stops: const [0.4, 1.0],
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        // Offer Text
-                        Positioned(
-                          bottom: 8.h,
-                          left: 8.w,
-                          child: Text(
-                            res['offer']!,
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
+                          // Favorite Icon
+                          Positioned(
+                            right: 8.w,
+                            top: 8.h,
+                            child: Icon(
+                              Icons.favorite_border,
                               color: AppColors.white,
+                              size: 18.sp,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    height8,
-
-                    // Title
-                    Text(
-                      res['name']!,
-                      style: AppTextStyles.restaurantTitle,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-                    height4,
-
-                    // Rating & Delivery Time
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(2.r),
-                          decoration: const BoxDecoration(
-                            color: AppColors.successGreen,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.star,
-                            color: AppColors.white,
-                            size: 10.sp,
-                          ),
-                        ),
-                        width4,
-                        Expanded(
-                          child: Text(
-                            "${res['rating']} • ${res['time']}",
-                            style: AppTextStyles.caption.copyWith(
-                              fontWeight: FontWeight.bold,
+                          // Offer Text
+                          Positioned(
+                            bottom: 8.h,
+                            left: 8.w,
+                            child: Text(
+                              res['offer']!,
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.white,
+                              ),
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
-                    ),
-
-                    // Cuisine
-                    Text(
-                      res['cuisine']!,
-                      style: AppTextStyles.caption,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                        ],
+                      ),
+                      height8,
+                
+                      // Title
+                      Text(
+                        res['name']!,
+                        style: AppTextStyles.restaurantTitle,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                      height4,
+                
+                      // Rating & Delivery Time
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(2.r),
+                            decoration: const BoxDecoration(
+                              color: AppColors.successGreen,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.star,
+                              color: AppColors.white,
+                              size: 10.sp,
+                            ),
+                          ),
+                          width4,
+                          Expanded(
+                            child: Text(
+                              "${res['rating']} • ${res['time']}",
+                              style: AppTextStyles.caption.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                
+                      // Cuisine
+                      Text(
+                        res['cuisine']!,
+                        style: AppTextStyles.caption,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

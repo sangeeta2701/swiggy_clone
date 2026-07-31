@@ -6,7 +6,7 @@ import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/core/widgets/app_theme_button.dart';
 import 'package:swiggy_clone/features/auth/widgets/otp_input_fields.dart';
-import 'package:swiggy_clone/features/home/screen/home_screen.dart';
+import 'package:swiggy_clone/features/home/screen/main_container_screen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   final String phoneNumber;
@@ -74,7 +74,7 @@ void _verifyOtp() async {
     // Navigate to Home and clear auth stack
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
-        builder: (context) => const HomeScreen(),
+        builder: (context) => const MainContainerScreen(),
       ),
       (route) => false,
     );

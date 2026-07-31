@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
-import 'package:swiggy_clone/features/home/widgets/custom_bottom_nav.dart';
 import 'package:swiggy_clone/features/home/widgets/home_location_header.dart';
 import 'package:swiggy_clone/features/home/widgets/home_search_bar.dart';
 import 'package:swiggy_clone/features/home/widgets/jain_vegan_section.dart';
@@ -19,7 +18,6 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      bottomNavigationBar: const CustomBottomNav(),
       body: SingleChildScrollView(
         child: Column(
           children: [

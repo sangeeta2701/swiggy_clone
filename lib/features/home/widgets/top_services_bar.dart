@@ -37,7 +37,7 @@ class TopServicesBar extends ConsumerWidget {
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              margin: EdgeInsets.only(right: 12.w),
+              margin: EdgeInsets.only(right: 8.w),
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: isSelected
