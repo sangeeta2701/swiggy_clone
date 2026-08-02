@@ -42,10 +42,7 @@ class HomeScreen extends ConsumerWidget {
               ),
               child: Column(
                 children: [
-                  const HomeLocationHeader(),
-                  height16,
-                  const TopServicesBar(),
-                  height16,
+                 height12,
                   const HomeSearchBar(),
                   height20,
                   const OfferPromosScroll(),
