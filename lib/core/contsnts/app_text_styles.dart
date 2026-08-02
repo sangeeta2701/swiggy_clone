@@ -125,5 +125,39 @@ static TextStyle get instamartCartText => TextStyle(
       fontWeight: FontWeight.bold,
       color: AppColors.white,
     );
+
+    static TextStyle get categoriesHeader => TextStyle(
+      fontSize: 22.sp,
+      fontWeight: FontWeight.w800,
+      color: AppColors.textPrimary,
+      letterSpacing: -0.5,
+    );
+
+static TextStyle get storeTitle => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColors.textPrimary,
+      height: 1.2,
+    );
+
+static TextStyle get freeDeliveryText => TextStyle(
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w800,
+      color: AppColors.freeDeliveryText,
+      letterSpacing: 0.3,
+    );
+
+static TextStyle get instamartFooterTitle => TextStyle(
+      fontSize: 28.sp,
+      fontWeight: FontWeight.w900,
+      color: AppColors.textHint.withOpacity(0.4),
+      letterSpacing: -1,
+    );
+
+static TextStyle get instamartFooterSubtitle => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w500,
+      color: AppColors.textHint,
+    );
 }
 

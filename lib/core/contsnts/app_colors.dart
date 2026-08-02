@@ -37,4 +37,10 @@ static const Color instamartBlue = Color(0xFF0052FF);
 static const Color instamartLightBlue = Color(0xFFEBF2FF);
 static const Color instamartBadgeYellow = Color(0xFFFFC72C);
 static const Color instamartDiscountBg = Color(0xFFE8F5E9);
+
+// Add these to your existing AppColors class
+static const Color freeDeliveryBg = Color(0xFFF0FAF7);
+static const Color freeDeliveryText = Color(0xFF165B4C);
+static const Color storeCardBg = Color(0xFFEAF2FF);
+static const Color categoryCardBg = Color(0xFFF0F4F8);
 }

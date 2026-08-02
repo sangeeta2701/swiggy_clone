@@ -74,6 +74,7 @@ class MainContainerScreen extends ConsumerWidget {
                     const HomeLocationHeader(),
                     height16,
                     const TopServicesBar(),
+                    height12,
                   ],
                 ),
               ),
