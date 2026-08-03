@@ -8,6 +8,7 @@ import 'package:swiggy_clone/features/home/screen/home_screen.dart';
 import 'package:swiggy_clone/features/home/widgets/custom_bottom_nav.dart';
 import 'package:swiggy_clone/features/home/widgets/home_location_header.dart';
 import 'package:swiggy_clone/features/home/widgets/top_services_bar.dart';
+import 'package:swiggy_clone/features/instamart/providers/instamart_providers.dart';
 import 'package:swiggy_clone/features/instamart/screens/instamart_screen.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_bottom_nav.dart';
 
@@ -18,10 +19,12 @@ class MainContainerScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final topCategoryIndex = ref.watch(selectedCategoryIndexProvider);
     final bottomIndex = ref.watch(bottomNavIndexProvider);
+    
+    // Watch current internal Instamart tab selection
+    final instamartSubIndex = ref.watch(instamartBottomNavIndexProvider);
 
-    // Determines active screen based on bottom nav and top top_services_bar selections
+    // Determines active screen based on bottom nav and top services bar selections
     Widget getBodyScreen() {
-      // Primary handling when user is on the Main Tab (bottomIndex == 0)
       if (bottomIndex == 0) {
         switch (topCategoryIndex) {
           case 0:
@@ -39,7 +42,6 @@ class MainContainerScreen extends ConsumerWidget {
         }
       }
 
-      // Secondary handling for other Bottom Navigation Tabs (e.g., Bolt, 99 Store, etc.)
       switch (bottomIndex) {
         case 1:
           return const Center(child: Text("Bolt (15 Mins) Screen"));
@@ -54,8 +56,11 @@ class MainContainerScreen extends ConsumerWidget {
       }
     }
 
-    // Instamart mode check for switching bottom bar
+    // Check if user is currently inside Instamart
     final isInstamartMode = (bottomIndex == 0 && topCategoryIndex == 1);
+
+    // Header should only show if NOT in Instamart mode OR if on Instamart Home (subIndex == 0)
+    final showTopHeader = !isInstamartMode || (instamartSubIndex == 0);
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -64,21 +69,22 @@ class MainContainerScreen extends ConsumerWidget {
         bottom: false,
         child: Column(
           children: [
-            // Persistent Purple Top Header
-            Container(
-              color: AppColors.homePurple,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-                child: Column(
-                  children: [
-                    const HomeLocationHeader(),
-                    height16,
-                    const TopServicesBar(),
-                    height12,
-                  ],
+            // Top Purple Header renders conditionally
+            if (showTopHeader)
+              Container(
+                color: AppColors.homePurple,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                  child: Column(
+                    children: [
+                      const HomeLocationHeader(),
+                      height16,
+                      const TopServicesBar(),
+                      height12,
+                    ],
+                  ),
                 ),
               ),
-            ),
 
             // Dynamic Body Content Routing
             Expanded(
