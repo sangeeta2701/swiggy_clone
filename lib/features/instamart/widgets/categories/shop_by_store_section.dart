@@ -9,20 +9,21 @@ class ShopByStoreSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Direct working URLs hosted on open CDNs
     final stores = [
       {
         'name': 'Print\nStore',
-        'image': 'https://cdn-icons-png.flaticon.com/512/2659/2659360.png',
+        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Printer_icon_font_awesome.svg/512px-Printer_icon_font_awesome.svg.png',
         'bgColor': const Color(0xFFDCEBFF),
       },
       {
         'name': 'Book\nStore',
-        'image': 'https://cdn-icons-png.flaticon.com/512/3389/3389081.png',
+        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Open_book_icon.svg/512px-Open_book_icon.svg.png',
         'bgColor': const Color(0xFFCDE2FE),
       },
       {
         'name': 'The Noice\nStore',
-        'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553658.png',
+        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Food_icon.svg/512px-Food_icon.svg.png',
         'bgColor': const Color(0xFFFFF3C4),
       },
     ];
@@ -38,49 +39,55 @@ class ShopByStoreSection extends StatelessWidget {
           ),
         ),
         height12,
-        SizedBox(
-          height: 145.h,
-          child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            scrollDirection: Axis.horizontal,
-            itemCount: stores.length,
-            separatorBuilder: (_, __) => width12,
-            itemBuilder: (context, index) {
-              final store = stores[index];
-              return Column(
-                children: [
-                  Container(
-                    width: 105.w,
-                    height: 95.h,
-                    decoration: BoxDecoration(
-                      color: store['bgColor'] as Color,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(52.r),
-                        bottom: Radius.circular(16.r),
-                      ),
-                    ),
-                    padding: EdgeInsets.all(10.r),
-                    child: Center(
-                      child: Image.network(
-                        store['image'] as String,
-                        fit: BoxFit.contain,
-                        errorBuilder: (_, __, ___) => Icon(
-                          Icons.storefront_rounded,
-                          size: 36.sp,
-                          color: AppColors.textSecondary,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: stores.map((store) {
+              return Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  child: Column(
+                    children: [
+                      AspectRatio(
+                        aspectRatio: 1.1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: store['bgColor'] as Color,
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(46.r),
+                              bottom: Radius.circular(16.r),
+                            ),
+                          ),
+                          padding: EdgeInsets.all(14.r),
+                          child: Center(
+                            child: Image.network(
+                              store['image'] as String,
+                              fit: BoxFit.contain,
+                              errorBuilder: (_, __, ___) => Icon(
+                                Icons.storefront_rounded,
+                                size: 32.sp,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      height8,
+                      Text(
+                        store['name'] as String,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        style: AppTextStyles.storeTitle?.copyWith(
+                          height: 1.15,
+                        ),
+                      ),
+                    ],
                   ),
-                  height8,
-                  Text(
-                    store['name'] as String,
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.storeTitle,
-                  ),
-                ],
+                ),
               );
-            },
+            }).toList(),
           ),
         ),
       ],

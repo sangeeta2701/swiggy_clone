@@ -11,173 +11,151 @@ class InstamartCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // --- ENHANCED CATEGORIES MOCK DATA ---
+    // --- HIGH QUALITY TRANSPARENT PNG CATEGORIES DATA ---
 
-final freshItems = [
-  {
-    'name': 'Fresh Vegetables',
-    // Assorted fresh vegetables basket/pile
-    'image': 'https://pngimg.com/uploads/vegetables/vegetables_PNG101657.png',
-  },
-  {
-    'name': 'Fresh Fruits',
-    // Mix of colorful fresh fruits
-    'image': 'https://pngimg.com/uploads/fruit/fruit_PNG13.png',
-  },
-  {
-    'name': 'Dairy, Bread and Eggs',
-    // Milk bottle, egg crate, and bread combination
-    'image': 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=300&q=80',
-  },
-  {
-    'name': 'Meat and Seafood',
-    // Fresh meat assortment
-    'image': 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=300&q=80',
-  },
-];
+    final freshItems = [
+      {
+        'name': 'Fresh Vegetables',
+        'image': 'https://pngimg.com/uploads/vegetables/vegetables_PNG101657.png',
+      },
+      {
+        'name': 'Fresh Fruits',
+        'image': 'https://pngimg.com/uploads/fruit/fruit_PNG13.png',
+      },
+      {
+        'name': 'Dairy, Bread and Eggs',
+        'image': 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      },
+      {
+        'name': 'Meat and Seafood',
+        'image': 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+      },
+    ];
 
-final groceryItems = [
-  {
-    'name': 'Atta, Rice and Dal',
-    // Grains, lentils, and flour assortment
-    'image': 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80',
-  },
-  {
-    'name': 'Masalas',
-    // Indian spice bowl assortment
-    'image': 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
-  },
-  {
-    'name': 'Oils and Ghee',
-    // Cooking oil bottle and ghee jar
-    'image': 'https://pngimg.com/uploads/olive_oil/olive_oil_PNG9.png',
-  },
-  {
-    'name': 'Cereals and Breakfast',
-    // Breakfast cereal bowl & oats
-    'image': 'https://images.unsplash.com/photo-1521483451569-e33803c0330c?w=300&q=80',
-  },
-];
+    final groceryItems = [
+      {
+        'name': 'Atta, Rice and Dal',
+        'image': 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+      },
+      {
+        'name': 'Masalas',
+        'image': 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+      },
+      {
+        'name': 'Oils and Ghee',
+        'image': 'https://pngimg.com/uploads/olive_oil/olive_oil_PNG9.png',
+      },
+      {
+        'name': 'Cereals and Breakfast',
+        'image': 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      },
+    ];
 
-final snacksItems = [
-  {
-    'name': 'Cold Drinks and Juices',
-    'image': 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
-  },
-  {
-    'name': 'Ice Creams and Frozen...',
-    'image': 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=300&q=80',
-  },
-  {
-    'name': 'Chips and Namkeens',
-    'image': 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&q=80',
-  },
-  {
-    'name': 'Chocolates',
-    'image': 'https://pngimg.com/uploads/chocolate/chocolate_PNG97155.png',
-  },
-  {
-    'name': 'Biscuits and Cakes',
-    'image': 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&q=80',
-  },
-  {
-    'name': 'Tea, Coffee and Milk dr...',
-    'image': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300&q=80',
-  },
-  {
-    'name': 'Sauces and Spreads',
-    'image': 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=300&q=80',
-  },
-  {
-    'name': 'Sweet Corner',
-    'image': 'https://images.unsplash.com/photo-1587314168485-3236d6710814?w=300&q=80',
-  },
-];
-final beautyItems = [
-  {
-    'name': 'Bath and Body',
-    // Soaps, body washes, and sponges assortment
-    'image': 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80',
-  },
-  {
-    'name': 'Hair Care',
-    // Shampoo, conditioner, and oil bottles
-    'image': 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80',
-  },
-  {
-    'name': 'Skincare',
-    // Serums, moisturizers, and face cream jars
-    'image': 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80',
-  },
-  {
-    'name': 'Makeup',
-    // Lipstick, brushes, and cosmetics palette
-    'image': 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&q=80',
-  },
-  {
-    'name': 'Feminine Hygiene',
-    // Organic pads, wipes, and care products
-    'image': 'https://images.unsplash.com/photo-1556228722-d11917a15998?w=300&q=80',
-  },
-  {
-    'name': 'Sexual Wellness',
-    // Wellness & care essentials bundle
-    'image': 'https://images.unsplash.com/photo-1608248597260-502287c80088?w=300&q=80',
-  },
-  {
-    'name': 'Health and Pharma',
-    // First aid kit, vitamins, and healthcare supplies
-    'image': 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=300&q=80',
-  },
-  {
-    'name': 'Baby Care',
-    // Baby lotion, wipes, and powder assortment
-    'image': 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300&q=80',
-  },
-];
+    final snacksItems = [
+      {
+        'name': 'Cold Drinks and Juices',
+        'image': 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      },
+      {
+        'name': 'Ice Creams and Frozen...',
+        'image': 'https://pngimg.com/uploads/ice_cream/ice_cream_PNG5097.png',
+      },
+      {
+        'name': 'Chips and Namkeens',
+        'image': 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
+      },
+      {
+        'name': 'Chocolates',
+        'image': 'https://pngimg.com/uploads/chocolate/chocolate_PNG97155.png',
+      },
+      {
+        'name': 'Biscuits and Cakes',
+        'image': 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      },
+      {
+        'name': 'Tea, Coffee and Milk dr...',
+        'image': 'https://pngimg.com/uploads/tea/tea_PNG98881.png',
+      },
+      {
+        'name': 'Sauces and Spreads',
+        'image': 'https://pngimg.com/uploads/ketchup/ketchup_PNG14.png',
+      },
+      {
+        'name': 'Sweet Corner',
+        'image': 'https://pngimg.com/uploads/candy/candy_PNG98.png',
+      },
+    ];
 
-final householdItems = [
-  {
-    'name': 'Home and Kitchen',
-    // Kitchenware, utensils, and containers set
-    'image': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=300&q=80',
-  },
-  {
-    'name': 'Puja Store',
-    // Diyas, incense, and festive puja supplies
-    'image': 'https://images.unsplash.com/photo-1602615576820-ea14b9e78d29?w=300&q=80',
-  },
-  {
-    'name': 'Cleaners and Repell...',
-    // Multi-surface cleaners and sprays
-    'image': 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=300&q=80',
-  },
-  {
-    'name': 'Toys and Stationery',
-    // Pens, notebooks, and creative supplies
-    'image': 'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=300&q=80',
-  },
-  {
-    'name': 'Electronics and Applia...',
-    // Small appliances, cables, and gadgets setup
-    'image': 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=300&q=80',
-  },
-  {
-    'name': 'Fashion',
-    // T-shirts, socks, and basic apparel
-    'image': 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300&q=80',
-  },
-  {
-    'name': 'Pet Supplies',
-    // Pet food bowls, toys, and grooming products
-    'image': 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&q=80',
-  },
-  {
-    'name': 'Sports and Fitness',
-    // Resistance bands, yoga mat, and fitness gear
-    'image': 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=300&q=80',
-  },
-];
+    final beautyItems = [
+      {
+        'name': 'Bath and Body',
+        'image': 'https://pngimg.com/uploads/soap/soap_PNG42.png',
+      },
+      {
+        'name': 'Hair Care',
+        'image': 'https://pngimg.com/uploads/shampoo/shampoo_PNG18.png',
+      },
+      {
+        'name': 'Skincare',
+        'image': 'https://pngimg.com/uploads/cream/cream_PNG23.png',
+      },
+      {
+        'name': 'Makeup',
+        'image': 'https://pngimg.com/uploads/lipstick/lipstick_PNG27.png',
+      },
+      {
+        'name': 'Feminine Hygiene',
+        'image': 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png',
+      },
+      {
+        'name': 'Sexual Wellness',
+        'image': 'https://pngimg.com/uploads/perfume/perfume_PNG10237.png',
+      },
+      {
+        'name': 'Health and Pharma',
+        'image': 'https://pngimg.com/uploads/pills/pills_PNG98.png',
+      },
+      {
+        'name': 'Baby Care',
+        'image': 'https://pngimg.com/uploads/baby/baby_PNG52680.png',
+      },
+    ];
+
+    final householdItems = [
+      {
+        'name': 'Home and Kitchen',
+        'image': 'https://pngimg.com/uploads/frying_pan/frying_pan_PNG9.png',
+      },
+      {
+        'name': 'Puja Store',
+        'image': 'https://pngimg.com/uploads/candle/candle_PNG3120.png',
+      },
+      {
+        'name': 'Cleaners and Repell...',
+        'image': 'https://pngimg.com/uploads/detergent/detergent_PNG21.png',
+      },
+      {
+        'name': 'Toys and Stationery',
+        'image': 'https://pngimg.com/uploads/pen/pen_PNG7413.png',
+      },
+      {
+        'name': 'Electronics and Applia...',
+        'image': 'https://pngimg.com/uploads/headphones/headphones_PNG101980.png',
+      },
+      {
+        'name': 'Fashion',
+        'image': 'https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png',
+      },
+      {
+        'name': 'Pet Supplies',
+        'image': 'https://pngimg.com/uploads/dog_food/dog_food_PNG38.png',
+      },
+      {
+        'name': 'Sports and Fitness',
+        'image': 'https://pngimg.com/uploads/dumbbells/dumbbells_PNG16.png',
+      },
+    ];
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(

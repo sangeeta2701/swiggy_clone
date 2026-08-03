@@ -21,10 +21,7 @@ class CategoryGridSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Text(
-            title,
-            style: AppTextStyles.instamartSectionHeader,
-          ),
+          child: Text(title, style: AppTextStyles.instamartSectionHeader),
         ),
         height12,
         GridView.builder(
@@ -42,21 +39,26 @@ class CategoryGridSection extends StatelessWidget {
             final item = items[index];
             return Column(
               children: [
+                
                 Container(
                   height: 72.h,
-                  width: double.infinity,
-                  padding: EdgeInsets.all(8.r),
+                  width: 72.w,
                   decoration: BoxDecoration(
-                    color: AppColors.categoryCardBg,
-                    borderRadius: BorderRadius.circular(16.r),
+                    color: const Color(
+                      0xF2F5F8,
+                    ), 
+                    borderRadius: BorderRadius.circular(18.r),
                   ),
+                  padding: EdgeInsets.all(
+                    8.r,
+                  ), 
                   child: Image.network(
                     item['image'] ?? '',
-                    fit: BoxFit.contain,
-                    errorBuilder: (_, __, ___) => Icon(
+                    fit: BoxFit.contain, 
+                    errorBuilder: (context, error, stackTrace) => Icon(
                       Icons.shopping_bag_outlined,
+                      color: Colors.grey[400],
                       size: 28.sp,
-                      color: AppColors.textHint,
                     ),
                   ),
                 ),
