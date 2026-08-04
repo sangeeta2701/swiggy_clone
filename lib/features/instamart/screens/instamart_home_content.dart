@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
-import 'package:swiggy_clone/features/instamart/widgets/instamart_floating_cart_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_grid_section.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_search_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_sub_categories_bar.dart';
@@ -75,12 +74,12 @@ class InstamartHomeContent extends ConsumerWidget {
         ),
 
         // Floating Cart Overlay Bar
-        const Positioned(
-          left: 0,
-          right: 0,
-          bottom: 12,
-          child: InstamartFloatingCartBar(),
-        ),
+        // const Positioned(
+        //   left: 0,
+        //   right: 0,
+        //   bottom: 12,
+        //   child: InstamartFloatingCartBar(),
+        // ),
       ],
     );
   }

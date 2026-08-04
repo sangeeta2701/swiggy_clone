@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 
 class CategoryGridSection extends StatelessWidget {
   final String title;
   final List<Map<String, String>> items;
+  final Function(String sectionTitle, Map<String, String> item)? onItemTap;
 
   const CategoryGridSection({
     super.key,
     required this.title,
     required this.items,
+    this.onItemTap,
   });
 
   @override
@@ -37,43 +38,46 @@ class CategoryGridSection extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
-            return Column(
-              children: [
-                
-                Container(
-                  height: 72.h,
-                  width: 72.w,
-                  decoration: BoxDecoration(
-                    color: const Color(
-                      0xF2F5F8,
-                    ), 
-                    borderRadius: BorderRadius.circular(18.r),
-                  ),
-                  padding: EdgeInsets.all(
-                    8.r,
-                  ), 
-                  child: Image.network(
-                    item['image'] ?? '',
-                    fit: BoxFit.contain, 
-                    errorBuilder: (context, error, stackTrace) => Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Colors.grey[400],
-                      size: 28.sp,
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                if (onItemTap != null) {
+                  onItemTap!(title, item);
+                }
+              },
+              child: Column(
+                children: [
+                  Container(
+                    height: 72.h,
+                    width: 72.w,
+                    decoration: BoxDecoration(
+                      color: const Color(0xF2F5F8),
+                      borderRadius: BorderRadius.circular(18.r),
+                    ),
+                    padding: EdgeInsets.all(8.r),
+                    child: Image.network(
+                      item['image'] ?? '',
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) => Icon(
+                        Icons.shopping_bag_outlined,
+                        color: Colors.grey[400],
+                        size: 28.sp,
+                      ),
                     ),
                   ),
-                ),
-                height8,
-                SizedBox(
-                  height: 32.h,
-                  child: Text(
-                    item['name'] ?? '',
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.instamartItemTitle,
+                  height8,
+                  SizedBox(
+                    height: 32.h,
+                    child: Text(
+                      item['name'] ?? '',
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.instamartItemTitle,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           },
         ),

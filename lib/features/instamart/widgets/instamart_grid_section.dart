@@ -3,15 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
 
 class InstamartGridSection extends StatelessWidget {
   final String sectionTitle;
   final List<Map<String, String>> items;
+  final Function(String sectionTitle, Map<String, String> item)? onItemTap;
 
   const InstamartGridSection({
     super.key,
     required this.sectionTitle,
     required this.items,
+    this.onItemTap,
   });
 
   @override
@@ -43,51 +46,69 @@ class InstamartGridSection extends StatelessWidget {
             final String imageUrl = item['image'] ?? '';
             final String itemName = item['name'] ?? '';
 
-            // ALWAYS RETURN A VALID WIDGET
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  height: 72.h,
-                  width: double.infinity,
-                  padding: EdgeInsets.all(8.r),
-                  decoration: BoxDecoration(
-                    color: AppColors.headerBackground,
-                    borderRadius: BorderRadius.circular(16.r),
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                if (onItemTap != null) {
+                  onItemTap!(sectionTitle, item);
+                } else {
+                  // Default navigation fallback if no custom callback is passed
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => InstamartCategoryProductsScreen(
+                        categoryName: sectionTitle,
+                        selectedSubCategory: itemName,
+                      ),
+                    ),
+                  );
+                }
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    height: 72.h,
+                    width: double.infinity,
+                    padding: EdgeInsets.all(8.r),
+                    decoration: BoxDecoration(
+                      color: AppColors.headerBackground,
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12.r),
+                      child: imageUrl.isNotEmpty
+                          ? Image.network(
+                              imageUrl,
+                              fit: BoxFit.contain,
+                              errorBuilder: (context, error, stackTrace) {
+                                return Icon(
+                                  Icons.shopping_bag_outlined,
+                                  color: AppColors.textHint,
+                                  size: 28.sp,
+                                );
+                              },
+                            )
+                          : Icon(
+                              Icons.shopping_bag_outlined,
+                              color: AppColors.textHint,
+                              size: 28.sp,
+                            ),
+                    ),
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12.r),
-                    child: imageUrl.isNotEmpty
-                        ? Image.network(
-                            imageUrl,
-                            fit: BoxFit.contain,
-                            errorBuilder: (context, error, stackTrace) {
-                              return Icon(
-                                Icons.shopping_bag_outlined,
-                                color: AppColors.textHint,
-                                size: 28.sp,
-                              );
-                            },
-                          )
-                        : Icon(
-                            Icons.shopping_bag_outlined,
-                            color: AppColors.textHint,
-                            size: 28.sp,
-                          ),
+                  height8,
+                  SizedBox(
+                    height: 32.h,
+                    child: Text(
+                      itemName,
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.instamartItemTitle,
+                    ),
                   ),
-                ),
-                height8,
-                SizedBox(
-                  height: 32.h,
-                  child: Text(
-                    itemName,
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.instamartItemTitle,
-                  ),
-                ),
-              ],
+                ],
+              ),
             );
           },
         ),

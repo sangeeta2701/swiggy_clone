@@ -3,11 +3,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/category_grid_section.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/shop_by_store_section.dart';
 
 class InstamartCategoriesScreen extends StatelessWidget {
   const InstamartCategoriesScreen({super.key});
+
+  void _navigateToProductsScreen(
+    BuildContext context,
+    String categoryName,
+    String selectedSubCategory,
+  ) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => InstamartCategoryProductsScreen(
+          categoryName: categoryName,
+          selectedSubCategory: selectedSubCategory,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -188,15 +205,65 @@ class InstamartCategoriesScreen extends StatelessWidget {
                 height12,
                 const ShopByStoreSection(),
                 height20,
-                CategoryGridSection(title: 'Fresh items', items: freshItems),
+                CategoryGridSection(
+                  title: 'Fresh items',
+                  items: freshItems,
+                  onItemTap: (sectionTitle, item) {
+                    _navigateToProductsScreen(
+                      context,
+                      sectionTitle,
+                      item['name'] ?? '',
+                    );
+                  },
+                ),
                 height20,
-                CategoryGridSection(title: 'Grocery & Kitchen', items: groceryItems),
+                CategoryGridSection(
+                  title: 'Grocery & Kitchen',
+                  items: groceryItems,
+                  onItemTap: (sectionTitle, item) {
+                    _navigateToProductsScreen(
+                      context,
+                      sectionTitle,
+                      item['name'] ?? '',
+                    );
+                  },
+                ),
                 height20,
-                CategoryGridSection(title: 'Snacks & drinks', items: snacksItems),
+                CategoryGridSection(
+                  title: 'Snacks & drinks',
+                  items: snacksItems,
+                  onItemTap: (sectionTitle, item) {
+                    _navigateToProductsScreen(
+                      context,
+                      sectionTitle,
+                      item['name'] ?? '',
+                    );
+                  },
+                ),
                 height20,
-                CategoryGridSection(title: 'Beauty & Wellness', items: beautyItems),
+                CategoryGridSection(
+                  title: 'Beauty & Wellness',
+                  items: beautyItems,
+                  onItemTap: (sectionTitle, item) {
+                    _navigateToProductsScreen(
+                      context,
+                      sectionTitle,
+                      item['name'] ?? '',
+                    );
+                  },
+                ),
                 height20,
-                CategoryGridSection(title: 'Household & Lifestyle', items: householdItems),
+                CategoryGridSection(
+                  title: 'Household & Lifestyle',
+                  items: householdItems,
+                  onItemTap: (sectionTitle, item) {
+                    _navigateToProductsScreen(
+                      context,
+                      sectionTitle,
+                      item['name'] ?? '',
+                    );
+                  },
+                ),
                 height30,
 
                 // --- INSTAMART BRAND FOOTER ---
