@@ -11,7 +11,7 @@ class InstamartCategoryProductsScreen extends StatefulWidget {
   const InstamartCategoryProductsScreen({
     super.key,
     required this.categoryName,
-    this.selectedSubCategory = 'Seasonal Fruits',
+    this.selectedSubCategory = 'Fresh Vegetables',
   });
 
   @override
@@ -23,19 +23,22 @@ class _InstamartCategoryProductsScreenState
     extends State<InstamartCategoryProductsScreen> {
   late String activeSubCat;
 
-  // Sub-categories list for left sidebar
+  // Local Cart State: { 'product_id': quantity }
+  final Map<String, int> cartItems = {};
+
+  // Sub-categories sidebar list
   final List<Map<String, String>> subCategories = [
     {
-      'name': 'Seasonal Fruits',
-      'image': 'https://pngimg.com/uploads/fruit/fruit_PNG13.png',
+      'name': 'Fresh Vegetables',
+      'image': 'https://freepngimg.com/download/vegetable/24646-6-vegetable-photos.png',
+    },
+    {
+      'name': 'Fresh Fruits',
+      'image': 'https://freepngimg.com/download/fruit/174260-fresh-fruits-png-download-free.png',
     },
     {
       'name': 'Milk',
-      'image': 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
-    },
-    {
-      'name': 'Seasonal Veggies',
-      'image': 'https://pngimg.com/uploads/vegetables/vegetables_PNG101657.png',
+      'image': 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
     },
     {
       'name': 'Meat & Seafood',
@@ -43,64 +46,218 @@ class _InstamartCategoryProductsScreenState
     },
     {
       'name': 'Paneer & Tofu',
-      'image': 'https://pngimg.com/uploads/cheese/cheese_PNG2555.png',
+      'image': 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
     },
   ];
 
-  // Mock Products List
-  final List<Map<String, dynamic>> products = [
-    {
-      'name': 'Zespri Kiwi Green',
-      'weight': '2 Pieces',
-      'eta': '6 MINS',
-      'price': 117,
-      'originalPrice': 149,
-      'discount': '21% OFF',
-      'image':
-          'https://images.unsplash.com/photo-1585059819970-311832b47ee6?w=400&q=80',
-    },
-    {
-      'name': 'Red Flesh Dragon Fruit Indian',
-      'weight': '300 - 350 g',
-      'eta': '6 MINS',
-      'price': 39,
-      'originalPrice': 54,
-      'discount': '27% OFF',
-      'badge': 'Price Drop',
-      'image':
-          'https://images.unsplash.com/photo-1527325678964-549216468488?w=400&q=80',
-    },
-    {
-      'name': 'Premium Guava (Seebe Hannu)',
-      'weight': '200 - 300 g',
-      'eta': '6 MINS',
-      'price': 35,
-      'originalPrice': 49,
-      'discount': '28% OFF',
-      'image':
-          'https://images.unsplash.com/photo-1536511135882-70df59d18b56?w=400&q=80',
-    },
-    {
-      'name': 'Sweet Lime (Mosambi)',
-      'weight': '500 g',
-      'eta': '6 MINS',
-      'price': 39,
-      'originalPrice': 50,
-      'discount': '22% OFF',
-      'badge': 'Price Drop',
-      'image':
-          'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&q=80',
-    },
-  ];
+  // Dynamic products repository organized by sub-categories
+  final Map<String, List<Map<String, dynamic>>> catalogProducts = {
+    'Fresh Fruits': [
+      {
+        'id': 'ff_1',
+        'name': 'Zespri Kiwi Green',
+        'weight': '2 Pieces',
+        'eta': '6 MINS',
+        'price': 117,
+        'originalPrice': 149,
+        'discount': '21% OFF',
+        'image': 'https://pngimg.com/uploads/kiwi/kiwi_PNG4035.png',
+      },
+      {
+        'id': 'ff_2',
+        'name': 'Red Flesh Dragon Fruit',
+        'weight': '300 - 350 g',
+        'eta': '6 MINS',
+        'price': 39,
+        'originalPrice': 54,
+        'discount': '27% OFF',
+        'badge': 'Price Drop',
+        'image': 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+      },
+      {
+        'id': 'ff_3',
+        'name': 'Premium Guava (Seebe Hannu)',
+        'weight': '200 - 300 g',
+        'eta': '6 MINS',
+        'price': 35,
+        'originalPrice': 49,
+        'discount': '28% OFF',
+        'image': 'https://pngimg.com/uploads/guava/guava_PNG49.png',
+      },
+      {
+        'id': 'ff_4',
+        'name': 'Sweet Lime (Mosambi)',
+        'weight': '500 g',
+        'eta': '6 MINS',
+        'price': 39,
+        'originalPrice': 50,
+        'discount': '22% OFF',
+        'badge': 'Price Drop',
+        'image': 'https://pngimg.com/uploads/lime/lime_PNG33.png',
+      },
+      {
+        'id': 'ff_5',
+        'name': 'Royal Gala Apples',
+        'weight': '4 Pieces (approx 500g)',
+        'eta': '6 MINS',
+        'price': 149,
+        'originalPrice': 180,
+        'discount': '17% OFF',
+        'image': 'https://pngimg.com/uploads/apple/apple_PNG12405.png',
+      },
+      {
+        'id': 'ff_6',
+        'name': 'Robusta Banana',
+        'weight': '1 kg',
+        'eta': '6 MINS',
+        'price': 42,
+        'originalPrice': 55,
+        'discount': '23% OFF',
+        'image': 'https://pngimg.com/uploads/banana/banana_PNG827.png',
+      },
+      {
+        'id': 'ff_7',
+        'name': 'Pomegranate (Anar)',
+        'weight': '500 g',
+        'eta': '6 MINS',
+        'price': 120,
+        'originalPrice': 160,
+        'discount': '25% OFF',
+        'image': 'https://pngimg.com/uploads/pomegranate/pomegranate_PNG20525.png',
+      },
+      {
+        'id': 'ff_8',
+        'name': 'Fresh Papaya',
+        'weight': '1 pc (approx 800g)',
+        'eta': '6 MINS',
+        'price': 58,
+        'originalPrice': 75,
+        'discount': '22% OFF',
+        'image': 'https://pngimg.com/uploads/papaya/papaya_PNG12.png',
+      },
+    ],
+    'Fresh Vegetables': [
+      {
+        'id': 'fv_1',
+        'name': 'Fresh Broccoli',
+        'weight': '250 - 300 g',
+        'eta': '6 MINS',
+        'price': 49,
+        'originalPrice': 70,
+        'discount': '30% OFF',
+        'badge': 'Price Drop',
+        'image': 'https://pngimg.com/uploads/broccoli/broccoli_PNG72973.png',
+      },
+      {
+        'id': 'fv_2',
+        'name': 'Fresh Tomato Hybrid',
+        'weight': '500 g',
+        'eta': '6 MINS',
+        'price': 24,
+        'originalPrice': 32,
+        'discount': '25% OFF',
+        'image': 'https://pngimg.com/uploads/tomato/tomato_PNG12586.png',
+      },
+    ],
+    'Milk': [
+      {
+        'id': 'mk_1',
+        'name': 'Amul Taaza Toned Milk',
+        'weight': '500 ml',
+        'eta': '6 MINS',
+        'price': 27,
+        'originalPrice': 27,
+        'discount': 'MRP',
+        'image': 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      },
+      {
+        'id': 'mk_2',
+        'name': 'Nandini GoodLife Cow Milk',
+        'weight': '1 Litre',
+        'eta': '6 MINS',
+        'price': 56,
+        'originalPrice': 60,
+        'discount': '6% OFF',
+        'image': 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      },
+    ],
+    'Meat & Seafood': [
+      {
+        'id': 'ms_1',
+        'name': 'Fresh Chicken Curry Cut',
+        'weight': '500 g',
+        'eta': '6 MINS',
+        'price': 169,
+        'originalPrice': 220,
+        'discount': '23% OFF',
+        'image': 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+      },
+    ],
+    'Paneer & Tofu': [
+      {
+        'id': 'pt_1',
+        'name': 'Amul Fresh Malai Paneer',
+        'weight': '200 g',
+        'eta': '6 MINS',
+        'price': 91,
+        'originalPrice': 95,
+        'discount': '4% OFF',
+        'image': 'https://pngimg.com/uploads/cheese/cheese_PNG2555.png',
+      },
+    ],
+  };
 
   @override
   void initState() {
     super.initState();
-    activeSubCat = widget.selectedSubCategory;
+    final matchingSub = subCategories.firstWhere(
+      (sub) =>
+          sub['name']!.toLowerCase() ==
+          widget.selectedSubCategory.toLowerCase(),
+      orElse: () => subCategories[0],
+    );
+    activeSubCat = matchingSub['name']!;
+  }
+
+  int get totalCartCount =>
+      cartItems.values.fold(0, (sum, count) => sum + count);
+
+  num get totalCartPrice {
+    num total = 0;
+    catalogProducts.forEach((_, products) {
+      for (var product in products) {
+        final id = product['id'] as String;
+        if (cartItems.containsKey(id)) {
+          total += (product['price'] as num) * cartItems[id]!;
+        }
+      }
+    });
+    return total;
+  }
+
+  void _incrementCart(String productId) {
+    setState(() {
+      cartItems[productId] = (cartItems[productId] ?? 0) + 1;
+    });
+  }
+
+  void _decrementCart(String productId) {
+    setState(() {
+      if (cartItems.containsKey(productId)) {
+        if (cartItems[productId]! > 1) {
+          cartItems[productId] = cartItems[productId]! - 1;
+        } else {
+          cartItems.remove(productId);
+        }
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final activeProducts =
+        catalogProducts[activeSubCat] ?? catalogProducts['Fresh Vegetables']!;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -116,7 +273,7 @@ class _InstamartCategoryProductsScreenState
           children: [
             Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
             Text(
-              '1959 items',
+              '${activeProducts.length} items available',
               style: TextStyle(
                 fontSize: 11.sp,
                 color: AppColors.textSecondary,
@@ -141,7 +298,7 @@ class _InstamartCategoryProductsScreenState
         children: [
           Row(
             children: [
-              // --- 1. LEFT SUB-CATEGORY SIDEBAR ---
+              // --- 1. LEFT SIDEBAR ---
               SizedBox(
                 width: 82.w,
                 child: ListView.separated(
@@ -227,7 +384,8 @@ class _InstamartCategoryProductsScreenState
                     // Filter Pills
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
                       child: Row(
                         children: [
                           _buildFilterChip(icon: Icons.tune, label: ''),
@@ -246,14 +404,15 @@ class _InstamartCategoryProductsScreenState
                       ),
                     ),
 
-                    // Sub-category header count
+                    // Active Category Sub-header
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                       child: RichText(
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: '${products.length} items ',
+                              text: '${activeProducts.length} items ',
                               style: TextStyle(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.bold,
@@ -274,19 +433,19 @@ class _InstamartCategoryProductsScreenState
                     ),
                     height4,
 
-                    // Products Grid View
+                    // Products Grid View (Tightened aspect ratio to 0.64 to remove gaps)
                     Expanded(
                       child: GridView.builder(
-                        padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 90.h),
+                        padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: 0.52,
+                          childAspectRatio: 0.60, 
                           crossAxisSpacing: 10.w,
-                          mainAxisSpacing: 12.h,
+                          mainAxisSpacing: 10.h,
                         ),
-                        itemCount: products.length,
+                        itemCount: activeProducts.length,
                         itemBuilder: (context, index) {
-                          final product = products[index];
+                          final product = activeProducts[index];
                           return _buildProductCard(product);
                         },
                       ),
@@ -297,58 +456,65 @@ class _InstamartCategoryProductsScreenState
             ],
           ),
 
-          // --- 3. BOTTOM FLOATING CART BAR ---
-          Positioned(
-            left: 12.w,
-            right: 12.w,
-            bottom: 12.h,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                color: AppColors.instamartBlue,
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        '1 ITEM',
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
+          // --- 3. FLOATING CART BAR ---
+          if (totalCartCount > 0)
+            Positioned(
+              left: 12.w,
+              right: 12.w,
+              bottom: 12.h,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                decoration: BoxDecoration(
+                  color: AppColors.instamartBlue,
+                  borderRadius: BorderRadius.circular(12.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.instamartBlue.withOpacity(0.3),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          '$totalCartCount ${totalCartCount == 1 ? 'ITEM' : 'ITEMS'}',
+                          style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Text(
-                        '₹39',
-                        style: AppTextStyles.buttonText,
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  Text(
-                    'View Cart',
-                    style: AppTextStyles.buttonText,
-                  ),
-                  width4,
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: AppColors.white,
-                    size: 14.sp,
-                  ),
-                ],
+                        Text(
+                          '₹$totalCartPrice',
+                          style: AppTextStyles.buttonText,
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Text(
+                      'View Cart',
+                      style: AppTextStyles.buttonText,
+                    ),
+                    width4,
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: AppColors.white,
+                      size: 14.sp,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
         ],
       ),
     );
   }
 
-  // --- FILTER CHIP WIDGET ---
   Widget _buildFilterChip({
     required String label,
     IconData? icon,
@@ -382,33 +548,55 @@ class _InstamartCategoryProductsScreenState
     );
   }
 
-  // --- PRODUCT CARD WIDGET ---
+  // --- COMPACT PRODUCT CARD (Zero Empty Vertical Spacers) ---
   Widget _buildProductCard(Map<String, dynamic> product) {
+    final String id = product['id'];
+    final int qty = cartItems[id] ?? 0;
+
     return Container(
+      padding: EdgeInsets.all(8.r),
       decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12.r),
+        color: AppColors.backgroundGrey.withOpacity(0.3),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: AppColors.borderGrey.withOpacity(0.6),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.03),
+            blurRadius: 4,
+            spreadRadius: 1,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          // Image + Overlays
+          // Image + Overlays Stack
           Stack(
+            clipBehavior: Clip.none,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12.r),
+              SizedBox(
+                height: 80.h,
+                width: double.infinity,
                 child: Image.network(
                   product['image'],
-                  height: 125.h,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
+                  errorBuilder: (_, __, ___) => Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 32.sp,
+                    color: AppColors.textHint,
+                  ),
                 ),
               ),
 
-              // Veg Icon Indicator (Bottom Left)
+              // Veg Icon
               Positioned(
-                bottom: 6.h,
-                left: 6.w,
+                bottom: 0,
+                left: 0,
                 child: Container(
                   padding: EdgeInsets.all(2.r),
                   decoration: BoxDecoration(
@@ -423,45 +611,92 @@ class _InstamartCategoryProductsScreenState
                 ),
               ),
 
-              // Bookmark Icon (Top Right)
+              // Bookmark
               Positioned(
-                top: 6.h,
-                right: 6.w,
+                top: 0,
+                right: 0,
                 child: Icon(
                   Icons.bookmark_outline,
                   color: AppColors.textSecondary,
-                  size: 20.sp,
+                  size: 18.sp,
                 ),
               ),
 
-              // Add Button (+) Overlaid Bottom Right
+              // Add / Increment Button
               Positioned(
-                bottom: 6.h,
-                right: 6.w,
-                child: Container(
-                  height: 32.h,
-                  width: 32.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(color: AppColors.instamartBlue, width: 1.2),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.06),
-                        blurRadius: 4,
+                bottom: 0,
+                right: 0,
+                child: qty == 0
+                    ? GestureDetector(
+                        onTap: () => _incrementCart(id),
+                        child: Container(
+                          height: 28.h,
+                          width: 28.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(
+                                color: AppColors.instamartBlue, width: 1.2),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.06),
+                                blurRadius: 4,
+                              )
+                            ],
+                          ),
+                          child: Icon(
+                            Icons.add,
+                            color: AppColors.instamartBlue,
+                            size: 16.sp,
+                          ),
+                        ),
                       )
-                    ],
-                  ),
-                  child: Icon(
-                    Icons.add,
-                    color: AppColors.instamartBlue,
-                    size: 20.sp,
-                  ),
-                ),
+                    : Container(
+                        height: 28.h,
+                        decoration: BoxDecoration(
+                          color: AppColors.instamartBlue,
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            GestureDetector(
+                              onTap: () => _decrementCart(id),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                child: Icon(
+                                  Icons.remove,
+                                  color: AppColors.white,
+                                  size: 12.sp,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              '$qty',
+                              style: TextStyle(
+                                color: AppColors.white,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () => _incrementCart(id),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                child: Icon(
+                                  Icons.add,
+                                  color: AppColors.white,
+                                  size: 12.sp,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
               ),
             ],
           ),
-          height8,
+          height4,
 
           // Delivery ETA
           Text(
@@ -472,7 +707,7 @@ class _InstamartCategoryProductsScreenState
               color: AppColors.textSecondary,
             ),
           ),
-          height4,
+          height2,
 
           // Product Title
           Text(
@@ -483,17 +718,20 @@ class _InstamartCategoryProductsScreenState
               fontSize: 11.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
-              height: 1.2,
+              height: 1.15,
             ),
           ),
           height4,
 
-          // Quantity / Weight
+          // Weight Badge
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
             decoration: BoxDecoration(
-              color: AppColors.backgroundGrey,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(4.r),
+              border: Border.all(
+                color: AppColors.borderGrey.withOpacity(0.5),
+              ),
             ),
             child: Text(
               product['weight'],
@@ -504,9 +742,9 @@ class _InstamartCategoryProductsScreenState
               ),
             ),
           ),
-          const Spacer(),
+          height4, // Tight gap directly to price block
 
-          // Price drop badge if available
+          // Price Drop Badge (Only takes vertical space when active)
           if (product['badge'] != null) ...[
             Text(
               product['badge'],
@@ -516,7 +754,7 @@ class _InstamartCategoryProductsScreenState
                 color: AppColors.errorRed,
               ),
             ),
-            height4,
+            height2,
           ],
 
           // Pricing Row
@@ -544,7 +782,7 @@ class _InstamartCategoryProductsScreenState
           Text(
             product['discount'],
             style: TextStyle(
-              fontSize: 10.sp,
+              fontSize: 9.sp,
               fontWeight: FontWeight.bold,
               color: AppColors.successGreen,
             ),

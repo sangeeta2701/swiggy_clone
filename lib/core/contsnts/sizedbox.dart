@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 //**************constant heights************/
+final height2 = SizedBox(height: 2.h,);
 final height4 = SizedBox(height: 4.h,);
 final height8 = SizedBox(height: 8.h,);
 final height12 = SizedBox(height: 12.h,);
