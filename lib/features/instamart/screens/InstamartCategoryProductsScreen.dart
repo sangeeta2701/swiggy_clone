@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/instamart/screens/product_detail_sheet.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/category_sidebar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/floating_cart_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/product_card.dart';
@@ -154,6 +155,10 @@ class _InstamartCategoryProductsScreenState
                             quantity: cartItems[product.id] ?? 0,
                             onIncrement: () => _incrementCart(product.id),
                             onDecrement: () => _decrementCart(product.id),
+                            onTap: () {
+                              ProductDetailSheet.show(context, product);
+                              
+                            },
                           );
                         },
                       ),
