@@ -4,6 +4,7 @@ import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
+import 'package:swiggy_clone/features/instamart/screens/grocery_category_products_screen.dart';
 
 class InstamartGridSection extends StatelessWidget {
   final String sectionTitle;
@@ -52,14 +53,24 @@ class InstamartGridSection extends StatelessWidget {
                 if (onItemTap != null) {
                   onItemTap!(sectionTitle, item);
                 } else {
-                  // Default navigation fallback if no custom callback is passed
+                  Widget targetScreen;
+
+                  if (sectionTitle.trim() == 'Grocery & Kitchen') {
+                    targetScreen = GroceryCategoryProductsScreen(
+                      categoryName: sectionTitle,
+                      selectedSubCategory: itemName,
+                    );
+                  } else {
+                    targetScreen = InstamartCategoryProductsScreen(
+                      categoryName: sectionTitle,
+                      selectedSubCategory: itemName,
+                    );
+                  }
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => InstamartCategoryProductsScreen(
-                        categoryName: sectionTitle,
-                        selectedSubCategory: itemName,
-                      ),
+                      builder: (context) => targetScreen,
                     ),
                   );
                 }

@@ -4,6 +4,7 @@ import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
+import 'package:swiggy_clone/features/instamart/screens/grocery_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/category_grid_section.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/shop_by_store_section.dart';
 
@@ -11,20 +12,39 @@ class InstamartCategoriesScreen extends StatelessWidget {
   const InstamartCategoriesScreen({super.key});
 
   void _navigateToProductsScreen(
-    BuildContext context,
-    String categoryName,
-    String selectedSubCategory,
-  ) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => InstamartCategoryProductsScreen(
-          categoryName: categoryName,
-          selectedSubCategory: selectedSubCategory,
-        ),
-      ),
+  BuildContext context,
+  String categoryName,
+  String selectedSubCategory,
+) {
+  Widget targetScreen;
+
+  if (categoryName.trim() == 'Grocery & Kitchen') {
+    // Map long display names to actual mock data keys if needed
+    String mappedSubCategory = selectedSubCategory;
+    if (selectedSubCategory.contains('Atta, Rice & Dal') ||
+        selectedSubCategory.contains('Masalas & Spices') ||
+        selectedSubCategory.contains('Oils & Ghee') || selectedSubCategory.contains('Cereals & Breakfast')) {
+      mappedSubCategory = 'Atta';
+    }
+
+    targetScreen = GroceryCategoryProductsScreen(
+      categoryName: categoryName,
+      selectedSubCategory: mappedSubCategory,
+    );
+  } else {
+    targetScreen = InstamartCategoryProductsScreen(
+      categoryName: categoryName,
+      selectedSubCategory: selectedSubCategory,
     );
   }
+
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => targetScreen,
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
