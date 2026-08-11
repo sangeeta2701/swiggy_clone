@@ -384,7 +384,7 @@ class InstamartMockData {
         originalPrice: 120,
         discount: '25% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsk-2spF9jt9ru5M1f2U2Rdpx2CeZvqZhQVUUbyuIs3A&s=10',
       ),
       ProductModel(
         id: 'ef_2',
@@ -394,7 +394,7 @@ class InstamartMockData {
         price: 129,
         originalPrice: 160,
         discount: '19% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVaR89fQA8awNpk8aloE1JyUABO_AX72Pr9mkyYoRJaQ&s=10',
       ),
       ProductModel(
         id: 'ef_3',
@@ -404,7 +404,7 @@ class InstamartMockData {
         price: 199,
         originalPrice: 250,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy2vaSmvx_bYBxkYekFUtpZxoybBusenNtFvoTr1mneA&s=10',
       ),
       ProductModel(
         id: 'ef_4',
@@ -414,7 +414,7 @@ class InstamartMockData {
         price: 240,
         originalPrice: 300,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2aY4MHM_UceKSfpQcXDTXYo8pyuKr-W1uBLpVfMJTog&s=10',
       ),
       ProductModel(
         id: 'ef_5',
@@ -424,7 +424,7 @@ class InstamartMockData {
         price: 145,
         originalPrice: 180,
         discount: '19% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrfHUUbUNsQXZvYDDkJN-djQ4F_Arwiz7tOe6tuovMBQ&s=10',
       ),
       ProductModel(
         id: 'ef_6',
@@ -434,7 +434,7 @@ class InstamartMockData {
         price: 175,
         originalPrice: 220,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbLBMY5Y5NCherxG-jIzg2kXIlkYrH8kjam7rSTX_LlA&s=10',
       ),
     ],
 
@@ -447,7 +447,7 @@ class InstamartMockData {
         price: 56,
         originalPrice: 60,
         discount: '6% OFF',
-        image: 'https://pngimg.com/uploads/butter/butter_PNG9.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlxvIlM2FeQ5R2X455HVxDbKN6R9tP0mMIizW0xHflOg&s=10',
       ),
       ProductModel(
         id: 'bc_2',
@@ -458,7 +458,7 @@ class InstamartMockData {
         originalPrice: 155,
         discount: '9% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/butter/butter_PNG9.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUO43ebYBkH1487LPsyYyUCuov-vDVsBPCPz8ZWvLeFQ&s=10',
       ),
       ProductModel(
         id: 'bc_3',
@@ -468,7 +468,7 @@ class InstamartMockData {
         price: 125,
         originalPrice: 140,
         discount: '10% OFF',
-        image: 'https://pngimg.com/uploads/butter/butter_PNG9.png',
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm7jp3-zUZ1bqsQHbZR_1lVt1ujaU-tRiyDuEuYo3sVg&s=10",
       ),
       ProductModel(
         id: 'bc_4',
@@ -478,7 +478,7 @@ class InstamartMockData {
         price: 98,
         originalPrice: 110,
         discount: '10% OFF',
-        image: 'https://pngimg.com/uploads/butter/butter_PNG9.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA6qZ5x-2HkJcx1c9VsPx3WRj1cyF3j5b9BYTwY3JS3A&s',
       ),
       ProductModel(
         id: 'bc_5',
@@ -488,7 +488,7 @@ class InstamartMockData {
         price: 132,
         originalPrice: 145,
         discount: '8% OFF',
-        image: 'https://pngimg.com/uploads/butter/butter_PNG9.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY-IBC9aZQgfILi75_nXMR-PVBM88uQJJGHwuWnAh_iA&s',
       ),
       ProductModel(
         id: 'bc_6',
@@ -512,7 +512,7 @@ class InstamartMockData {
         originalPrice: 130,
         discount: '23% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTeqwA92HCOeAcNzcvwBxRHwAdfRbFo4xGWNTh1kIDsg&s',
       ),
       ProductModel(
         id: 'fc_2',
@@ -522,7 +522,7 @@ class InstamartMockData {
         price: 35,
         originalPrice: 45,
         discount: '22% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeb66jfuZtG-c7TEf0UxLOzFSsbhGz-eeNhrtqX9HO7w&s=10',
       ),
       ProductModel(
         id: 'fc_3',
@@ -532,7 +532,7 @@ class InstamartMockData {
         price: 79,
         originalPrice: 100,
         discount: '21% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxv2LpkKCMdPoZt-1cEdk5uAQmtWF86pYaxzeOmAEBqQ&s=10',
       ),
       ProductModel(
         id: 'fc_4',
@@ -542,7 +542,7 @@ class InstamartMockData {
         price: 49,
         originalPrice: 65,
         discount: '24% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgMStTXY76TbhOlonzyafLj2eQvtzWN80-gRvssCpyQg&s=10',
       ),
       ProductModel(
         id: 'fc_5',
@@ -552,7 +552,7 @@ class InstamartMockData {
         price: 55,
         originalPrice: 70,
         discount: '21% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2-pjWAwTmk1xAL0__g7Mz5_SaPOVGU6WhZnr1qgI5jQ&s=10',
       ),
       ProductModel(
         id: 'fc_6',
@@ -575,7 +575,7 @@ class InstamartMockData {
         price: 75,
         originalPrice: 90,
         discount: '16% OFF',
-        image: 'https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-idli-dosa-batter-in-bowl-png-image_10398282.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmHH2SqG841eopT1vGJEuly3SGwRICRsXgyfU1V4LIFA&s',
       ),
       ProductModel(
         id: 'bc_2',
@@ -586,7 +586,7 @@ class InstamartMockData {
         originalPrice: 70,
         discount: '21% OFF',
         badge: 'Price Drop',
-        image: 'https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-idli-dosa-batter-in-bowl-png-image_10398282.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7h6eYzc-a5_AFTL_D5s--5WBairZ64m0CKI3E-npA5Q&s=10',
       ),
       ProductModel(
         id: 'bc_3',
@@ -596,7 +596,7 @@ class InstamartMockData {
         price: 35,
         originalPrice: 45,
         discount: '22% OFF',
-        image: 'https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-idli-dosa-batter-in-bowl-png-image_10398282.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKNOTWLvJNJ3kxjBcT0fuLjUNRfUuwP6YnUCT9UvR-uQ&s=10',
       ),
       ProductModel(
         id: 'bc_4',
@@ -606,7 +606,7 @@ class InstamartMockData {
         price: 40,
         originalPrice: 50,
         discount: '20% OFF',
-        image: 'https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-idli-dosa-batter-in-bowl-png-image_10398282.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9d5qyUdHBYfm1vsYOngLXOuL1CBzVDAcOJ0DQ2It0sA&s',
       ),
       ProductModel(
         id: 'bc_5',
@@ -616,7 +616,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 80,
         discount: '18% OFF',
-        image: 'https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-idli-dosa-batter-in-bowl-png-image_10398282.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpVP0xNXRA9W8QvL7uKSYTz7MStzX42JKZH33kcdgbkA&s=10',
       ),
       ProductModel(
         id: 'bc_6',
@@ -626,7 +626,7 @@ class InstamartMockData {
         price: 50,
         originalPrice: 65,
         discount: '23% OFF',
-        image: 'https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-idli-dosa-batter-in-bowl-png-image_10398282.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40016495_3-melam-appamidiyappam-podi.jpg',
       ),
     ],
 
@@ -639,7 +639,7 @@ class InstamartMockData {
         price: 27,
         originalPrice: 27,
         discount: 'MRP',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsf8JOsWsNGwyqdCy4DTJwqU0jbhSMO5RBWp6wDAngug&s=10',
       ),
       ProductModel(
         id: 'mk_2',
@@ -649,7 +649,7 @@ class InstamartMockData {
         price: 56,
         originalPrice: 60,
         discount: '6% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjrBby_esMDJyLYeTnHBitXzR51maS2WhPXtdxr761Zw&s=10',
       ),
       ProductModel(
         id: 'mk_3',
@@ -659,7 +659,7 @@ class InstamartMockData {
         price: 33,
         originalPrice: 35,
         discount: '5% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgn4_IhJSrTTw54OaJ_HUV6vMy41_Hth8w-JVEmj2q7g&s=10',
       ),
       ProductModel(
         id: 'mk_4',
@@ -669,7 +669,7 @@ class InstamartMockData {
         price: 66,
         originalPrice: 68,
         discount: '3% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTrQey8ogeLpHJif06Nf3UnG2Cpn9bRBA0mLdyIjYtw&s=10',
       ),
       ProductModel(
         id: 'mk_5',
@@ -689,7 +689,7 @@ class InstamartMockData {
         price: 95,
         originalPrice: 110,
         discount: '13% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoPw_zvPsNcE_nYiWG1Ca317J65e_jIxVQZXgAo-8ZMg&s=10',
       ),
     ],
 
@@ -702,7 +702,7 @@ class InstamartMockData {
         price: 169,
         originalPrice: 220,
         discount: '23% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-xEFYXSsqQKCgpYbU9wp9Z5ENnmulrJ4nWN1vk0Uvg&s=10',
       ),
       ProductModel(
         id: 'ms_2',
@@ -712,7 +712,7 @@ class InstamartMockData {
         price: 219,
         originalPrice: 270,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK58LAvg6imB-NZcOjSoCvAOgUqK0apbJKzre5Zg3vpg&s=10',
       ),
       ProductModel(
         id: 'ms_3',
@@ -732,7 +732,7 @@ class InstamartMockData {
         price: 199,
         originalPrice: 240,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBjivIHla1TdTG8YD-t-64O1V6BKH4nzUcpeY3_4BRjg&s=10',
       ),
       ProductModel(
         id: 'ms_5',
@@ -742,7 +742,7 @@ class InstamartMockData {
         price: 299,
         originalPrice: 360,
         discount: '16% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6oGmJPPKTXqe4hiLdFwRQyiN2OStyOFF4qfLypPuuLg&s=10',
       ),
       ProductModel(
         id: 'ms_6',
@@ -765,7 +765,7 @@ class InstamartMockData {
         price: 91,
         originalPrice: 95,
         discount: '4% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjemf6eToG6tIvwLLQRABlwLPc_owJnMw2FCtjS-FOVA&s=10',
       ),
       ProductModel(
         id: 'pt_2',
@@ -775,7 +775,7 @@ class InstamartMockData {
         price: 88,
         originalPrice: 95,
         discount: '7% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG0kWqixuoFZPkRfz88M6uBUBF3KhXagUOsC8X_hD_cw&s=10',
       ),
       ProductModel(
         id: 'pt_3',
@@ -785,7 +785,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 80,
         discount: '18% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwsTQ7hMaSJRgJEvbAQmvbX1UmWLUnBvAYR6mXLtr2IQ&s=10',
       ),
       ProductModel(
         id: 'pt_4',
@@ -795,7 +795,7 @@ class InstamartMockData {
         price: 98,
         originalPrice: 105,
         discount: '6% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Olzg57CqSUr8Nc1JkvW7XzGUcE2_sZfZy7HtXR-lug&s=10',
       ),
       ProductModel(
         id: 'pt_5',
@@ -815,7 +815,7 @@ class InstamartMockData {
         price: 85,
         originalPrice: 100,
         discount: '15% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMmSdWypnRLAHp-k7JdyMOYLxGAAeFTFQddeesA0Z96Q&s=10',
       ),
     ],
   };

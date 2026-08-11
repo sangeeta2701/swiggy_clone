@@ -51,7 +51,7 @@ class GroceryMockData {
         originalPrice: 310,
         discount: '18% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://media-dev.bazaar5.com/media/product/95/6306/b0140pr9s6-aashirvaad-superior-mp-atta-5kg-pack-0-78453b42.jpg',
       ),
       ProductModel(
         id: 'gk_2',
@@ -62,7 +62,7 @@ class GroceryMockData {
         originalPrice: 95,
         discount: '46% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFsEDz1WEIimQxHDXidXfM9HVfVPR1YXITN8ap3I6Dtg&s=10',
       ),
       ProductModel(
         id: 'gk_3',
@@ -72,7 +72,7 @@ class GroceryMockData {
         price: 78,
         originalPrice: 99,
         discount: '21% OFF',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmIHnf9Ex3b1bAEgf92xbbisIP6hZDq0PcQIbSAC24ug&s=10',
       ),
       ProductModel(
         id: 'gk_4',
@@ -82,7 +82,7 @@ class GroceryMockData {
         price: 228,
         originalPrice: 285,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk90js2WF4xB-XYt-T78cDK9TlDoKJxfFiEVNXYCJieQ&s',
       ),
       ProductModel(
         id: 'gk_5',
@@ -115,7 +115,7 @@ class GroceryMockData {
         price: 345,
         originalPrice: 420,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPeXAn_zDMECti-DOUus1UxkAnSL7ATmYuV_swf9JcsA&s=10',
       ),
       ProductModel(
         id: 'rc_2',
@@ -125,7 +125,7 @@ class GroceryMockData {
         price: 680,
         originalPrice: 800,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSoDMUTpnbOZsTNwtuaSu4BttrxUIq9pHvX3aOSK8T_A&s=10',
       ),
       ProductModel(
         id: 'rc_3',
@@ -136,7 +136,7 @@ class GroceryMockData {
         originalPrice: 150,
         discount: '26% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5cfpUAXRgFKuI2nVZdb4cBPpDB-jwGLEiqATgueexA&s=10',
       ),
       ProductModel(
         id: 'rc_4',
@@ -146,7 +146,7 @@ class GroceryMockData {
         price: 380,
         originalPrice: 499,
         discount: '23% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgYBK5TS07FhmB7hj42fL5V4Iwzcy1MREsNYmkr7mP4g&s=10',
       ),
       ProductModel(
         id: 'rc_5',
@@ -156,7 +156,7 @@ class GroceryMockData {
         price: 95,
         originalPrice: 130,
         discount: '26% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqpDXMwri3HfEBD2M1GUrjhZCbc-UTs6kqa4Ptegy1jA&s=10',
       ),
       ProductModel(
         id: 'rc_6',
@@ -180,7 +180,7 @@ class GroceryMockData {
         originalPrice: 195,
         discount: '14% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSz7QGw6lzZSHPOQ_jXyCxNUIK4jANTy5SJpVDLngRGw&s=10',
       ),
       ProductModel(
         id: 'dl_2',
@@ -191,7 +191,7 @@ class GroceryMockData {
         originalPrice: 175,
         discount: '17% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTbg5JpwHIJw7qNemXH_DsyzqhG02zKLqNnDMausIGA&s',
       ),
       ProductModel(
         id: 'dl_3',
@@ -201,7 +201,7 @@ class GroceryMockData {
         price: 89,
         originalPrice: 105,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsC4sXY27s6u706vHv4V7FsSeG4ngQaGTnEl-2E92tXA&s=10',
       ),
       ProductModel(
         id: 'dl_4',
@@ -211,7 +211,7 @@ class GroceryMockData {
         price: 158,
         originalPrice: 190,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTobonSLHRP1YjKM1qvD3L_wnpJ52-czhqvo_NbwRaI3A&s',
       ),
     ],
 
@@ -225,7 +225,7 @@ class GroceryMockData {
         originalPrice: 340,
         discount: '16% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYECbDrovSHspOkzoN0hL08Lv7-vhLi7Vj5YlkhLg15g&s=10',
       ),
       ProductModel(
         id: 'hp_2',
@@ -236,7 +236,7 @@ class GroceryMockData {
         originalPrice: 99,
         discount: '21% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmIHnf9Ex3b1bAEgf92xbbisIP6hZDq0PcQIbSAC24ug&s=10',
       ),
       ProductModel(
         id: 'hp_3',
@@ -246,7 +246,7 @@ class GroceryMockData {
         price: 265,
         originalPrice: 320,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/wheat/wheat_PNG10.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTXBqg345p6_pD0QtVPuvzd5_96foH3_uj51N39ftUDw&s=10',
       ),
       ProductModel(
         id: 'hp_4',
@@ -281,7 +281,7 @@ class GroceryMockData {
         originalPrice: 499,
         discount: '23% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgYBK5TS07FhmB7hj42fL5V4Iwzcy1MREsNYmkr7mP4g&s=10',
       ),
       ProductModel(
         id: 'br_3',
@@ -291,7 +291,7 @@ class GroceryMockData {
         price: 110,
         originalPrice: 150,
         discount: '26% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGWbSOdtreVkB-XtRSULtJKX7-Y5mz-d8lnDyAwxrT8A&s=10',
       ),
       ProductModel(
         id: 'br_4',
@@ -301,7 +301,7 @@ class GroceryMockData {
         price: 165,
         originalPrice: 210,
         discount: '21% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShUw50O9J-iKZrojhKHU9YXIW9NuQ-qaU6S4gY6EB_aw&s',
       ),
     ],
 
@@ -314,7 +314,7 @@ class GroceryMockData {
         price: 64,
         originalPrice: 85,
         discount: '24% OFF',
-        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxf-FsAv7RYr_56pYaQitaQjfm6h7KTeVznmTaQR4JiA&s=10',
       ),
       ProductModel(
         id: 'bs_2',
@@ -325,7 +325,7 @@ class GroceryMockData {
         originalPrice: 80,
         discount: '35% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1x-Oxcm4I_OUSn1a_pRa-jYw7-XyeG75SspFHdXVF_A&s',
       ),
       ProductModel(
         id: 'bs_3',
@@ -335,7 +335,7 @@ class GroceryMockData {
         price: 69,
         originalPrice: 76,
         discount: '9% OFF',
-        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV5iV7GUB4dbVwk3YSFxD-TCGMgYndGSXqFb7SDmwu5g&s=10',
       ),
       ProductModel(
         id: 'bs_4',
@@ -345,7 +345,7 @@ class GroceryMockData {
         price: 45,
         originalPrice: 55,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS0uaCzg3xFD_rZ340OnUEMJ7BS6wnJc86pPxQT_3tCQ&s=10',
       ),
       ProductModel(
         id: 'bs_5',
@@ -379,7 +379,7 @@ class GroceryMockData {
         originalPrice: 205,
         discount: '15% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-HeZk-YU4p_iFQmQSy9ffJfdw5IjQQvYcCNxH8-nzEg&s=10',
       ),
       ProductModel(
         id: 'rj_2',
@@ -390,7 +390,7 @@ class GroceryMockData {
         originalPrice: 155,
         discount: '17% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ29nXjij2-IKbfa2JBrKhqTijtDeNcC0khaFM-ZCoUg&s=10',
       ),
       ProductModel(
         id: 'rj_3',
@@ -400,7 +400,7 @@ class GroceryMockData {
         price: 68,
         originalPrice: 82,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4a_4kPm_UbtlXAC_E46zKPtL27q3javnBaM-JxLsqcA&s=10',
       ),
       ProductModel(
         id: 'rj_4',
@@ -410,7 +410,7 @@ class GroceryMockData {
         price: 195,
         originalPrice: 235,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP5ifrJ-aN6jFYhW2PA0vjONbSSHAY0p7FaQGsXMXpJw&s=10',
       ),
     ],
 
@@ -424,7 +424,7 @@ class GroceryMockData {
         originalPrice: 75,
         discount: '17% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTErynqYOgFZxwAPP9p3EgY3ZOpbJT9PEmKPHTOiyWqZQ&s=10',
       ),
       ProductModel(
         id: 'ph_2',
@@ -435,7 +435,7 @@ class GroceryMockData {
         originalPrice: 45,
         discount: '22% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lfCC8apXGAHIoAPlHoileqTmH4i5--nkP9_-L32Z4g&s=10',
       ),
       ProductModel(
         id: 'ph_3',
@@ -445,7 +445,7 @@ class GroceryMockData {
         price: 32,
         originalPrice: 40,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLjqVX1r5v-bR39FoabbDxTZMDt4R4dR7pUXBSg-Cylw&s=10',
       ),
       ProductModel(
         id: 'ph_4',
@@ -455,7 +455,7 @@ class GroceryMockData {
         price: 48,
         originalPrice: 58,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1GyIm0bbgrhaQiRTe34HJaGhfleIFlYhSyxOhy2Hzg&s=10',
       ),
     ],
 
@@ -468,7 +468,7 @@ class GroceryMockData {
         price: 39,
         originalPrice: 47,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtQFqqmZwuqE6GlPencMDt4z7yg4Hr7ULKwg7S5WW5eg&s=10',
       ),
       ProductModel(
         id: 'sy_2',
@@ -479,7 +479,7 @@ class GroceryMockData {
         originalPrice: 50,
         discount: '8% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBAqtzXt8KGPD7VH8kX8cbrMotN625VCsRwUMH2GSqsw&s=10',
       ),
       ProductModel(
         id: 'sy_3',
@@ -490,7 +490,7 @@ class GroceryMockData {
         originalPrice: 55,
         discount: '41% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpIx4JtSwTcgrCRhJ9-DKGugFUwwpDmIrF4nd3DhdxMA&s',
       ),
       ProductModel(
         id: 'sy_4',
@@ -500,7 +500,7 @@ class GroceryMockData {
         price: 39,
         originalPrice: 47,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQakR3tvxmB4xa3SBo5n5DbpZO54EKGGg8vs156b_fXRw&s=10',
       ),
       ProductModel(
         id: 'sy_5',
@@ -510,7 +510,7 @@ class GroceryMockData {
         price: 48,
         originalPrice: 55,
         discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZUm0TKogpHqhh2u8mumJndN2Mg-nlf-fLvTzfa0Mqhw&s=10',
       ),
       ProductModel(
         id: 'sy_6',
