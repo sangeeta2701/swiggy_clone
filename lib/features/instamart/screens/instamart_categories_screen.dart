@@ -12,41 +12,7 @@ import 'package:swiggy_clone/features/instamart/widgets/categories/shop_by_store
 
 class InstamartCategoriesScreen extends StatelessWidget {
   const InstamartCategoriesScreen({super.key});
-
-//   void _navigateToProductsScreen(
-//   BuildContext context,
-//   String categoryName,
-//   String selectedSubCategory,
-// ) {
-//   Widget targetScreen;
-
-//   if (categoryName.trim() == 'Grocery & Kitchen') {
-//     // Map long display names to actual mock data keys if needed
-//     String mappedSubCategory = selectedSubCategory;
-//     if (selectedSubCategory.contains('Atta, Rice & Dal') ||
-//         selectedSubCategory.contains('Masalas & Spices') ||
-//         selectedSubCategory.contains('Oils & Ghee') || selectedSubCategory.contains('Cereals & Breakfast')) {
-//       mappedSubCategory = 'Atta';
-//     }
-
-//     targetScreen = GroceryCategoryProductsScreen(
-//       categoryName: categoryName,
-//       selectedSubCategory: mappedSubCategory,
-//     );
-//   } else {
-//     targetScreen = InstamartCategoryProductsScreen(
-//       categoryName: categoryName,
-//       selectedSubCategory: selectedSubCategory,
-//     );
-//   }
-
-//   Navigator.push(
-//     context,
-//     MaterialPageRoute(
-//       builder: (context) => targetScreen,
-//     ),
-//   );
-// }
+ 
 
 void _navigateToProductsScreen(
   BuildContext context,
@@ -55,34 +21,34 @@ void _navigateToProductsScreen(
 ) {
   Widget targetScreen;
 
-  final catTrimmed = categoryName.trim();
-  final subCatTrimmed = selectedSubCategory.trim();
+  final String catTrimmed = categoryName.trim();
+  final String subCatTrimmed = selectedSubCategory.trim();
 
-  // 1. Grocery & Kitchen
+  // 1. Grocery & Kitchen Router
   if (catTrimmed == 'Grocery & Kitchen') {
     targetScreen = GroceryCategoryProductsScreen(
-      categoryName: categoryName,
+      categoryName: selectedSubCategory, // Display clicked item title on AppBar
       selectedSubCategory: selectedSubCategory,
     );
   }
-  // 2. Cold Drinks & Juices
+  // 2. Cold Drinks & Juices Dedicated Router
   else if (subCatTrimmed.contains('Cold Drinks') || subCatTrimmed.contains('Juices')) {
     targetScreen = ColdDrinksJuicesScreen(
       categoryName: selectedSubCategory,
       selectedSubCategory: 'Soft Drinks',
     );
   }
-  // 3. Other Snacks & Drinks (Chips, Chocolates, Biscuits, etc.)
+  // 3. Snacks & Drinks Router
   else if (catTrimmed.contains('Snacks')) {
     targetScreen = SnacksCategoryProductsScreen(
-      categoryName: categoryName,
+      categoryName: selectedSubCategory,
       selectedSubCategory: selectedSubCategory,
     );
   }
-  // 4. Fresh Items (Vegetables, Fruits, Eggs, Milk)
+  // 4. Fresh Items Router (Vegetables, Fruits, Dairy, Meat)
   else {
     targetScreen = InstamartCategoryProductsScreen(
-      categoryName: categoryName,
+      categoryName: selectedSubCategory, // Shows "Fresh Fruits" or "Fresh Vegetables" on AppBar
       selectedSubCategory: selectedSubCategory,
     );
   }

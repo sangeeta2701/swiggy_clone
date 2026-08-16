@@ -8,8 +8,9 @@ import 'package:swiggy_clone/features/instamart/widgets/categories/category_side
 import 'package:swiggy_clone/features/instamart/widgets/categories/floating_cart_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/product_card.dart';
 
-import '../data/instamart_mock_data.dart';
 
+import '../data/instamart_mock_data.dart';
+import '../models/product_model.dart';
 
 class InstamartCategoryProductsScreen extends StatefulWidget {
   final String categoryName;
@@ -18,7 +19,7 @@ class InstamartCategoryProductsScreen extends StatefulWidget {
   const InstamartCategoryProductsScreen({
     super.key,
     required this.categoryName,
-    this.selectedSubCategory = 'Fresh Vegetables',
+    required this.selectedSubCategory,
   });
 
   @override
@@ -29,21 +30,32 @@ class InstamartCategoryProductsScreen extends StatefulWidget {
 class _InstamartCategoryProductsScreenState
     extends State<InstamartCategoryProductsScreen> {
   late String activeSubCat;
+  late List<CategoryModel> availableSidebarCategories;
   final Map<String, int> cartItems = {};
 
   @override
   void initState() {
     super.initState();
-    final matchingSub = InstamartMockData.subCategories.firstWhere(
-      (sub) =>
-          sub.name.toLowerCase() == widget.selectedSubCategory.toLowerCase(),
-      orElse: () => InstamartMockData.subCategories[0],
+
+    // 1. Get ONLY the subcategories relevant to the tapped category
+    availableSidebarCategories = InstamartMockData.categorySubCategories[widget.categoryName] ??
+        InstamartMockData.categorySubCategories[widget.selectedSubCategory] ??
+        InstamartMockData.categorySubCategories.values.first;
+
+    // 2. Select initial subcategory
+    final query = widget.selectedSubCategory.toLowerCase();
+    final matchingSub = availableSidebarCategories.firstWhere(
+      (sub) {
+        final subName = sub.name.toLowerCase();
+        return subName == query || query.contains(subName) || subName.contains(query);
+      },
+      orElse: () => availableSidebarCategories.first,
     );
+
     activeSubCat = matchingSub.name;
   }
 
-  int get totalCartCount =>
-      cartItems.values.fold(0, (sum, count) => sum + count);
+  int get totalCartCount => cartItems.values.fold(0, (sum, count) => sum + count);
 
   num get totalCartPrice {
     num total = 0;
@@ -58,9 +70,7 @@ class _InstamartCategoryProductsScreenState
   }
 
   void _incrementCart(String productId) {
-    setState(() {
-      cartItems[productId] = (cartItems[productId] ?? 0) + 1;
-    });
+    setState(() => cartItems[productId] = (cartItems[productId] ?? 0) + 1);
   }
 
   void _decrementCart(String productId) {
@@ -77,9 +87,7 @@ class _InstamartCategoryProductsScreenState
 
   @override
   Widget build(BuildContext context) {
-    final activeProducts =
-        InstamartMockData.catalogProducts[activeSubCat] ??
-            InstamartMockData.catalogProducts['Fresh Vegetables']!;
+    final activeProducts = InstamartMockData.catalogProducts[activeSubCat] ?? [];
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -121,8 +129,9 @@ class _InstamartCategoryProductsScreenState
         children: [
           Row(
             children: [
+              // Sidebar showing ONLY category-specific subcategories
               CategorySidebar(
-                categories: InstamartMockData.subCategories,
+                categories: availableSidebarCategories,
                 activeCategory: activeSubCat,
                 onSelectCategory: (name) => setState(() => activeSubCat = name),
               ),
@@ -139,29 +148,35 @@ class _InstamartCategoryProductsScreenState
                     _buildSubHeader(activeProducts.length),
                     height4,
                     Expanded(
-                      child: GridView.builder(
-                        padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 0.58,
-                          crossAxisSpacing: 10.w,
-                          mainAxisSpacing: 10.h,
-                        ),
-                        itemCount: activeProducts.length,
-                        itemBuilder: (context, index) {
-                          final product = activeProducts[index];
-                          return ProductCard(
-                            product: product,
-                            quantity: cartItems[product.id] ?? 0,
-                            onIncrement: () => _incrementCart(product.id),
-                            onDecrement: () => _decrementCart(product.id),
-                            onTap: () {
-                              ProductDetailSheet.show(context, product);
-                              
-                            },
-                          );
-                        },
-                      ),
+                      child: activeProducts.isEmpty
+                          ? Center(
+                              child: Text(
+                                'No items found in $activeSubCat',
+                                style: AppTextStyles.subtitle,
+                              ),
+                            )
+                          : GridView.builder(
+                              padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: 0.58,
+                                crossAxisSpacing: 10.w,
+                                mainAxisSpacing: 10.h,
+                              ),
+                              itemCount: activeProducts.length,
+                              itemBuilder: (context, index) {
+                                final product = activeProducts[index];
+                                return ProductCard(
+                                  product: product,
+                                  quantity: cartItems[product.id] ?? 0,
+                                  onIncrement: () => _incrementCart(product.id),
+                                  onDecrement: () => _decrementCart(product.id),
+                                  onTap: () {
+                                    ProductDetailSheet.show(context, product);
+                                  },
+                                );
+                              },
+                            ),
                     ),
                   ],
                 ),
@@ -185,10 +200,7 @@ class _InstamartCategoryProductsScreenState
         children: [
           _buildFilterChip(icon: Icons.tune, label: ''),
           width8,
-          _buildFilterChip(
-            label: 'Sort By',
-            icon: Icons.keyboard_arrow_down,
-          ),
+          _buildFilterChip(label: 'Sort By', icon: Icons.keyboard_arrow_down),
           width8,
           _buildFilterChip(
             label: 'Price Drop',

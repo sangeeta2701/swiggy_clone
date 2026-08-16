@@ -5,6 +5,7 @@ import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_grid_section.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_search_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_sub_categories_bar.dart';
+import 'package:swiggy_clone/features/instamart/widgets/navigateToCategoryProducts.dart';
 
 class InstamartHomeContent extends ConsumerWidget {
   const InstamartHomeContent({super.key});
@@ -54,20 +55,34 @@ class InstamartHomeContent extends ConsumerWidget {
               height16,
 
               // Categories Grid Lists
-              InstamartGridSection(
-                sectionTitle: 'Fresh items',
-                items: freshItems,
-              ),
-              height20,
-              InstamartGridSection(
-                sectionTitle: 'Grocery & Kitchen',
-                items: groceryItems,
-              ),
-              height20,
-              InstamartGridSection(
-                sectionTitle: 'Snacks & drinks',
-                items: snacksItems,
-              ),
+              // Fresh Items
+InstamartGridSection(
+  sectionTitle: 'Fresh items',
+  items: freshItems,
+  onItemTap: (sectionTitle, item) {
+    navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+  },
+),
+height20,
+
+// Grocery & Kitchen
+InstamartGridSection(
+  sectionTitle: 'Grocery & Kitchen',
+  items: groceryItems,
+  onItemTap: (sectionTitle, item) {
+    navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+  },
+),
+height20,
+
+// Snacks & drinks
+InstamartGridSection(
+  sectionTitle: 'Snacks & drinks',
+  items: snacksItems,
+  onItemTap: (sectionTitle, item) {
+    navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+  },
+),
               height90, // Bottom padding for cart overlay space
             ],
           ),

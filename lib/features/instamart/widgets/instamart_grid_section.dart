@@ -1,10 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
-import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
-import 'package:swiggy_clone/features/instamart/screens/grocery_category_products_screen.dart';
 
 class InstamartGridSection extends StatelessWidget {
   final String sectionTitle;
@@ -52,27 +51,6 @@ class InstamartGridSection extends StatelessWidget {
               onTap: () {
                 if (onItemTap != null) {
                   onItemTap!(sectionTitle, item);
-                } else {
-                  Widget targetScreen;
-
-                  if (sectionTitle.trim() == 'Grocery & Kitchen') {
-                    targetScreen = GroceryCategoryProductsScreen(
-                      categoryName: sectionTitle,
-                      selectedSubCategory: itemName,
-                    );
-                  } else {
-                    targetScreen = InstamartCategoryProductsScreen(
-                      categoryName: sectionTitle,
-                      selectedSubCategory: itemName,
-                    );
-                  }
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => targetScreen,
-                    ),
-                  );
                 }
               },
               child: Column(
@@ -92,13 +70,11 @@ class InstamartGridSection extends StatelessWidget {
                           ? Image.network(
                               imageUrl,
                               fit: BoxFit.contain,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Icon(
-                                  Icons.shopping_bag_outlined,
-                                  color: AppColors.textHint,
-                                  size: 28.sp,
-                                );
-                              },
+                              errorBuilder: (context, error, stackTrace) => Icon(
+                                Icons.shopping_bag_outlined,
+                                color: AppColors.textHint,
+                                size: 28.sp,
+                              ),
                             )
                           : Icon(
                               Icons.shopping_bag_outlined,
