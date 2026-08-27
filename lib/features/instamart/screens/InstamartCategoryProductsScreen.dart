@@ -8,7 +8,6 @@ import 'package:swiggy_clone/features/instamart/widgets/categories/category_side
 import 'package:swiggy_clone/features/instamart/widgets/categories/floating_cart_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/product_card.dart';
 
-
 import '../data/instamart_mock_data.dart';
 import '../models/product_model.dart';
 
@@ -37,17 +36,34 @@ class _InstamartCategoryProductsScreenState
   void initState() {
     super.initState();
 
-    // 1. Get ONLY the subcategories relevant to the tapped category
-    availableSidebarCategories = InstamartMockData.categorySubCategories[widget.categoryName] ??
-        InstamartMockData.categorySubCategories[widget.selectedSubCategory] ??
+    final String selected = widget.selectedSubCategory.trim().toLowerCase();
+    final String parentCategory = widget.categoryName.trim().toLowerCase();
+
+    // 1. Flexible Map Lookup for categorySubCategories
+    List<CategoryModel>? matchedCategories;
+
+    InstamartMockData.categorySubCategories.forEach((key, list) {
+      final k = key.trim().toLowerCase();
+      // Match key directly or check if strings contain key words (e.g., 'dairy', 'meat', 'fruit', 'vegetable')
+      if (k == selected ||
+          k == parentCategory ||
+          selected.contains(k) ||
+          k.contains(selected)) {
+        matchedCategories ??= list;
+      }
+    });
+
+    // Fallback safely to first available list if no exact string match is found
+    availableSidebarCategories = matchedCategories ??
         InstamartMockData.categorySubCategories.values.first;
 
-    // 2. Select initial subcategory
-    final query = widget.selectedSubCategory.toLowerCase();
+    // 2. Select initial active subcategory
     final matchingSub = availableSidebarCategories.firstWhere(
       (sub) {
-        final subName = sub.name.toLowerCase();
-        return subName == query || query.contains(subName) || subName.contains(query);
+        final subName = sub.name.trim().toLowerCase();
+        return subName == selected ||
+            selected.contains(subName) ||
+            subName.contains(selected);
       },
       orElse: () => availableSidebarCategories.first,
     );
@@ -55,7 +71,8 @@ class _InstamartCategoryProductsScreenState
     activeSubCat = matchingSub.name;
   }
 
-  int get totalCartCount => cartItems.values.fold(0, (sum, count) => sum + count);
+  int get totalCartCount =>
+      cartItems.values.fold(0, (sum, count) => sum + count);
 
   num get totalCartPrice {
     num total = 0;
@@ -87,7 +104,8 @@ class _InstamartCategoryProductsScreenState
 
   @override
   Widget build(BuildContext context) {
-    final activeProducts = InstamartMockData.catalogProducts[activeSubCat] ?? [];
+    final activeProducts =
+        InstamartMockData.catalogProducts[activeSubCat] ?? [];
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -96,13 +114,20 @@ class _InstamartCategoryProductsScreenState
         elevation: 0,
         scrolledUnderElevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: AppColors.textPrimary, size: 24.sp),
+          icon: Icon(Icons.arrow_back,
+              color: AppColors.textPrimary, size: 24.sp),
           onPressed: () => Navigator.pop(context),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
+            // Displays exact tapped category (e.g. "Dairy, Bread & Eggs" / "Meat & Seafood")
+            Text(
+              widget.selectedSubCategory.isNotEmpty
+                  ? widget.selectedSubCategory
+                  : widget.categoryName,
+              style: AppTextStyles.instamartSectionHeader,
+            ),
             Text(
               '${activeProducts.length} items available',
               style: TextStyle(
@@ -115,11 +140,13 @@ class _InstamartCategoryProductsScreenState
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.search, color: AppColors.textPrimary, size: 22.sp),
+            icon: Icon(Icons.search,
+                color: AppColors.textPrimary, size: 22.sp),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.share_outlined, color: AppColors.textPrimary, size: 22.sp),
+            icon: Icon(Icons.share_outlined,
+                color: AppColors.textPrimary, size: 22.sp),
             onPressed: () {},
           ),
           width8,
@@ -129,11 +156,12 @@ class _InstamartCategoryProductsScreenState
         children: [
           Row(
             children: [
-              // Sidebar showing ONLY category-specific subcategories
+              // Dynamic Sidebar rendering ONLY category-specific subcategories
               CategorySidebar(
                 categories: availableSidebarCategories,
                 activeCategory: activeSubCat,
-                onSelectCategory: (name) => setState(() => activeSubCat = name),
+                onSelectCategory: (name) =>
+                    setState(() => activeSubCat = name),
               ),
               const VerticalDivider(
                 width: 1,
@@ -156,8 +184,10 @@ class _InstamartCategoryProductsScreenState
                               ),
                             )
                           : GridView.builder(
-                              padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
-                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              padding:
+                                  EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 childAspectRatio: 0.58,
                                 crossAxisSpacing: 10.w,
@@ -169,10 +199,13 @@ class _InstamartCategoryProductsScreenState
                                 return ProductCard(
                                   product: product,
                                   quantity: cartItems[product.id] ?? 0,
-                                  onIncrement: () => _incrementCart(product.id),
-                                  onDecrement: () => _decrementCart(product.id),
+                                  onIncrement: () =>
+                                      _incrementCart(product.id),
+                                  onDecrement: () =>
+                                      _decrementCart(product.id),
                                   onTap: () {
-                                    ProductDetailSheet.show(context, product);
+                                    ProductDetailSheet.show(
+                                        context, product);
                                   },
                                 );
                               },
@@ -200,7 +233,10 @@ class _InstamartCategoryProductsScreenState
         children: [
           _buildFilterChip(icon: Icons.tune, label: ''),
           width8,
-          _buildFilterChip(label: 'Sort By', icon: Icons.keyboard_arrow_down),
+          _buildFilterChip(
+            label: 'Sort By',
+            icon: Icons.keyboard_arrow_down,
+          ),
           width8,
           _buildFilterChip(
             label: 'Price Drop',
@@ -256,7 +292,8 @@ class _InstamartCategoryProductsScreenState
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[
-            Icon(icon, size: 14.sp, color: iconColor ?? AppColors.textPrimary),
+            Icon(icon,
+                size: 14.sp, color: iconColor ?? AppColors.textPrimary),
             if (label.isNotEmpty) width4,
           ],
           if (label.isNotEmpty)
