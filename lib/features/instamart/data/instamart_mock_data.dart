@@ -730,7 +730,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 85,
         discount: '23% OFF',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://e7.pngegg.com/pngimages/446/739/png-clipart-watermelon-seedless-fruit-watermelon-food-sweetness.png',
       ),
       ProductModel(
         id: 'sf_5',
@@ -740,7 +740,7 @@ class InstamartMockData {
         price: 48,
         originalPrice: 60,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://png.pngtree.com/png-vector/20240313/ourmid/pngtree-sweet-juicy-tasty-natural-eco-product-melon-png-image_11939612.png',
       ),
       ProductModel(
         id: 'sf_6',
@@ -750,7 +750,7 @@ class InstamartMockData {
         price: 85,
         originalPrice: 110,
         discount: '22% OFF',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-three-fresh-oranges-png-image_5529883.jpg',
       ),
     ],
 
@@ -764,7 +764,7 @@ class InstamartMockData {
         originalPrice: 120,
         discount: '25% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-fresh-red-dragon-fruit-png-image_5530610.jpg',
       ),
       ProductModel(
         id: 'ef_2',
@@ -774,7 +774,7 @@ class InstamartMockData {
         price: 129,
         originalPrice: 160,
         discount: '19% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://png.pngtree.com/png-vector/20241030/ourmid/pngtree-fresh-hass-avocado-fruits-on-transparent-background-png-image_14203373.png',
       ),
       ProductModel(
         id: 'ef_3',
@@ -784,7 +784,7 @@ class InstamartMockData {
         price: 199,
         originalPrice: 250,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://png.pngtree.com/png-clipart/20250611/original/pngtree-fresh-blueberries-with-green-leaves-png-image_19168025.png',
       ),
       ProductModel(
         id: 'ef_4',
@@ -794,7 +794,7 @@ class InstamartMockData {
         price: 240,
         originalPrice: 300,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://png.pngtree.com/png-clipart/20250206/original/pngtree-mangosteen-png-image_20348126.png',
       ),
       ProductModel(
         id: 'ef_5',
@@ -804,7 +804,7 @@ class InstamartMockData {
         price: 145,
         originalPrice: 180,
         discount: '19% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://png.pngtree.com/png-clipart/20241103/original/pngtree-passion-fruit-png-image_16670117.png',
       ),
       ProductModel(
         id: 'ef_6',
@@ -814,7 +814,7 @@ class InstamartMockData {
         price: 175,
         originalPrice: 220,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/dragon_fruit/dragon_fruit_PNG18.png',
+        image: 'https://png.pngtree.com/png-vector/20240804/ourmid/pngtree-rambutan-fruit-png-image_13368354.png',
       ),
     ],
 
@@ -828,7 +828,7 @@ class InstamartMockData {
         originalPrice: 130,
         discount: '23% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://png.pngtree.com/png-vector/20240515/ourlarge/pngtree-pomegranate-seeds-isolated-on-transparent-png-image_12461679.png',
       ),
       ProductModel(
         id: 'cf_2',
@@ -838,7 +838,7 @@ class InstamartMockData {
         price: 79,
         originalPrice: 100,
         discount: '21% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://png.pngtree.com/png-clipart/20241208/original/pngtree-d-fresh-orange-juice-bottle-with-slice-of-citrus-on-transparent-png-image_17660283.png',
       ),
       ProductModel(
         id: 'cf_3',
@@ -848,7 +848,7 @@ class InstamartMockData {
         price: 55,
         originalPrice: 70,
         discount: '21% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://png.pngtree.com/png-clipart/20250106/original/pngtree-coconut-water-splashing-out-of-a-fresh-green-isolated-on-transparent-png-image_20111340.png',
       ),
       ProductModel(
         id: 'cf_4',
@@ -858,7 +858,7 @@ class InstamartMockData {
         price: 85,
         originalPrice: 110,
         discount: '22% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://png.pngtree.com/png-clipart/20240313/original/pngtree-fruit-salad-png-png-image_14579819.png',
       ),
       ProductModel(
         id: 'cf_5',
@@ -868,7 +868,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 85,
         discount: '23% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://png.pngtree.com/png-vector/20240930/ourlarge/pngtree-peeled-pineapple-slicess-isolated-on-white-transparent-background-png-image_13991300.png',
       ),
       ProductModel(
         id: 'cf_6',
@@ -878,7 +878,7 @@ class InstamartMockData {
         price: 49,
         originalPrice: 65,
         discount: '24% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://png.pngtree.com/png-clipart/20250130/original/pngtree-refreshing-sugar-cane-juice-illustration-png-image_19293991.png',
       ),
     ],
 
@@ -891,7 +891,7 @@ class InstamartMockData {
         price: 254,
         originalPrice: 299,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/raspberry/raspberry_PNG43.png',
+        image: 'https://png.pngtree.com/png-clipart/20250727/original/pngtree-frozen-berry-mix-in-a-cup-isolated-on-white-background-png-image_21434648.png',
       ),
       ProductModel(
         id: 'ffr_2',
@@ -901,7 +901,7 @@ class InstamartMockData {
         price: 474,
         originalPrice: 499,
         discount: '5% OFF',
-        image: 'https://pngimg.com/uploads/raspberry/raspberry_PNG43.png',
+        image: 'https://png.pngtree.com/png-vector/20231031/ourmid/pngtree-closeup-shot-of-frozen-raspberries-diet-png-image_10402898.png',
       ),
       ProductModel(
         id: 'ffr_3',
@@ -912,7 +912,7 @@ class InstamartMockData {
         originalPrice: 179,
         discount: '15% OFF',
         badge: 'SOLD OUT',
-        image: 'https://pngimg.com/uploads/raspberry/raspberry_PNG43.png',
+        image: 'https://banner2.cleanpng.com/20180412/sse/kisspng-smoothie-almond-milk-organic-food-blueberry-frozen-blueberry-5acf44657a2f77.6979196815235329015005.jpg',
       ),
       ProductModel(
         id: 'ffr_4',
@@ -922,7 +922,7 @@ class InstamartMockData {
         price: 365,
         originalPrice: 429,
         discount: '14% OFF',
-        image: 'https://pngimg.com/uploads/raspberry/raspberry_PNG43.png',
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/ciw/2025/12/18/463f22ff-ef91-4927-8024-1aac0089b9fc_ANQCR6XQGX_MN_18122025.png',
       ),
       ProductModel(
         id: 'ffr_5',
@@ -932,7 +932,7 @@ class InstamartMockData {
         price: 180,
         originalPrice: 220,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/raspberry/raspberry_PNG43.png',
+        image: 'https://png.pngtree.com/png-clipart/20250310/original/pngtree-frozen-fresh-strawberries-covered-in-ice-crystals-png-image_20625293.png',
       ),
       ProductModel(
         id: 'ffr_6',
@@ -942,7 +942,7 @@ class InstamartMockData {
         price: 140,
         originalPrice: 175,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/raspberry/raspberry_PNG43.png',
+        image: 'https://png.pngtree.com/png-vector/20260708/ourlarge/pngtree-fresh-frozen-mango-cubes-piled-in-a-small-heap-png-image_19693738.webp',
       ),
     ],
 
@@ -958,7 +958,7 @@ class InstamartMockData {
         price: 27,
         originalPrice: 27,
         discount: 'MRP',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40090894_7-amul-taaza.jpg',
       ),
       ProductModel(
         id: 'mk_2',
@@ -968,7 +968,7 @@ class InstamartMockData {
         price: 56,
         originalPrice: 60,
         discount: '6% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xl/100285703_15-nandini-goodlife-toned-milk.jpg',
       ),
       ProductModel(
         id: 'mk_3',
@@ -978,7 +978,7 @@ class InstamartMockData {
         price: 33,
         originalPrice: 35,
         discount: '5% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40159657_4-mother-dairy-full-cream-milk-fcm.jpg',
       ),
       ProductModel(
         id: 'mk_4',
@@ -988,7 +988,7 @@ class InstamartMockData {
         price: 66,
         originalPrice: 68,
         discount: '3% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/ciw/2025/12/17/51a2cd89-2a42-4b2b-ac97-95288e02952d_TYF3262KU8_MN_16122025.png',
       ),
       ProductModel(
         id: 'mk_5',
@@ -1008,7 +1008,7 @@ class InstamartMockData {
         price: 95,
         originalPrice: 110,
         discount: '13% OFF',
-        image: 'https://png.pngtree.com/png-clipart/20240619/original/pngtree-a-bottle-in-fresh-splash-milk-png-image_15366664.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40049915_5-amul-lactose-free-milk.jpg',
       ),
     ],
 
@@ -1021,7 +1021,7 @@ class InstamartMockData {
         price: 45,
         originalPrice: 50,
         discount: '10% OFF',
-        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+        image: 'https://png.pngtree.com/png-clipart/20250201/original/pngtree-whole-grain-bread-loaf-on-transparent-background-png-image_20367294.png',
       ),
       ProductModel(
         id: 'bb_2',
@@ -1031,7 +1031,7 @@ class InstamartMockData {
         price: 35,
         originalPrice: 40,
         discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+        image: 'https://png.pngtree.com/png-clipart/20240312/original/pngtree-bakery-bread-milky-plain-white-bread-png-image_14566757.png',
       ),
       ProductModel(
         id: 'bb_3',
@@ -1042,7 +1042,7 @@ class InstamartMockData {
         originalPrice: 30,
         discount: '16% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+        image: 'https://png.pngtree.com/png-clipart/20220215/ourmid/pngtree-bun-or-bread-fresh-bakery-shop-png-image_4389285.png',
       ),
       ProductModel(
         id: 'bb_4',
@@ -1052,7 +1052,7 @@ class InstamartMockData {
         price: 55,
         originalPrice: 65,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+        image: 'https://png.pngtree.com/png-clipart/20241006/original/pngtree-freshly-baked-multigrain-bread-loaf-with-oats-png-image_16222073.png',
       ),
       ProductModel(
         id: 'bb_5',
@@ -1062,7 +1062,7 @@ class InstamartMockData {
         price: 38,
         originalPrice: 45,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+        image: 'https://freepngimg.com/download/burger/147416-bun-hamburger-hq-image-free.png',
       ),
       ProductModel(
         id: 'bb_6',
@@ -1072,7 +1072,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 80,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+        image: 'https://png.pngtree.com/png-clipart/20240725/original/pngtree-baguette-bread-png-image_15629017.png',
       ),
     ],
 
@@ -1085,7 +1085,7 @@ class InstamartMockData {
         price: 91,
         originalPrice: 95,
         discount: '4% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy3o9k9k8usYR3Vo0bqqT1CiTxRYRP_-uHtGXzyCUFDA&s=10',
       ),
       ProductModel(
         id: 'pt_2',
@@ -1095,7 +1095,7 @@ class InstamartMockData {
         price: 88,
         originalPrice: 95,
         discount: '7% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/264679_6-milky-mist-paneer-premium-fresh.jpg',
       ),
       ProductModel(
         id: 'pt_3',
@@ -1105,7 +1105,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 80,
         discount: '18% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://png.pngtree.com/png-vector/20240721/ourmid/pngtree-tofu-soy-cheese-or-paneer-feta-cubes-adding-fresh-parsley-and-png-image_13053541.png',
       ),
       ProductModel(
         id: 'pt_4',
@@ -1115,7 +1115,7 @@ class InstamartMockData {
         price: 98,
         originalPrice: 105,
         discount: '6% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40335473-3_1-milky-mist-high-protein-paneer.jpg',
       ),
       ProductModel(
         id: 'pt_5',
@@ -1125,7 +1125,7 @@ class InstamartMockData {
         price: 95,
         originalPrice: 100,
         discount: '5% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://png.pngtree.com/png-vector/20250611/ourmid/pngtree-realistic-diced-paneer-cubes-for-indian-recipes-png-image_16512503.png',
       ),
       ProductModel(
         id: 'pt_6',
@@ -1135,7 +1135,7 @@ class InstamartMockData {
         price: 85,
         originalPrice: 100,
         discount: '15% OFF',
-        image: 'https://png.pngtree.com/png-vector/20240802/ourmid/pngtree-the-versatility-of-paneer-cubes-in-indian-cuisine-png-image_13343230.png',
+        image: 'https://png.pngtree.com/png-clipart/20240907/original/pngtree-cubes-of-raw-tofu-on-transparent-background-png-image_15958430.png',
       ),
     ],
 
@@ -1149,7 +1149,7 @@ class InstamartMockData {
         originalPrice: 60,
         discount: '20% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/egg/egg_PNG40782.png',
+        image: 'https://png.pngtree.com/png-vector/20250506/ourmid/pngtree-egg-carton-with-six-white-eggs-png-image_16184541.png',
       ),
       ProductModel(
         id: 'eg_2',
@@ -1159,7 +1159,7 @@ class InstamartMockData {
         price: 65,
         originalPrice: 80,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/egg/egg_PNG40782.png',
+        image: 'https://png.pngtree.com/png-vector/20241106/ourmid/pngtree-farm-fresh-eggs-in-container-png-image_14285728.png',
       ),
       ProductModel(
         id: 'eg_3',
@@ -1169,7 +1169,7 @@ class InstamartMockData {
         price: 110,
         originalPrice: 135,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/egg/egg_PNG40782.png',
+        image: 'https://png.pngtree.com/png-clipart/20240516/original/pngtree-eggs-country-cuisine-weave-photo-png-image_15104977.png',
       ),
       ProductModel(
         id: 'eg_4',
@@ -1179,7 +1179,7 @@ class InstamartMockData {
         price: 210,
         originalPrice: 250,
         discount: '16% OFF',
-        image: 'https://pngimg.com/uploads/egg/egg_PNG40782.png',
+        image: 'https://png.pngtree.com/png-clipart/20240130/original/pngtree-30-pieces-one-parcel-white-egg-pictures-organic-photo-png-image_14188466.png',
       ),
       ProductModel(
         id: 'eg_5',
@@ -1189,7 +1189,7 @@ class InstamartMockData {
         price: 85,
         originalPrice: 105,
         discount: '19% OFF',
-        image: 'https://pngimg.com/uploads/egg/egg_PNG40782.png',
+        image: 'https://p7.hiclipart.com/preview/237/690/477/free-range-eggs-dairy-product-saturated-fat-vitamin-eggs-picture-material-thumbnail.jpg',
       ),
       ProductModel(
         id: 'eg_6',
@@ -1199,7 +1199,7 @@ class InstamartMockData {
         price: 75,
         originalPrice: 90,
         discount: '16% OFF',
-        image: 'https://pngimg.com/uploads/egg/egg_PNG40782.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaE1DPjBFeKmYvXfMWgrsLTNtFDTqVwDbDfz-svx65HQ&s=10',
       ),
     ],
 
@@ -1215,7 +1215,7 @@ class InstamartMockData {
         price: 169,
         originalPrice: 220,
         discount: '23% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20250516/ourmid/pngtree-diced-raw-chicken-png-image_16299512.png',
       ),
       ProductModel(
         id: 'ms_2',
@@ -1225,7 +1225,7 @@ class InstamartMockData {
         price: 219,
         originalPrice: 270,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20241110/ourmid/pngtree-healthy-raw-chicken-breasts-for-meal-prep-png-image_14301990.png',
       ),
       ProductModel(
         id: 'ms_3',
@@ -1235,7 +1235,7 @@ class InstamartMockData {
         price: 179,
         originalPrice: 210,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-clipart/20231110/original/pngtree-raw-chicken-drumsticks-polystyrene-photo-png-image_13531960.png',
       ),
       ProductModel(
         id: 'ms_4',
@@ -1245,7 +1245,7 @@ class InstamartMockData {
         price: 139,
         originalPrice: 170,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-clipart/20231015/original/pngtree-chicken-wings-cut-photo-png-image_13306625.png',
       ),
       ProductModel(
         id: 'ms_5',
@@ -1255,7 +1255,7 @@ class InstamartMockData {
         price: 185,
         originalPrice: 220,
         discount: '16% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20240705/ourlarge/pngtree-chicken-keema-fresh-png-image_12957397.png',
       ),
       ProductModel(
         id: 'ms_6',
@@ -1265,7 +1265,7 @@ class InstamartMockData {
         price: 280,
         originalPrice: 340,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20250321/ourmid/pngtree-fresh-raw-chicken-leg-piece-with-skin-png-image_15816101.png',
       ),
     ],
 
@@ -1278,7 +1278,7 @@ class InstamartMockData {
         price: 199,
         originalPrice: 240,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xl/40209928_1-fresho-deshi-rohu-curry-cut-without-head.jpg',
       ),
       ProductModel(
         id: 'fs_2',
@@ -1288,7 +1288,7 @@ class InstamartMockData {
         price: 299,
         originalPrice: 360,
         discount: '16% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20230926/ourmid/pngtree-raw-headless-prawns-uncooked-peeled-png-image_10114515.png',
       ),
       ProductModel(
         id: 'fs_3',
@@ -1298,7 +1298,7 @@ class InstamartMockData {
         price: 220,
         originalPrice: 270,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20240221/ourmid/pngtree-pieces-tuna-fish-big-healthy-png-image_11758748.png',
       ),
       ProductModel(
         id: 'fs_4',
@@ -1308,7 +1308,7 @@ class InstamartMockData {
         price: 450,
         originalPrice: 520,
         discount: '13% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://dukaan.b-cdn.net/1000x1000/webp/228345/ffc05920-ef91-407f-883e-588a3e95b53a.png',
       ),
       ProductModel(
         id: 'fs_5',
@@ -1318,7 +1318,7 @@ class InstamartMockData {
         price: 260,
         originalPrice: 320,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20241002/ourmid/pngtree-salmon-fish-tasty-chef-png-image_13951509.png',
       ),
       ProductModel(
         id: 'fs_6',
@@ -1328,7 +1328,7 @@ class InstamartMockData {
         price: 340,
         originalPrice: 400,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-clipart/20240502/original/pngtree-many-steam-crab-on-one-dish-cuisine-ocean-seafood-photo-png-image_14987122.png',
       ),
     ],
 
@@ -1341,7 +1341,7 @@ class InstamartMockData {
         price: 480,
         originalPrice: 550,
         discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-clipart/20240909/original/pngtree-beef-pork-chicken-and-lamb-meat-cuts-png-image_15972180.png',
       ),
       ProductModel(
         id: 'fm_2',
@@ -1351,7 +1351,7 @@ class InstamartMockData {
         price: 390,
         originalPrice: 450,
         discount: '13% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20240214/ourmid/pngtree-the-sliced-mutton-piece-isolated-ingredient-png-image_11693687.png',
       ),
       ProductModel(
         id: 'fm_3',
@@ -1361,7 +1361,7 @@ class InstamartMockData {
         price: 395,
         originalPrice: 460,
         discount: '14% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20231224/ourmid/pngtree-minced-meat-grinded-png-image_11215122.png',
       ),
       ProductModel(
         id: 'fm_4',
@@ -1381,7 +1381,7 @@ class InstamartMockData {
         price: 240,
         originalPrice: 300,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-clipart/20250605/original/pngtree-raw-lamb-chop-bone-in-red-meat-fresh-cut-png-image_21127396.png',
       ),
       ProductModel(
         id: 'fm_6',
@@ -1391,7 +1391,7 @@ class InstamartMockData {
         price: 495,
         originalPrice: 570,
         discount: '13% OFF',
-        image: 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+        image: 'https://png.pngtree.com/png-vector/20241022/ourlarge/pngtree-lamb-shoulder-roast-flavorful-cut-slow-cooked-tender-meat-png-image_14142148.png',
       ),
     ],
   };
