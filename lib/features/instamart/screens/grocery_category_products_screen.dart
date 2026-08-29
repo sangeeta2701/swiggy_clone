@@ -1,14 +1,12 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/instamart/screens/product_detail_sheet.dart';
-import 'package:swiggy_clone/features/instamart/widgets/categories/floating_cart_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/categories/product_card.dart';
 import 'package:swiggy_clone/features/instamart/widgets/grocery/grocery_sidebar.dart';
+
 
 import '../data/grocery_mock_data.dart';
 import '../models/product_model.dart';
@@ -31,27 +29,41 @@ class GroceryCategoryProductsScreen extends StatefulWidget {
 class _GroceryCategoryProductsScreenState
     extends State<GroceryCategoryProductsScreen> {
   late String activeSubCat;
-  final Map<String, int> cartItems = {}; 
+  late List<CategoryModel> availableSidebarCategories;
+  final Map<String, int> cartItems = {};
 
   @override
-void initState() {
-  super.initState();
-  
-  final String query = widget.selectedSubCategory.toLowerCase();
+  void initState() {
+    super.initState();
 
-  final matchingSub = GroceryMockData.subCategories.firstWhere(
-    (sub) {
-      final String subName = sub.name.toLowerCase();
-      return subName == query || query.contains(subName) || subName.contains(query);
-    },
-    orElse: () => GroceryMockData.subCategories.first, // Defaults to 'Atta'
-  );
+    final String selected = widget.selectedSubCategory.trim().toLowerCase();
+    final String category = widget.categoryName.trim().toLowerCase();
 
-  activeSubCat = matchingSub.name;
-}
+    // 1. Resolve sidebar subcategories dynamically for Masalas, Oils, Cereals, etc.
+    List<CategoryModel>? foundList;
+    GroceryMockData.categorySubCategories.forEach((key, list) {
+      final k = key.trim().toLowerCase();
+      if (k == selected || k == category || selected.contains(k) || category.contains(k)) {
+        foundList ??= list;
+      }
+    });
 
-  int get totalCartCount =>
-      cartItems.values.fold(0, (sum, count) => sum + count);
+    availableSidebarCategories =
+        foundList ?? GroceryMockData.categorySubCategories.values.first;
+
+    // 2. Resolve initial active subcategory
+    final matchingSub = availableSidebarCategories.firstWhere(
+      (sub) {
+        final subName = sub.name.trim().toLowerCase();
+        return subName == selected || selected.contains(subName) || subName.contains(selected);
+      },
+      orElse: () => availableSidebarCategories.first,
+    );
+
+    activeSubCat = matchingSub.name;
+  }
+
+  int get totalCartCount => cartItems.values.fold(0, (sum, count) => sum + count);
 
   num get totalCartPrice {
     num total = 0;
@@ -66,9 +78,7 @@ void initState() {
   }
 
   void _incrementCart(String productId) {
-    setState(() {
-      cartItems[productId] = (cartItems[productId] ?? 0) + 1;
-    });
+    setState(() => cartItems[productId] = (cartItems[productId] ?? 0) + 1);
   }
 
   void _decrementCart(String productId) {
@@ -85,10 +95,6 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
-    // FIX: no more silent fallback to 'Atta'. If a sidebar category has no
-    // matching entry in catalogProducts, this now shows an empty grid
-    // (with a friendly message) instead of showing the WRONG category's
-    // products under the RIGHT category's label.
     final List<ProductModel> activeProducts =
         GroceryMockData.catalogProducts[activeSubCat] ?? const <ProductModel>[];
 
@@ -133,11 +139,10 @@ void initState() {
           Row(
             children: [
               GrocerySidebar(
-                categories: GroceryMockData.subCategories,
+                categories: availableSidebarCategories,
                 activeCategory: activeSubCat,
                 onSelectCategory: (name) => setState(() => activeSubCat = name),
               ),
-              
               const VerticalDivider(
                 width: 1,
                 thickness: 1,
@@ -155,8 +160,7 @@ void initState() {
                           ? _buildEmptyState()
                           : GridView.builder(
                               padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 childAspectRatio: 0.58,
                                 crossAxisSpacing: 10.w,
@@ -168,15 +172,11 @@ void initState() {
                                 return ProductCard(
                                   product: product,
                                   quantity: cartItems[product.id] ?? 0,
-                                  onIncrement: () =>
-                                      _incrementCart(product.id),
-                                  onDecrement: () =>
-                                      _decrementCart(product.id),
-                                      onTap: () {
-                              ProductDetailSheet.show(context, product);
-                              
-                            },
-                                 
+                                  onIncrement: () => _incrementCart(product.id),
+                                  onDecrement: () => _decrementCart(product.id),
+                                  onTap: () {
+                                    ProductDetailSheet.show(context, product);
+                                  },
                                 );
                               },
                             ),
@@ -186,10 +186,7 @@ void initState() {
               ),
             ],
           ),
-          FloatingCartBar(
-            totalCount: totalCartCount,
-            totalPrice: totalCartPrice,
-          ),
+          
         ],
       ),
     );
@@ -220,10 +217,7 @@ void initState() {
         children: [
           _buildFilterChip(icon: Icons.tune, label: ''),
           width8,
-          _buildFilterChip(
-            label: 'Sort By',
-            icon: Icons.keyboard_arrow_down,
-          ),
+          _buildFilterChip(label: 'Sort By', icon: Icons.keyboard_arrow_down),
           width8,
           _buildFilterChip(
             label: 'Price Drop',

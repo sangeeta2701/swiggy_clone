@@ -14,22 +14,29 @@ void navigateToCategoryProducts(
 
   Widget targetScreen;
 
-  if (section.contains('grocery') || item.contains('atta') || item.contains('rice') || item.contains('dal')) {
+  // 1. Grocery & Kitchen Router
+  if (section.contains('grocery')) {
     targetScreen = GroceryCategoryProductsScreen(
-      categoryName: 'Grocery & Kitchen',
-      selectedSubCategory: itemName,
+      categoryName: itemName,         // Sets title to "Masalas & Spices", "Oils & Ghee", "Cereals & Breakfast"
+      selectedSubCategory: itemName, // Passes clicked item
     );
-  } else if (item.contains('cold drinks') || item.contains('juice')) {
+  } 
+  // 2. Cold Drinks & Juices Router
+  else if (item.contains('cold drinks') || item.contains('juice')) {
     targetScreen = ColdDrinksJuicesScreen(
       categoryName: itemName,
       selectedSubCategory: 'Soft Drinks',
     );
-  } else if (section.contains('snack') || item.contains('chips') || item.contains('chocolate') || item.contains('biscuit')) {
+  } 
+  // 3. Snacks & Drinks Router
+  else if (section.contains('snack')) {
     targetScreen = SnacksCategoryProductsScreen(
       categoryName: sectionTitle,
       selectedSubCategory: itemName,
     );
-  } else {
+  } 
+  // 4. Fresh Items Router
+  else {
     targetScreen = InstamartCategoryProductsScreen(
       categoryName: sectionTitle,
       selectedSubCategory: itemName,
