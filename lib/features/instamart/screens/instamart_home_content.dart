@@ -33,13 +33,27 @@ class InstamartHomeContent extends ConsumerWidget {
       {'name': 'Chocolates', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
     ];
 
+    final beautyItems = [
+      {'name': 'Bath & Body', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {'name': 'Hair Care', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {'name': 'Skincare', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {'name': 'Makeup', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+    ];
+
+    final householdItems = [
+      {'name': 'Home & Kitchen', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {'name': 'Puja Store', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {'name': 'Cleaners & Repellents', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {'name': 'Toys & Stationery', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+    ];
+
     return Stack(
       children: [
         SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Instamart Top Purple Header Extension (Search + Sub-categories)
+              // Instamart Top Purple Header
               Container(
                 color: AppColors.homePurple,
                 child: Column(
@@ -54,47 +68,58 @@ class InstamartHomeContent extends ConsumerWidget {
               ),
               height16,
 
-              // Categories Grid Lists
-              // Fresh Items
-InstamartGridSection(
-  sectionTitle: 'Fresh items',
-  items: freshItems,
-  onItemTap: (sectionTitle, item) {
-    navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-  },
-),
-height20,
+              // 1. Fresh Items
+              InstamartGridSection(
+                sectionTitle: 'Fresh items',
+                items: freshItems,
+                onItemTap: (sectionTitle, item) {
+                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+                },
+              ),
+              height20,
 
-// Grocery & Kitchen
-InstamartGridSection(
-  sectionTitle: 'Grocery & Kitchen',
-  items: groceryItems,
-  onItemTap: (sectionTitle, item) {
-    navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-  },
-),
-height20,
+              // 2. Grocery & Kitchen
+              InstamartGridSection(
+                sectionTitle: 'Grocery & Kitchen',
+                items: groceryItems,
+                onItemTap: (sectionTitle, item) {
+                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+                },
+              ),
+              height20,
 
-// Snacks & drinks
-InstamartGridSection(
-  sectionTitle: 'Snacks & drinks',
-  items: snacksItems,
-  onItemTap: (sectionTitle, item) {
-    navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-  },
-),
-              height90, // Bottom padding for cart overlay space
+              // 3. Snacks & drinks
+              InstamartGridSection(
+                sectionTitle: 'Snacks & drinks',
+                items: snacksItems,
+                onItemTap: (sectionTitle, item) {
+                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+                },
+              ),
+              height20,
+
+              // 4. Beauty & Wellness
+              InstamartGridSection(
+                sectionTitle: 'Beauty & Wellness',
+                items: beautyItems,
+                onItemTap: (sectionTitle, item) {
+                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+                },
+              ),
+              height20,
+
+              // 5. Household & Lifestyle
+              InstamartGridSection(
+                sectionTitle: 'Household & Lifestyle',
+                items: householdItems,
+                onItemTap: (sectionTitle, item) {
+                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+                },
+              ),
+              height90, // Bottom padding
             ],
           ),
         ),
-
-        // Floating Cart Overlay Bar
-        // const Positioned(
-        //   left: 0,
-        //   right: 0,
-        //   bottom: 12,
-        //   child: InstamartFloatingCartBar(),
-        // ),
       ],
     );
   }
