@@ -7,6 +7,7 @@ import 'package:swiggy_clone/features/instamart/widgets/cold%20drinks/build_filt
 import 'package:swiggy_clone/features/instamart/widgets/cold%20drinks/build_promo_banner.dart';
 
 import '../data/cold_drinks_mock_data.dart';
+import '../models/product_model.dart';
 import '../widgets/categories/floating_cart_bar.dart';
 import '../widgets/categories/product_card.dart';
 import '../widgets/grocery/grocery_sidebar.dart';
@@ -78,8 +79,8 @@ class _ColdDrinksJuicesScreenState extends State<ColdDrinksJuicesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final activeProducts = ColdDrinksMockData.catalogProducts[activeSubCat] ??
-        ColdDrinksMockData.catalogProducts['Soft Drinks']!;
+    final List<ProductModel> activeProducts =
+        ColdDrinksMockData.catalogProducts[activeSubCat] ?? const <ProductModel>[];
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -91,7 +92,20 @@ class _ColdDrinksJuicesScreenState extends State<ColdDrinksJuicesScreen> {
           icon: Icon(Icons.arrow_back, color: AppColors.textPrimary, size: 24.sp),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
+            Text(
+              '${activeProducts.length} items available',
+              style: TextStyle(
+                fontSize: 11.sp,
+                color: AppColors.textSecondary,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: AppColors.textPrimary, size: 22.sp),
@@ -114,48 +128,39 @@ class _ColdDrinksJuicesScreenState extends State<ColdDrinksJuicesScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Promotional Banner Box
                     buildPromoBanner(),
-
-                    // Filter Row
                     buildFilterRow(),
-
-                    // Products Grid View
                     Expanded(
-                      child: GridView.builder(
-                        padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 0.58,
-                          crossAxisSpacing: 10.w,
-                          mainAxisSpacing: 10.h,
-                        ),
-                        itemCount: activeProducts.length,
-                        itemBuilder: (context, index) {
-                          final product = activeProducts[index];
-                          return GestureDetector(
-                            onTap: () => ProductDetailSheet.show(context, product),
-                            child: ProductCard(
-                              product: product,
-                              quantity: cartItems[product.id] ?? 0,
-                              onIncrement: () => _incrementCart(product.id),
-                              onDecrement: () => _decrementCart(product.id),
-                              onTap: () {
-                              ProductDetailSheet.show(context, product);
-                              
-                            },
+                      child: activeProducts.isEmpty
+                          ? _buildEmptyState()
+                          : GridView.builder(
+                              padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: 0.58,
+                                crossAxisSpacing: 10.w,
+                                mainAxisSpacing: 10.h,
+                              ),
+                              itemCount: activeProducts.length,
+                              itemBuilder: (context, index) {
+                                final product = activeProducts[index];
+                                return ProductCard(
+                                  product: product,
+                                  quantity: cartItems[product.id] ?? 0,
+                                  onIncrement: () => _incrementCart(product.id),
+                                  onDecrement: () => _decrementCart(product.id),
+                                  onTap: () {
+                                    ProductDetailSheet.show(context, product);
+                                  },
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
                     ),
                   ],
                 ),
               ),
             ],
           ),
-
-          // Floating Cart Summary Bar
           FloatingCartBar(
             totalCount: totalCartCount,
             totalPrice: totalCartPrice,
@@ -165,9 +170,20 @@ class _ColdDrinksJuicesScreenState extends State<ColdDrinksJuicesScreen> {
     );
   }
 
-  
-
-  
-
- 
+  Widget _buildEmptyState() {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Text(
+          'No products available in "$activeSubCat" yet.',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 13.sp,
+            color: AppColors.textSecondary,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
 }

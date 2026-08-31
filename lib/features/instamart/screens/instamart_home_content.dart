@@ -26,25 +26,109 @@ class InstamartHomeContent extends ConsumerWidget {
       {'name': 'Cereals & Breakfast', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553658.png'},
     ];
 
-    final snacksItems = [
-      {'name': 'Cold Drinks & Juices', 'image': 'https://cdn-icons-png.flaticon.com/512/2405/2405479.png'},
-      {'name': 'Ice Creams', 'image': 'https://cdn-icons-png.flaticon.com/512/938/938063.png'},
-      {'name': 'Chips & Namkeens', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553691.png'},
-      {'name': 'Chocolates', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+   final snacksItems = [
+      {
+        'name': 'Cold Drinks and Juices',
+        'image': 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      },
+      {
+        'name': 'Ice Creams and Frozen...',
+        'image': 'https://pngimg.com/uploads/ice_cream/ice_cream_PNG5097.png',
+      },
+      {
+        'name': 'Chips and Namkeens',
+        'image': 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
+      },
+      {
+        'name': 'Chocolates',
+        'image': 'https://pngimg.com/uploads/chocolate/chocolate_PNG97155.png',
+      },
+      {
+        'name': 'Biscuits and Cakes',
+        'image': 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      },
+      {
+        'name': 'Tea, Coffee and Milk dr...',
+        'image': 'https://pngimg.com/uploads/tea/tea_PNG98881.png',
+      },
+      {
+        'name': 'Sauces and Spreads',
+        'image': 'https://pngimg.com/uploads/ketchup/ketchup_PNG14.png',
+      },
+      {
+        'name': 'Sweet Corner',
+        'image': 'https://pngimg.com/uploads/candy/candy_PNG98.png',
+      },
     ];
 
     final beautyItems = [
-      {'name': 'Bath & Body', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
-      {'name': 'Hair Care', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
-      {'name': 'Skincare', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
-      {'name': 'Makeup', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {
+        'name': 'Bath and Body',
+        'image': 'https://pngimg.com/uploads/soap/soap_PNG42.png',
+      },
+      {
+        'name': 'Hair Care',
+        'image': 'https://pngimg.com/uploads/shampoo/shampoo_PNG18.png',
+      },
+      {
+        'name': 'Skincare',
+        'image': 'https://pngimg.com/uploads/cream/cream_PNG23.png',
+      },
+      {
+        'name': 'Makeup',
+        'image': 'https://pngimg.com/uploads/lipstick/lipstick_PNG27.png',
+      },
+      {
+        'name': 'Feminine Hygiene',
+        'image': 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png',
+      },
+      {
+        'name': 'Sexual Wellness',
+        'image': 'https://pngimg.com/uploads/perfume/perfume_PNG10237.png',
+      },
+      {
+        'name': 'Health and Pharma',
+        'image': 'https://pngimg.com/uploads/pills/pills_PNG98.png',
+      },
+      {
+        'name': 'Baby Care',
+        'image': 'https://pngimg.com/uploads/baby/baby_PNG52680.png',
+      },
     ];
 
     final householdItems = [
-      {'name': 'Home & Kitchen', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
-      {'name': 'Puja Store', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
-      {'name': 'Cleaners & Repellents', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
-      {'name': 'Toys & Stationery', 'image': 'https://cdn-icons-png.flaticon.com/512/2553/2553645.png'},
+      {
+        'name': 'Home and Kitchen',
+        'image': 'https://pngimg.com/uploads/frying_pan/frying_pan_PNG9.png',
+      },
+      {
+        'name': 'Puja Store',
+        'image': 'https://pngimg.com/uploads/candle/candle_PNG3120.png',
+      },
+      {
+        'name': 'Cleaners and Repell...',
+        'image': 'https://pngimg.com/uploads/detergent/detergent_PNG21.png',
+      },
+      {
+        'name': 'Toys and Stationery',
+        'image': 'https://pngimg.com/uploads/pen/pen_PNG7413.png',
+      },
+      {
+        'name': 'Electronics and Applia...',
+        'image': 'https://pngimg.com/uploads/headphones/headphones_PNG101980.png',
+      },
+      {
+        'name': 'Fashion',
+        'image': 'https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png',
+      },
+      {
+        'name': 'Pet Supplies',
+        'image': 'https://pngimg.com/uploads/dog_food/dog_food_PNG38.png',
+      },
+      {
+        'name': 'Sports and Fitness',
+        'image': 'https://pngimg.com/uploads/dumbbells/dumbbells_PNG16.png',
+      },
     ];
 
     return Stack(

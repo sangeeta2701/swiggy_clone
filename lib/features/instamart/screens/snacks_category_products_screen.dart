@@ -5,6 +5,7 @@ import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 
 import '../data/snacks_mock_data.dart';
+import '../models/product_model.dart';
 import '../widgets/categories/floating_cart_bar.dart';
 import '../widgets/categories/product_card.dart';
 import '../widgets/grocery/grocery_sidebar.dart';
@@ -28,19 +29,37 @@ class SnacksCategoryProductsScreen extends StatefulWidget {
 class _SnacksCategoryProductsScreenState
     extends State<SnacksCategoryProductsScreen> {
   late String activeSubCat;
+  late List<CategoryModel> availableSidebarCategories;
   final Map<String, int> cartItems = {};
 
   @override
   void initState() {
     super.initState();
-    final query = widget.selectedSubCategory.toLowerCase();
-    final matchingSub = SnacksMockData.subCategories.firstWhere(
+
+    final String selected = widget.selectedSubCategory.trim().toLowerCase();
+    final String category = widget.categoryName.trim().toLowerCase();
+
+    // 1. Resolve sidebar subcategories from SnacksMockData.categorySubCategories
+    List<CategoryModel>? foundList;
+    SnacksMockData.categorySubCategories.forEach((key, list) {
+      final k = key.trim().toLowerCase();
+      if (k == selected || k == category || selected.contains(k) || category.contains(k)) {
+        foundList ??= list;
+      }
+    });
+
+    availableSidebarCategories =
+        foundList ?? SnacksMockData.categorySubCategories.values.first;
+
+    // 2. Select initial active subcategory
+    final matchingSub = availableSidebarCategories.firstWhere(
       (sub) {
-        final subName = sub.name.toLowerCase();
-        return subName == query || query.contains(subName) || subName.contains(query);
+        final subName = sub.name.trim().toLowerCase();
+        return subName == selected || selected.contains(subName) || subName.contains(selected);
       },
-      orElse: () => SnacksMockData.subCategories.first, // Defaults to Chips & Namkeens
+      orElse: () => availableSidebarCategories.first,
     );
+
     activeSubCat = matchingSub.name;
   }
 
@@ -78,8 +97,8 @@ class _SnacksCategoryProductsScreenState
 
   @override
   Widget build(BuildContext context) {
-    final activeProducts = SnacksMockData.catalogProducts[activeSubCat] ??
-        SnacksMockData.catalogProducts['Chips & Namkeens']!;
+    final List<ProductModel> activeProducts =
+        SnacksMockData.catalogProducts[activeSubCat] ?? const <ProductModel>[];
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -91,7 +110,20 @@ class _SnacksCategoryProductsScreenState
           icon: Icon(Icons.arrow_back, color: AppColors.textPrimary, size: 24.sp),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
+            Text(
+              '${activeProducts.length} items available',
+              style: TextStyle(
+                fontSize: 11.sp,
+                color: AppColors.textSecondary,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: AppColors.textPrimary, size: 22.sp),
@@ -105,7 +137,7 @@ class _SnacksCategoryProductsScreenState
           Row(
             children: [
               GrocerySidebar(
-                categories: SnacksMockData.subCategories,
+                categories: availableSidebarCategories,
                 activeCategory: activeSubCat,
                 onSelectCategory: (name) => setState(() => activeSubCat = name),
               ),
@@ -115,33 +147,33 @@ class _SnacksCategoryProductsScreenState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildFilterRow(),
+                    _buildSubHeader(activeProducts.length),
+                    height4,
                     Expanded(
-                      child: GridView.builder(
-                        padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 0.58,
-                          crossAxisSpacing: 10.w,
-                          mainAxisSpacing: 10.h,
-                        ),
-                        itemCount: activeProducts.length,
-                        itemBuilder: (context, index) {
-                          final product = activeProducts[index];
-                          return GestureDetector(
-                            onTap: () => ProductDetailSheet.show(context, product),
-                            child: ProductCard(
-                              product: product,
-                              quantity: cartItems[product.id] ?? 0,
-                              onIncrement: () => _incrementCart(product.id),
-                              onDecrement: () => _decrementCart(product.id),
-                              onTap: () {
-                              ProductDetailSheet.show(context, product);
-                              
-                            },
+                      child: activeProducts.isEmpty
+                          ? _buildEmptyState()
+                          : GridView.builder(
+                              padding: EdgeInsets.fromLTRB(10.w, 4.h, 10.w, 100.h),
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: 0.58,
+                                crossAxisSpacing: 10.w,
+                                mainAxisSpacing: 10.h,
+                              ),
+                              itemCount: activeProducts.length,
+                              itemBuilder: (context, index) {
+                                final product = activeProducts[index];
+                                return ProductCard(
+                                  product: product,
+                                  quantity: cartItems[product.id] ?? 0,
+                                  onIncrement: () => _incrementCart(product.id),
+                                  onDecrement: () => _decrementCart(product.id),
+                                  onTap: () {
+                                    ProductDetailSheet.show(context, product);
+                                  },
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
                     ),
                   ],
                 ),
@@ -153,6 +185,51 @@ class _SnacksCategoryProductsScreenState
             totalPrice: totalCartPrice,
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildEmptyState() {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Text(
+          'No products available in "$activeSubCat" yet.',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 13.sp,
+            color: AppColors.textSecondary,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSubHeader(int count) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: '$count items ',
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+              ),
+            ),
+            TextSpan(
+              text: 'in $activeSubCat',
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+                color: AppColors.textSecondary,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
