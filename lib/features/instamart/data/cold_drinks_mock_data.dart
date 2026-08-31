@@ -41,6 +41,9 @@ class ColdDrinksMockData {
   ];
 
   static const Map<String, List<ProductModel>> catalogProducts = {
+    // -------------------------------------------------------------------------
+    // 1. SOFT DRINKS
+    // -------------------------------------------------------------------------
     'Soft Drinks': [
       ProductModel(
         id: 'cd_1',
@@ -107,6 +110,10 @@ class ColdDrinksMockData {
         image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
       ),
     ],
+
+    // -------------------------------------------------------------------------
+    // 2. JUICES & FRUIT DRINKS
+    // -------------------------------------------------------------------------
     'Juices & Fruit Drinks': [
       ProductModel(
         id: 'jc_1',
@@ -170,6 +177,105 @@ class ColdDrinksMockData {
         image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
       ),
     ],
+
+    // -------------------------------------------------------------------------
+    // 3. CAFFEINATED BEVERAGES
+    // -------------------------------------------------------------------------
+    'Caffeinated Beverages': [
+      ProductModel(
+        id: 'cb_1',
+        name: 'Red Bull Energy Drink Can',
+        weight: '250 ml',
+        eta: '7 MINS',
+        price: 125,
+        originalPrice: 125,
+        discount: 'MRP',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+      ),
+      ProductModel(
+        id: 'cb_2',
+        name: 'Monster Energy Drink Can',
+        weight: '350 ml',
+        eta: '7 MINS',
+        price: 110,
+        originalPrice: 125,
+        discount: '12% OFF',
+        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+      ),
+      ProductModel(
+        id: 'cb_3',
+        name: 'Hell Energy Drink Classic',
+        weight: '250 ml',
+        eta: '7 MINS',
+        price: 60,
+        originalPrice: 65,
+        discount: '8% OFF',
+        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+      ),
+      ProductModel(
+        id: 'cb_4',
+        name: 'Sting Energy Drink Bottle',
+        weight: '250 ml',
+        eta: '7 MINS',
+        price: 20,
+        originalPrice: 20,
+        discount: 'MRP',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+      ),
+    ],
+
+    // -------------------------------------------------------------------------
+    // 4. HYDRATION DRINKS
+    // -------------------------------------------------------------------------
+    'Hydration Drinks': [
+      ProductModel(
+        id: 'hd_1',
+        name: 'Gatorade Blue Bolt Electrolyte Drink',
+        weight: '500 ml',
+        eta: '7 MINS',
+        price: 50,
+        originalPrice: 50,
+        discount: 'MRP',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+      ),
+      ProductModel(
+        id: 'hd_2',
+        name: 'Fast&Up Reload Electrolyte Drink Tablets',
+        weight: '20 Tablets',
+        eta: '7 MINS',
+        price: 230,
+        originalPrice: 270,
+        discount: '15% OFF',
+        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+      ),
+      ProductModel(
+        id: 'hd_3',
+        name: 'ORS Apple Hydration Drink Ready to Drink',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 31,
+        originalPrice: 35,
+        discount: '11% OFF',
+        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+      ),
+      ProductModel(
+        id: 'hd_4',
+        name: 'Ocean Fruit Water Mango Passion',
+        weight: '500 ml',
+        eta: '7 MINS',
+        price: 55,
+        originalPrice: 60,
+        discount: '8% OFF',
+        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+      ),
+    ],
+
+    // -------------------------------------------------------------------------
+    // 5. MANGO DRINKS
+    // -------------------------------------------------------------------------
     'Mango Drinks': [
       ProductModel(
         id: 'mg_1',
@@ -231,6 +337,198 @@ class ColdDrinksMockData {
         originalPrice: 25,
         discount: '20% OFF',
         image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+      ),
+    ],
+
+    // -------------------------------------------------------------------------
+    // 6. COCONUT WATER
+    // -------------------------------------------------------------------------
+    'Coconut Water': [
+      ProductModel(
+        id: 'cw_1',
+        name: 'Raw Pressery 100% Tender Coconut Water',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 55,
+        originalPrice: 65,
+        discount: '15% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+      ),
+      ProductModel(
+        id: 'cw_2',
+        name: 'Paper Boat Organic Tender Coconut Water',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 50,
+        originalPrice: 60,
+        discount: '16% OFF',
+        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+      ),
+      ProductModel(
+        id: 'cw_3',
+        name: 'Country Delight Fresh Tender Coconut',
+        weight: '1 pc',
+        eta: '7 MINS',
+        price: 65,
+        originalPrice: 75,
+        discount: '13% OFF',
+        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+      ),
+      ProductModel(
+        id: 'cw_4',
+        name: 'Real Active 100% Coconut Water Pack',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 48,
+        originalPrice: 55,
+        discount: '12% OFF',
+        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+      ),
+    ],
+
+    // -------------------------------------------------------------------------
+    // 7. WATER & ICE CUBES
+    // -------------------------------------------------------------------------
+    'Water & Ice Cubes': [
+      ProductModel(
+        id: 'wic_1',
+        name: 'Bisleri Mineral Water Bottle',
+        weight: '1 Litre',
+        eta: '7 MINS',
+        price: 20,
+        originalPrice: 20,
+        discount: 'MRP',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+      ),
+      ProductModel(
+        id: 'wic_2',
+        name: 'Tata Copper Plus Infused Water',
+        weight: '1 Litre',
+        eta: '7 MINS',
+        price: 28,
+        originalPrice: 30,
+        discount: '6% OFF',
+        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+      ),
+      ProductModel(
+        id: 'wic_3',
+        name: 'Clear Premium Drinking Water',
+        weight: '500 ml',
+        eta: '7 MINS',
+        price: 10,
+        originalPrice: 10,
+        discount: 'MRP',
+        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+      ),
+      ProductModel(
+        id: 'wic_4',
+        name: 'Party Cubes Purified Frozen Ice Pack',
+        weight: '1 kg',
+        eta: '7 MINS',
+        price: 60,
+        originalPrice: 75,
+        discount: '20% OFF',
+        badge: 'Chilled',
+        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+      ),
+    ],
+
+    // -------------------------------------------------------------------------
+    // 8. SODA & MIXERS
+    // -------------------------------------------------------------------------
+    'Soda & Mixers': [
+      ProductModel(
+        id: 'sm_1',
+        name: 'Kinley Strong Carbonated Soda Bottle',
+        weight: '750 ml',
+        eta: '7 MINS',
+        price: 21,
+        originalPrice: 22,
+        discount: '4% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      ),
+      ProductModel(
+        id: 'sm_2',
+        name: 'Schweppes Indian Tonic Water Can',
+        weight: '300 ml',
+        eta: '7 MINS',
+        price: 60,
+        originalPrice: 65,
+        discount: '8% OFF',
+        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      ),
+      ProductModel(
+        id: 'sm_3',
+        name: 'Bisleri Club Soda Pet Bottle',
+        weight: '750 ml',
+        eta: '7 MINS',
+        price: 20,
+        originalPrice: 20,
+        discount: 'MRP',
+        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      ),
+      ProductModel(
+        id: 'sm_4',
+        name: 'Fever-Tree Premium Ginger Ale',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 130,
+        originalPrice: 150,
+        discount: '13% OFF',
+        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      ),
+    ],
+
+    // -------------------------------------------------------------------------
+    // 9. MILK BASED DRINKS
+    // -------------------------------------------------------------------------
+    'Milk Based Drinks': [
+      ProductModel(
+        id: 'mbd_1',
+        name: 'Tata Coffee Grand Belgian Chocolate Cold Coffee',
+        weight: '180 ml',
+        eta: '7 MINS',
+        price: 57,
+        originalPrice: 65,
+        discount: '12% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      ),
+      ProductModel(
+        id: 'mbd_2',
+        name: 'Amul Masti Spiced Buttermilk Pouch',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 15,
+        originalPrice: 15,
+        discount: 'MRP',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      ),
+      ProductModel(
+        id: 'mbd_3',
+        name: 'Sunfeast 6G Protein Breakfast Smoothie',
+        weight: '160 ml',
+        eta: '7 MINS',
+        price: 40,
+        originalPrice: 45,
+        discount: '11% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      ),
+      ProductModel(
+        id: 'mbd_4',
+        name: 'NOICE Fresh Rose Thick Lassi (Homestyle)',
+        weight: '200 ml',
+        eta: '7 MINS',
+        price: 54,
+        originalPrice: 65,
+        discount: '17% OFF',
+        badge: 'SWITCH',
+        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
       ),
     ],
   };
