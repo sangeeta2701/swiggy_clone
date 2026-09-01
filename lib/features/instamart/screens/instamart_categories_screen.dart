@@ -12,202 +12,191 @@ import 'package:swiggy_clone/features/instamart/widgets/categories/shop_by_store
 
 class InstamartCategoriesScreen extends StatelessWidget {
   const InstamartCategoriesScreen({super.key});
- 
 
-void _navigateToProductsScreen(
-  BuildContext context,
-  String categoryName,
-  String selectedSubCategory,
-) {
-  Widget targetScreen;
+  // Moved static category arrays outside build method to prevent constant re-creations
+  static const freshItems = [
+    {
+      'name': 'Fresh Vegetables',
+      'image': 'https://pngimg.com/uploads/vegetables/vegetables_PNG101657.png',
+    },
+    {
+      'name': 'Fresh Fruits',
+      'image': 'https://pngimg.com/uploads/fruit/fruit_PNG13.png',
+    },
+    {
+      'name': 'Dairy, Bread and Eggs',
+      'image': 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+    },
+    {
+      'name': 'Meat and Seafood',
+      'image': 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
+    },
+  ];
 
-  final String catTrimmed = categoryName.trim();
-  final String subCatTrimmed = selectedSubCategory.trim();
+  static const groceryItems = [
+    {
+      'name': 'Atta, Rice and Dal',
+      'image': 'https://pngimg.com/uploads/rice/rice_PNG12.png',
+    },
+    {
+      'name': 'Masalas',
+      'image': 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
+    },
+    {
+      'name': 'Oils and Ghee',
+      'image': 'https://pngimg.com/uploads/olive_oil/olive_oil_PNG9.png',
+    },
+    {
+      'name': 'Cereals and Breakfast',
+      'image': 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+    },
+  ];
 
-  // 1. Grocery & Kitchen Router
-  if (catTrimmed == 'Grocery & Kitchen') {
-    targetScreen = GroceryCategoryProductsScreen(
-      categoryName: selectedSubCategory, // Display clicked item title on AppBar
-      selectedSubCategory: selectedSubCategory,
+  static const snacksItems = [
+    {
+      'name': 'Cold Drinks and Juices',
+      'image': 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+    },
+    {
+      'name': 'Ice Creams and Frozen...',
+      'image': 'https://pngimg.com/uploads/ice_cream/ice_cream_PNG5097.png',
+    },
+    {
+      'name': 'Chips and Namkeens',
+      'image': 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
+    },
+    {
+      'name': 'Chocolates',
+      'image': 'https://pngimg.com/uploads/chocolate/chocolate_PNG97155.png',
+    },
+    {
+      'name': 'Biscuits and Cakes',
+      'image': 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+    },
+    {
+      'name': 'Tea, Coffee and Milk dr...',
+      'image': 'https://pngimg.com/uploads/tea/tea_PNG98881.png',
+    },
+    {
+      'name': 'Sauces and Spreads',
+      'image': 'https://pngimg.com/uploads/ketchup/ketchup_PNG14.png',
+    },
+    {
+      'name': 'Sweet Corner',
+      'image': 'https://pngimg.com/uploads/candy/candy_PNG98.png',
+    },
+  ];
+
+  static const beautyItems = [
+    {
+      'name': 'Bath and Body',
+      'image': 'https://pngimg.com/uploads/soap/soap_PNG42.png',
+    },
+    {
+      'name': 'Hair Care',
+      'image': 'https://pngimg.com/uploads/shampoo/shampoo_PNG18.png',
+    },
+    {
+      'name': 'Skincare',
+      'image': 'https://pngimg.com/uploads/cream/cream_PNG23.png',
+    },
+    {
+      'name': 'Makeup',
+      'image': 'https://pngimg.com/uploads/lipstick/lipstick_PNG27.png',
+    },
+    {
+      'name': 'Feminine Hygiene',
+      'image': 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png',
+    },
+    {
+      'name': 'Sexual Wellness',
+      'image': 'https://pngimg.com/uploads/perfume/perfume_PNG10237.png',
+    },
+    {
+      'name': 'Health and Pharma',
+      'image': 'https://pngimg.com/uploads/pills/pills_PNG98.png',
+    },
+    {
+      'name': 'Baby Care',
+      'image': 'https://pngimg.com/uploads/baby/baby_PNG52680.png',
+    },
+  ];
+
+  static const householdItems = [
+    {
+      'name': 'Home and Kitchen',
+      'image': 'https://pngimg.com/uploads/frying_pan/frying_pan_PNG9.png',
+    },
+    {
+      'name': 'Puja Store',
+      'image': 'https://pngimg.com/uploads/candle/candle_PNG3120.png',
+    },
+    {
+      'name': 'Cleaners and Repell...',
+      'image': 'https://pngimg.com/uploads/detergent/detergent_PNG21.png',
+    },
+    {
+      'name': 'Toys and Stationery',
+      'image': 'https://pngimg.com/uploads/pen/pen_PNG7413.png',
+    },
+    {
+      'name': 'Electronics and Applia...',
+      'image': 'https://pngimg.com/uploads/headphones/headphones_PNG101980.png',
+    },
+    {
+      'name': 'Fashion',
+      'image': 'https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png',
+    },
+    {
+      'name': 'Pet Supplies',
+      'image': 'https://pngimg.com/uploads/dog_food/dog_food_PNG38.png',
+    },
+    {
+      'name': 'Sports and Fitness',
+      'image': 'https://pngimg.com/uploads/dumbbells/dumbbells_PNG16.png',
+    },
+  ];
+
+  void _navigateToProductsScreen(
+    BuildContext context,
+    String categoryName,
+    String selectedSubCategory,
+  ) {
+    Widget targetScreen;
+
+    final String catTrimmed = categoryName.trim();
+    final String subCatTrimmed = selectedSubCategory.trim();
+
+    if (catTrimmed == 'Grocery & Kitchen') {
+      targetScreen = GroceryCategoryProductsScreen(
+        categoryName: selectedSubCategory,
+        selectedSubCategory: selectedSubCategory,
+      );
+    } else if (subCatTrimmed.contains('Cold Drinks') || subCatTrimmed.contains('Juices')) {
+      targetScreen = ColdDrinksJuicesScreen(
+        categoryName: selectedSubCategory,
+        selectedSubCategory: 'Soft Drinks',
+      );
+    } else if (catTrimmed.contains('Snacks')) {
+      targetScreen = SnacksCategoryProductsScreen(
+        categoryName: selectedSubCategory,
+        selectedSubCategory: selectedSubCategory,
+      );
+    } else {
+      targetScreen = InstamartCategoryProductsScreen(
+        categoryName: selectedSubCategory,
+        selectedSubCategory: selectedSubCategory,
+      );
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => targetScreen),
     );
   }
-  // 2. Cold Drinks & Juices Dedicated Router
-  else if (subCatTrimmed.contains('Cold Drinks') || subCatTrimmed.contains('Juices')) {
-    targetScreen = ColdDrinksJuicesScreen(
-      categoryName: selectedSubCategory,
-      selectedSubCategory: 'Soft Drinks',
-    );
-  }
-  // 3. Snacks & Drinks Router
-  else if (catTrimmed.contains('Snacks')) {
-    targetScreen = SnacksCategoryProductsScreen(
-      categoryName: selectedSubCategory,
-      selectedSubCategory: selectedSubCategory,
-    );
-  }
-  // 4. Fresh Items Router (Vegetables, Fruits, Dairy, Meat)
-  else {
-    targetScreen = InstamartCategoryProductsScreen(
-      categoryName: selectedSubCategory, // Shows "Fresh Fruits" or "Fresh Vegetables" on AppBar
-      selectedSubCategory: selectedSubCategory,
-    );
-  }
-
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => targetScreen,
-    ),
-  );
-}
 
   @override
   Widget build(BuildContext context) {
-    // --- HIGH QUALITY TRANSPARENT PNG CATEGORIES DATA ---
-
-    final freshItems = [
-      {
-        'name': 'Fresh Vegetables',
-        'image': 'https://pngimg.com/uploads/vegetables/vegetables_PNG101657.png',
-      },
-      {
-        'name': 'Fresh Fruits',
-        'image': 'https://pngimg.com/uploads/fruit/fruit_PNG13.png',
-      },
-      {
-        'name': 'Dairy, Bread and Eggs',
-        'image': 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
-      },
-      {
-        'name': 'Meat and Seafood',
-        'image': 'https://pngimg.com/uploads/meat/meat_PNG3934.png',
-      },
-    ];
-
-    final groceryItems = [
-      {
-        'name': 'Atta, Rice and Dal',
-        'image': 'https://pngimg.com/uploads/rice/rice_PNG12.png',
-      },
-      {
-        'name': 'Masalas',
-        'image': 'https://pngimg.com/uploads/spices/spices_PNG101452.png',
-      },
-      {
-        'name': 'Oils and Ghee',
-        'image': 'https://pngimg.com/uploads/olive_oil/olive_oil_PNG9.png',
-      },
-      {
-        'name': 'Cereals and Breakfast',
-        'image': 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
-      },
-    ];
-
-    final snacksItems = [
-      {
-        'name': 'Cold Drinks and Juices',
-        'image': 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
-      },
-      {
-        'name': 'Ice Creams and Frozen...',
-        'image': 'https://pngimg.com/uploads/ice_cream/ice_cream_PNG5097.png',
-      },
-      {
-        'name': 'Chips and Namkeens',
-        'image': 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
-      },
-      {
-        'name': 'Chocolates',
-        'image': 'https://pngimg.com/uploads/chocolate/chocolate_PNG97155.png',
-      },
-      {
-        'name': 'Biscuits and Cakes',
-        'image': 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
-      },
-      {
-        'name': 'Tea, Coffee and Milk dr...',
-        'image': 'https://pngimg.com/uploads/tea/tea_PNG98881.png',
-      },
-      {
-        'name': 'Sauces and Spreads',
-        'image': 'https://pngimg.com/uploads/ketchup/ketchup_PNG14.png',
-      },
-      {
-        'name': 'Sweet Corner',
-        'image': 'https://pngimg.com/uploads/candy/candy_PNG98.png',
-      },
-    ];
-
-    final beautyItems = [
-      {
-        'name': 'Bath and Body',
-        'image': 'https://pngimg.com/uploads/soap/soap_PNG42.png',
-      },
-      {
-        'name': 'Hair Care',
-        'image': 'https://pngimg.com/uploads/shampoo/shampoo_PNG18.png',
-      },
-      {
-        'name': 'Skincare',
-        'image': 'https://pngimg.com/uploads/cream/cream_PNG23.png',
-      },
-      {
-        'name': 'Makeup',
-        'image': 'https://pngimg.com/uploads/lipstick/lipstick_PNG27.png',
-      },
-      {
-        'name': 'Feminine Hygiene',
-        'image': 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png',
-      },
-      {
-        'name': 'Sexual Wellness',
-        'image': 'https://pngimg.com/uploads/perfume/perfume_PNG10237.png',
-      },
-      {
-        'name': 'Health and Pharma',
-        'image': 'https://pngimg.com/uploads/pills/pills_PNG98.png',
-      },
-      {
-        'name': 'Baby Care',
-        'image': 'https://pngimg.com/uploads/baby/baby_PNG52680.png',
-      },
-    ];
-
-    final householdItems = [
-      {
-        'name': 'Home and Kitchen',
-        'image': 'https://pngimg.com/uploads/frying_pan/frying_pan_PNG9.png',
-      },
-      {
-        'name': 'Puja Store',
-        'image': 'https://pngimg.com/uploads/candle/candle_PNG3120.png',
-      },
-      {
-        'name': 'Cleaners and Repell...',
-        'image': 'https://pngimg.com/uploads/detergent/detergent_PNG21.png',
-      },
-      {
-        'name': 'Toys and Stationery',
-        'image': 'https://pngimg.com/uploads/pen/pen_PNG7413.png',
-      },
-      {
-        'name': 'Electronics and Applia...',
-        'image': 'https://pngimg.com/uploads/headphones/headphones_PNG101980.png',
-      },
-      {
-        'name': 'Fashion',
-        'image': 'https://pngimg.com/uploads/tshirt/tshirt_PNG5450.png',
-      },
-      {
-        'name': 'Pet Supplies',
-        'image': 'https://pngimg.com/uploads/dog_food/dog_food_PNG38.png',
-      },
-      {
-        'name': 'Sports and Fitness',
-        'image': 'https://pngimg.com/uploads/dumbbells/dumbbells_PNG16.png',
-      },
-    ];
-
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -232,7 +221,6 @@ void _navigateToProductsScreen(
       ),
       body: Stack(
         children: [
-          // Scrollable Categories View
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -300,8 +288,6 @@ void _navigateToProductsScreen(
                   },
                 ),
                 height30,
-
-                // --- INSTAMART BRAND FOOTER ---
                 Center(
                   child: Column(
                     children: [
@@ -331,12 +317,10 @@ void _navigateToProductsScreen(
                     ],
                   ),
                 ),
-                height90, // Clearance for fixed delivery banner
+                height90,
               ],
             ),
           ),
-
-          // --- STICKY FREE DELIVERY BANNER ---
           Positioned(
             left: 12.w,
             right: 12.w,

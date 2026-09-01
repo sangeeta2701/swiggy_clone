@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 
@@ -38,6 +40,8 @@ class CategoryGridSection extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
+            final imageUrl = item['image'] ?? '';
+
             return GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: () {
@@ -51,19 +55,41 @@ class CategoryGridSection extends StatelessWidget {
                     height: 72.h,
                     width: 72.w,
                     decoration: BoxDecoration(
-                      color: const Color(0xF2F5F8),
+                      color: AppColors.backgroundGrey.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(18.r),
                     ),
                     padding: EdgeInsets.all(8.r),
-                    child: Image.network(
-                      item['image'] ?? '',
-                      fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) => Icon(
-                        Icons.shopping_bag_outlined,
-                        color: Colors.grey[400],
-                        size: 28.sp,
-                      ),
-                    ),
+                    child: imageUrl.isNotEmpty
+                        ? CachedNetworkImage(
+                            imageUrl: imageUrl,
+                            fit: BoxFit.contain,
+                            httpHeaders: const {
+                              'User-Agent':
+                                  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                              'Accept':
+                                  'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+                            },
+                            placeholder: (context, url) => Center(
+                              child: SizedBox(
+                                width: 16.w,
+                                height: 16.h,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 1.8,
+                                  color: AppColors.instamartBlue,
+                                ),
+                              ),
+                            ),
+                            errorWidget: (context, url, error) => Icon(
+                              Icons.shopping_bag_outlined,
+                              color: AppColors.textHint,
+                              size: 28.sp,
+                            ),
+                          )
+                        : Icon(
+                            Icons.shopping_bag_outlined,
+                            color: AppColors.textHint,
+                            size: 28.sp,
+                          ),
                   ),
                   height8,
                   SizedBox(
