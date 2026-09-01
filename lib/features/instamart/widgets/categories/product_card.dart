@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
@@ -52,13 +53,28 @@ class ProductCard extends StatelessWidget {
                 SizedBox(
                   height: 80.h,
                   width: double.infinity,
-                  child: Image.network(
-                    product.image,
+                  child: CachedNetworkImage(
+                    imageUrl: product.image,
                     fit: BoxFit.contain,
-                    errorBuilder: (_, __, ___) => Icon(
-                      Icons.shopping_bag_outlined,
-                      size: 32.sp,
-                      color: AppColors.textHint,
+                    httpHeaders: const {
+                      'User-Agent':
+                          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                      'Accept':
+                          'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+                    },
+                    placeholder: (context, url) => Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: AppColors.instamartBlue,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => Container(
+                      color: AppColors.headerBackground,
+                      child: Icon(
+                        Icons.fastfood_outlined,
+                        color: AppColors.textHint,
+                        size: 32.sp,
+                      ),
                     ),
                   ),
                 ),
@@ -87,15 +103,11 @@ class ProductCard extends StatelessWidget {
                     size: 18.sp,
                   ),
                 ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: _buildActionButton(),
-                ),
+                Positioned(bottom: 0, right: 0, child: _buildActionButton()),
               ],
             ),
             height4,
-      
+
             // Metadata
             Text(
               product.eta,
@@ -137,7 +149,7 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             height4,
-      
+
             // Pricing + Conditional Badge
             if (product.badge != null) ...[
               Text(
@@ -197,17 +209,10 @@ class ProductCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
             border: Border.all(color: AppColors.instamartBlue, width: 1.2),
             boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.06),
-                blurRadius: 4,
-              ),
+              BoxShadow(color: Colors.black.withOpacity(0.06), blurRadius: 4),
             ],
           ),
-          child: Icon(
-            Icons.add,
-            color: AppColors.instamartBlue,
-            size: 16.sp,
-          ),
+          child: Icon(Icons.add, color: AppColors.instamartBlue, size: 16.sp),
         ),
       );
     }
