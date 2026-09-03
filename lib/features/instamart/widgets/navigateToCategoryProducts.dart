@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
 import 'package:swiggy_clone/features/instamart/screens/beauty_category_products_screen.dart';
@@ -28,7 +27,7 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 2. Cold Drinks & Juices Dedicated Router
+  // 2. Cold Drinks & Juices Router
   else if (item.contains('cold drinks') || item.contains('juices')) {
     targetScreen = ColdDrinksJuicesScreen(
       categoryName: itemName,
@@ -47,11 +46,12 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 4. Beauty & Wellness Router
+  // 4. Beauty & Wellness Router (Handles Bath & Body + Hair Care)
   else if (section.contains('beauty') || 
            item.contains('bath') || 
            item.contains('body') || 
            item.contains('hair') || 
+           item.contains('shampoo') || 
            item.contains('skin') || 
            item.contains('makeup')) {
     targetScreen = BeautyCategoryProductsScreen(
