@@ -8,19 +8,19 @@ class ColdDrinksMockData {
     ),
     CategoryModel(
       name: 'Juices & Fruit Drinks',
-      image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+      image: 'https://png.pngtree.com/png-clipart/20240701/original/pngtree-fruit-juice-photos-png-image_15464132.png',
     ),
     CategoryModel(
       name: 'Caffeinated Beverages',
-      image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+      image: 'https://png.pngtree.com/png-vector/20241110/ourmid/pngtree-cold-caffeine-beverages-coffee-latte-cappuccino-milk-png-image_14333415.png',
     ),
     CategoryModel(
       name: 'Hydration Drinks',
-      image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+      image: 'https://png.pngtree.com/png-clipart/20240612/original/pngtree-gatorade-cool-blue-hydration-drink-png-image_15316413.png',
     ),
     CategoryModel(
       name: 'Mango Drinks',
-      image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+      image: 'https://png.pngtree.com/png-clipart/20240608/original/pngtree-mango-juice-glass-with-mangoes-and-slices-summer-drink-png-image_15272767.png',
     ),
     CategoryModel(
       name: 'Coconut Water',
@@ -28,15 +28,15 @@ class ColdDrinksMockData {
     ),
     CategoryModel(
       name: 'Water & Ice Cubes',
-      image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+      image: 'https://png.pngtree.com/png-clipart/20250106/original/pngtree-coconut-water-splashing-out-of-a-fresh-green-isolated-on-transparent-png-image_20111340.png',
     ),
     CategoryModel(
       name: 'Soda & Mixers',
-      image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+      image: 'https://freepngimg.com/download/drink/157839-cold-soda-download-hq.png',
     ),
     CategoryModel(
       name: 'Milk Based Drinks',
-      image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+      image: 'https://png.pngtree.com/png-vector/20240327/ourmid/pngtree-almond-milk-drink-nuts-cream-and-dairy-splash-png-image_12216764.png',
     ),
   ];
 
@@ -54,7 +54,7 @@ class ColdDrinksMockData {
         originalPrice: 60,
         discount: '10% OFF',
         badge: 'Chilled',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/ad0eb815-1e98-4164-ba85-d6bf4394bf62/Paper-Boat-Zero-Prebiotic-Soda-Cranberry-Lime-5g-Fibre-Caffeinated-Sugar-Free-Cold-Drink.png',
       ),
       ProductModel(
         id: 'cd_2',
@@ -65,7 +65,7 @@ class ColdDrinksMockData {
         originalPrice: 60,
         discount: '10% OFF',
         badge: 'Chilled',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40366646_1-paper-boat-zero-zero-yuzu-orange-prebiotic-soda.jpg',
       ),
       ProductModel(
         id: 'cd_3',
@@ -76,7 +76,7 @@ class ColdDrinksMockData {
         originalPrice: 40,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://png.pngtree.com/background/20241025/original/pngtree-coke-zero-can-coca-cola-beverage-background-photo-picture-image_11002167.jpg',
       ),
       ProductModel(
         id: 'cd_4',
@@ -86,7 +86,7 @@ class ColdDrinksMockData {
         price: 40,
         originalPrice: 40,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xl/276213_8-thums-up-soft-drink.jpg',
       ),
       ProductModel(
         id: 'cd_5',
@@ -96,7 +96,7 @@ class ColdDrinksMockData {
         price: 38,
         originalPrice: 40,
         discount: '5% OFF',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://png.pngtree.com/png-vector/20240521/ourmid/pngtree-sprite-soft-drink-can-clipart-illustration-vector-design-png-image_12492459.png',
       ),
       ProductModel(
         id: 'cd_6',
@@ -107,7 +107,7 @@ class ColdDrinksMockData {
         originalPrice: 40,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://freepngimg.com/thumb/drink/157784-can-soda-download-free-image.png',
       ),
     ],
 
@@ -123,7 +123,7 @@ class ColdDrinksMockData {
         price: 115,
         originalPrice: 140,
         discount: '17% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://prodondcdoc.easypay.co.in/ondc_seller_product/EP_SELLER_X5EYMYNR5D/EP_SELLER_X5EYMYNR5D_IMG_1755884764818.png',
       ),
       ProductModel(
         id: 'jc_2',
@@ -134,7 +134,7 @@ class ColdDrinksMockData {
         originalPrice: 155,
         discount: '19% OFF',
         badge: 'Price Drop',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd_UJ70W8HeI5Nj0ertnl0_wi75Mkr52Hu_a8RHAvXKA&s=10',
       ),
       ProductModel(
         id: 'jc_3',
@@ -144,7 +144,7 @@ class ColdDrinksMockData {
         price: 40,
         originalPrice: 40,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://5.imimg.com/data5/SELLER/Default/2025/11/562105926/JV/YU/YW/222892822/paper-boat-swing-mixed-fruit-medley-juice.png',
       ),
       ProductModel(
         id: 'jc_4',
@@ -154,7 +154,7 @@ class ColdDrinksMockData {
         price: 110,
         originalPrice: 135,
         discount: '18% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://images.jdmagicbox.com/quickquotes/images_main/b-natural-fruit-juice-18-06-2021-803-228952115-7l4c9.png',
       ),
       ProductModel(
         id: 'jc_5',
@@ -164,7 +164,7 @@ class ColdDrinksMockData {
         price: 85,
         originalPrice: 100,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xl/40073724_5-raw-pressery-cold-extracted-juice-guava-blend.jpg',
       ),
       ProductModel(
         id: 'jc_6',
@@ -174,7 +174,7 @@ class ColdDrinksMockData {
         price: 38,
         originalPrice: 40,
         discount: '5% OFF',
-        image: 'https://pngimg.com/uploads/juice/juice_PNG7171.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/265692_9-appy-fizz-apple-juice-based-drink.jpg',
       ),
     ],
 
@@ -191,7 +191,7 @@ class ColdDrinksMockData {
         originalPrice: 125,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+        image: 'https://png.pngtree.com/png-clipart/20231015/original/pngtree-red-bull-energy-drink-tin-picture-image_13163856.png',
       ),
       ProductModel(
         id: 'cb_2',
@@ -201,7 +201,7 @@ class ColdDrinksMockData {
         price: 110,
         originalPrice: 125,
         discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+        image: 'https://pngfre.com/wp-content/uploads/monster-energy-drink-poster.png',
       ),
       ProductModel(
         id: 'cb_3',
@@ -211,7 +211,7 @@ class ColdDrinksMockData {
         price: 60,
         originalPrice: 65,
         discount: '8% OFF',
-        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+        image: 'https://www.hellenergy.com/wp-content/uploads/2021/04/hell-classic.png',
       ),
       ProductModel(
         id: 'cb_4',
@@ -222,7 +222,7 @@ class ColdDrinksMockData {
         originalPrice: 20,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/red_bull/red_bull_PNG12.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xl/40363575_1-sting-energy-drink.jpg',
       ),
     ],
 
@@ -239,7 +239,7 @@ class ColdDrinksMockData {
         originalPrice: 50,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40314318_2-gatorade-sports-drink-blue-bolt-flavour.jpg',
       ),
       ProductModel(
         id: 'hd_2',
@@ -249,7 +249,7 @@ class ColdDrinksMockData {
         price: 230,
         originalPrice: 270,
         discount: '15% OFF',
-        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xxl/40356270-6_2-fastup-reload-lime-lemon-flavour-instant-electrolytes-vitamins-tablets-for-7-years.jpg',
       ),
       ProductModel(
         id: 'hd_3',
@@ -259,7 +259,7 @@ class ColdDrinksMockData {
         price: 31,
         originalPrice: 35,
         discount: '11% OFF',
-        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+        image: 'https://cdn.zeptonow.com/production/tr:w-640,ar-4167-4167,pr-true,f-auto,q-40/cms/product_variant/a7cfb232-50ca-4fe8-aab5-681ae65a992c.jpg',
       ),
       ProductModel(
         id: 'hd_4',
@@ -269,7 +269,7 @@ class ColdDrinksMockData {
         price: 55,
         originalPrice: 60,
         discount: '8% OFF',
-        image: 'https://pngimg.com/uploads/water_bottle/water_bottle_PNG98968.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xxl/40075243_8-ocean-fruit-water-mango-passion-fruit-flavour.jpg',
       ),
     ],
 
@@ -286,7 +286,7 @@ class ColdDrinksMockData {
         originalPrice: 45,
         discount: '11% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/d5072a7f-924a-46e0-83ed-684612504e2b/Maaza.jpeg',
       ),
       ProductModel(
         id: 'mg_2',
@@ -296,7 +296,7 @@ class ColdDrinksMockData {
         price: 10,
         originalPrice: 10,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40358177_1-frooti-mango-drink.jpg',
       ),
       ProductModel(
         id: 'mg_3',
@@ -306,7 +306,7 @@ class ColdDrinksMockData {
         price: 65,
         originalPrice: 75,
         discount: '13% OFF',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://5.imimg.com/data5/SELLER/Default/2024/5/417383640/AR/PZ/BD/126647970/1l-slice-bottle.jpg',
       ),
       ProductModel(
         id: 'mg_4',
@@ -316,7 +316,7 @@ class ColdDrinksMockData {
         price: 40,
         originalPrice: 40,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/ciw/2026/8/21/c759f91e-e91b-4cac-bf9c-0dbba044ad72_2_FOP_Main_5cfb3034-29ed-4ca0-a08a-fc9de9cc840a.png',
       ),
       ProductModel(
         id: 'mg_5',
@@ -326,7 +326,7 @@ class ColdDrinksMockData {
         price: 15,
         originalPrice: 15,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://cdn.grofers.com/da/cms-assets/cms/product/51fd609acd9540a6b7072c3ef266cdb5.jpeg',
       ),
       ProductModel(
         id: 'mg_6',
@@ -336,7 +336,7 @@ class ColdDrinksMockData {
         price: 20,
         originalPrice: 25,
         discount: '20% OFF',
-        image: 'https://pngimg.com/uploads/mango/mango_PNG9172.png',
+        image: 'https://png.pngtree.com/png-clipart/20240608/original/pngtree-mango-juice-glass-with-mangoes-and-slices-summer-drink-png-image_15272767.png',
       ),
     ],
 
@@ -353,7 +353,7 @@ class ColdDrinksMockData {
         originalPrice: 65,
         discount: '15% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/ciw/2026/8/13/0ff66c6c-6aa9-42cc-b853-1fa05cfad432_1_MN_2da8e4ab-0f2c-441e-a2fe-646e5f97d63d.png',
       ),
       ProductModel(
         id: 'cw_2',
@@ -363,7 +363,7 @@ class ColdDrinksMockData {
         price: 50,
         originalPrice: 60,
         discount: '16% OFF',
-        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xxl/40114332_10-paper-boat-coconut-water.jpg',
       ),
       ProductModel(
         id: 'cw_3',
@@ -373,7 +373,7 @@ class ColdDrinksMockData {
         price: 65,
         originalPrice: 75,
         discount: '13% OFF',
-        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+        image: 'https://storage.googleapis.com/shy-pub/394479/tender-1733895619097.png',
       ),
       ProductModel(
         id: 'cw_4',
@@ -383,7 +383,7 @@ class ColdDrinksMockData {
         price: 48,
         originalPrice: 55,
         discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/coconut/coconut_PNG108842.png',
+        image: 'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/rc-upload-1779080176262-67.png?bg_token=color.background.quaternary',
       ),
     ],
 
@@ -400,7 +400,7 @@ class ColdDrinksMockData {
         originalPrice: 20,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+        image: 'https://5.imimg.com/data5/BG/XG/GLADMIN-7209162/bisleri-mountain-water-20-l-250x250.png',
       ),
       ProductModel(
         id: 'wic_2',
@@ -410,7 +410,7 @@ class ColdDrinksMockData {
         price: 28,
         originalPrice: 30,
         discount: '6% OFF',
-        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40172375-7_5-tata-added-mineral-water-copper-plus-for-immunity-active-lifestyle.jpg',
       ),
       ProductModel(
         id: 'wic_3',
@@ -420,7 +420,7 @@ class ColdDrinksMockData {
         price: 10,
         originalPrice: 10,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+        image: 'https://www.bbassets.com/media/uploads/p/l/40334330_3-clear-water-premium-drinking-water-with-added-minerals.jpg',
       ),
       ProductModel(
         id: 'wic_4',
@@ -431,7 +431,7 @@ class ColdDrinksMockData {
         originalPrice: 75,
         discount: '20% OFF',
         badge: 'Chilled',
-        image: 'https://pngimg.com/uploads/ice_cubes/ice_cubes_PNG23.png',
+        image: 'https://png.pngtree.com/png-clipart/20240610/original/pngtree-transparent-ice-cube-pack-png-image_15295938.png',
       ),
     ],
 
@@ -448,7 +448,7 @@ class ColdDrinksMockData {
         originalPrice: 22,
         discount: '4% OFF',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://m.media-amazon.com/images/I/41akRAbexAL.jpg',
       ),
       ProductModel(
         id: 'sm_2',
@@ -458,7 +458,7 @@ class ColdDrinksMockData {
         price: 60,
         originalPrice: 65,
         discount: '8% OFF',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3daefaYx6sOm2r27OqClf77DQNRkwqgo4TL-epJOryQ&s=10',
       ),
       ProductModel(
         id: 'sm_3',
@@ -468,7 +468,7 @@ class ColdDrinksMockData {
         price: 20,
         originalPrice: 20,
         discount: 'MRP',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://5.imimg.com/data5/SELLER/Default/2024/4/408535250/IB/JF/MB/109676491/750ml-bisleri-club-soda.png',
       ),
       ProductModel(
         id: 'sm_4',
@@ -478,7 +478,7 @@ class ColdDrinksMockData {
         price: 130,
         originalPrice: 150,
         discount: '13% OFF',
-        image: 'https://pngimg.com/uploads/cocacola/cocacola_PNG22.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROeziYulik7UHSxL_Fovo-nOW8olJAgyxDIWmhn_qlMLOFPAM0utk3dxk&s=10',
       ),
     ],
 
@@ -495,7 +495,7 @@ class ColdDrinksMockData {
         originalPrice: 65,
         discount: '12% OFF',
         badge: 'Ad',
-        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+        image: 'https://www.tatanutrikorner.com/cdn/shop/files/FOP_438eec3d-b4ff-4886-8fad-0a80afebd85b-removebg-preview.png?v=1748858210',
       ),
       ProductModel(
         id: 'mbd_2',
@@ -506,7 +506,7 @@ class ColdDrinksMockData {
         originalPrice: 15,
         discount: 'MRP',
         badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+        image: 'https://m.media-amazon.com/images/I/71WnRjJeV0L.jpg',
       ),
       ProductModel(
         id: 'mbd_3',
@@ -517,7 +517,7 @@ class ColdDrinksMockData {
         originalPrice: 45,
         discount: '11% OFF',
         badge: 'Ad',
-        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+        image: 'https://www.bbassets.com/media/uploads/p/xl/40358291_6-sunfeast-sunfeast-breakfast-smoothie-160ml.jpg',
       ),
       ProductModel(
         id: 'mbd_4',
@@ -528,7 +528,7 @@ class ColdDrinksMockData {
         originalPrice: 65,
         discount: '17% OFF',
         badge: 'SWITCH',
-        image: 'https://pngimg.com/uploads/milk/milk_PNG99573.png',
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2026/3/16/5e89164d-583c-4c59-aa7a-dff6e438db38_351803-1.png',
       ),
     ],
   };
