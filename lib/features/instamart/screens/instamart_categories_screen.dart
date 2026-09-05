@@ -108,10 +108,7 @@ class InstamartCategoriesScreen extends StatelessWidget {
       'name': 'Feminine Hygiene',
       'image': 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png',
     },
-    {
-      'name': 'Sexual Wellness',
-      'image': 'https://pngimg.com/uploads/perfume/perfume_PNG10237.png',
-    },
+   
     {
       'name': 'Health and Pharma',
       'image': 'https://pngimg.com/uploads/pills/pills_PNG98.png',

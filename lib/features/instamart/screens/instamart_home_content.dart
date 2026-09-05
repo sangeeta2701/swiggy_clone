@@ -42,7 +42,6 @@ class InstamartHomeContent extends ConsumerWidget {
     {'name': 'Skincare', 'image': 'https://pngimg.com/uploads/cream/cream_PNG23.png'},
     {'name': 'Makeup', 'image': 'https://pngimg.com/uploads/lipstick/lipstick_PNG27.png'},
     {'name': 'Feminine Hygiene', 'image': 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'},
-    {'name': 'Sexual Wellness', 'image': 'https://pngimg.com/uploads/perfume/perfume_PNG10237.png'},
     {'name': 'Health and Pharma', 'image': 'https://pngimg.com/uploads/pills/pills_PNG98.png'},
     {'name': 'Baby Care', 'image': 'https://pngimg.com/uploads/baby/baby_PNG52680.png'},
   ];

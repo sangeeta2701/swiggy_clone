@@ -46,14 +46,20 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 4. Beauty & Wellness Router (Handles Bath & Body + Hair Care)
+  // 4. Beauty & Wellness Router (Handles all personal care items)
   else if (section.contains('beauty') || 
            item.contains('bath') || 
            item.contains('body') || 
            item.contains('hair') || 
            item.contains('shampoo') || 
            item.contains('skin') || 
-           item.contains('makeup')) {
+           item.contains('makeup') || 
+           item.contains('feminine') || 
+           item.contains('hygiene') || 
+           item.contains('health') || 
+           item.contains('pharma') || 
+           item.contains('baby') || 
+           item.contains('sexual')) {
     targetScreen = BeautyCategoryProductsScreen(
       categoryName: itemName,
       selectedSubCategory: itemName,

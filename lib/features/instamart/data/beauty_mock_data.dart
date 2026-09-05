@@ -49,6 +49,43 @@ class BeautyMockData {
       CategoryModel(name: 'Tools & Brushes', image: 'https://pngimg.com/uploads/soap/soap_PNG42.png'),
       CategoryModel(name: 'Beauty Supplements', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
     ],
+
+    // --- 5. FEMININE HYGIENE (UPDATED EXACT SUBCATEGORIES) ---
+    'Feminine Hygiene': [
+      CategoryModel(name: 'Sanitary Pads', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      CategoryModel(name: 'Period Panties and Patches', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      CategoryModel(name: 'Hair Removal', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      CategoryModel(name: 'Menstrual Cups and Tampons', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      CategoryModel(name: 'Intimate Wipes and Washes', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      CategoryModel(name: 'Disposal Bags and Accessories', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+
+    // --- 6. HEALTH AND PHARMA (UPDATED EXACT SUBCATEGORIES) ---
+    'Health and Pharma': [
+      CategoryModel(name: 'Oral & Dental Care', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Infections & First Aid', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Immunity & Energy', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Gummies', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Heart & Blood Care', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Weight Management', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Superfoods', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      CategoryModel(name: 'Allergy, Cough & Cold', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+
+    // --- 7. BABY CARE (UPDATED EXACT SUBCATEGORIES) ---
+    'Baby Care': [
+      CategoryModel(name: 'Baby Diapers', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Food and Cereals', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Bathing', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Wipes', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Cream & Lotion', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Gifts & More', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Feeding and Teething', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Oil and Talc', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Hygiene', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Books and Toys', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      CategoryModel(name: 'Baby Oral Care', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
   };
 
   static const Map<String, List<ProductModel>> catalogProducts = {
@@ -252,6 +289,168 @@ class BeautyMockData {
       ProductModel(id: 'mu_tb2', name: 'Nutips Eco-Fresh Cotton Balls 80 Units', weight: '80 pieces', eta: '6 MINS', price: 72, originalPrice: 75, discount: '4% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/soap/soap_PNG42.png'),
       ProductModel(id: 'mu_tb3', name: 'Gubb 250ml Transparent Hair Spray Bottle', weight: '50 g', eta: '6 MINS', price: 145, originalPrice: 155, discount: '6% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/soap/soap_PNG42.png'),
       ProductModel(id: 'mu_tb4', name: 'Gubb Cotton Balls (Pack of 50)', weight: '50 pieces', eta: '6 MINS', price: 59, originalPrice: 64, discount: '7% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/soap/soap_PNG42.png'),
+    ],
+
+    // =========================================================================
+    // 5. FEMININE HYGIENE CATALOG
+    // =========================================================================
+    'Sanitary Pads': [
+      ProductModel(id: 'fh_sp1', name: 'Whisper Choice Wings Sanitary Pads Pack', weight: '20 Pads', eta: '6 MINS', price: 110, originalPrice: 130, discount: '15% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_sp2', name: 'Stayfree Secure Extra Large Cottony Soft', weight: '28 Pads', eta: '6 MINS', price: 180, originalPrice: 220, discount: '18% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_sp3', name: 'Sofy Bodyfit Extra Long Overnight Pads', weight: '14 Pads', eta: '6 MINS', price: 145, originalPrice: 175, discount: '17% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_sp4', name: 'Nua Ultra Thin Rash-Free Sanitary Pads', weight: '12 Pads', eta: '6 MINS', price: 199, originalPrice: 249, discount: '20% OFF', badge: 'Price Drop', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+    'Period Panties and Patches': [
+      ProductModel(id: 'fh_pp1', name: 'Sensur Ayurvedic Cramp Relief Roll On Fast & Safe', weight: '50 ml', eta: '6 MINS', price: 199, originalPrice: 299, discount: '33% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_pp2', name: 'Nua Cramp Comfort - Heat Patches For Period Pain', weight: '3 pieces', eta: '6 MINS', price: 277, originalPrice: 315, discount: '12% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_pp3', name: 'Plush Herbal Cramp Relief for Period Pain Self Heating', weight: '2 pieces', eta: '6 MINS', price: 200, originalPrice: 232, discount: '13% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_pp4', name: 'Whisper Period Panties Heavy Flow Protection', weight: '2 Pieces', eta: '6 MINS', price: 149, originalPrice: 180, discount: '17% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+    'Hair Removal': [
+      ProductModel(id: 'fh_hr1', name: 'Veet Pure Hair Removal Cream (Sensitive Skin)', weight: '100 g', eta: '6 MINS', price: 224, originalPrice: 325, discount: '31% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_hr2', name: 'Veet Ready-to-use Wax Strips (Sensitive Skin)', weight: '20 pieces', eta: '6 MINS', price: 233, originalPrice: 299, discount: '22% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_hr3', name: 'Plush Bikini Razor | No Cuts, No Bumps Promise', weight: '2 Pack', eta: '6 MINS', price: 202, originalPrice: 269, discount: '25% OFF', badge: 'Price Drop', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_hr4', name: 'Plush Foldable Face & Eyebrow Razor | Painless', weight: '3 pieces', eta: '6 MINS', price: 149, originalPrice: 299, discount: '50% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+    'Menstrual Cups and Tampons': [
+      ProductModel(id: 'fh_mc1', name: 'Pee Safe Medical Grade Silicone Menstrual Cup', weight: '1 Unit', eta: '6 MINS', price: 299, originalPrice: 399, discount: '25% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_mc2', name: 'Suki Reusable Menstrual Cup Large Size', weight: '1 Unit', eta: '6 MINS', price: 349, originalPrice: 499, discount: '30% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_mc3', name: 'Digital Tampons Regular Applicator Free', weight: '16 Tampons', eta: '6 MINS', price: 210, originalPrice: 260, discount: '19% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_mc4', name: 'Sofy Digital Tampons Super Absorbent', weight: '20 Tampons', eta: '6 MINS', price: 250, originalPrice: 299, discount: '16% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+    'Intimate Wipes and Washes': [
+      ProductModel(id: 'fh_iw1', name: 'VWash Plus Expert Intimate Hygiene Wash', weight: '100 ml', eta: '6 MINS', price: 165, originalPrice: 199, discount: '17% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_iw2', name: 'Lactacyd Feminine Hygiene Wash Bottle', weight: '250 ml', eta: '6 MINS', price: 280, originalPrice: 350, discount: '20% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_iw3', name: 'Pee Safe Natural Intimate Wash For Women', weight: '105 ml', eta: '6 MINS', price: 185, originalPrice: 225, discount: '18% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_iw4', name: 'Pee Safe Wet Intimate Wipes Pack', weight: '10 Wipes', eta: '6 MINS', price: 99, originalPrice: 120, discount: '17% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+    'Disposal Bags and Accessories': [
+      ProductModel(id: 'fh_db1', name: 'Plush Disposal Bags for Pads & Condoms | Biodegradable', weight: '50 pieces', eta: '6 MINS', price: 152, originalPrice: 179, discount: '15% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_db2', name: 'Pee Safe Oxo-Biodegradable Sanitary Disposal Bags', weight: '30 Bags', eta: '6 MINS', price: 149, originalPrice: 175, discount: '15% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_db3', name: 'Carmesi Disposable Bags For Sanitary Waste', weight: '25 Bags', eta: '6 MINS', price: 120, originalPrice: 150, discount: '20% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+      ProductModel(id: 'fh_db4', name: 'Suki Odour Free Sanitary Disposal Bags', weight: '40 Bags', eta: '6 MINS', price: 130, originalPrice: 160, discount: '18% OFF', image: 'https://pngimg.com/uploads/wet_wipes/wet_wipes_PNG18.png'),
+    ],
+
+    // =========================================================================
+    // 6. HEALTH AND PHARMA CATALOG
+    // =========================================================================
+    'Oral & Dental Care': [
+      ProductModel(id: 'hp_od1', name: 'Colgate Total Dental Cream Toothpaste', weight: '150 g', eta: '6 MINS', price: 145, originalPrice: 175, discount: '17% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_od2', name: 'Sensodyne Rapid Relief Sensitive Toothpaste', weight: '80 g', eta: '6 MINS', price: 190, originalPrice: 220, discount: '13% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_od3', name: 'Listerine Antiseptic Mouthwash Cool Mint', weight: '250 ml', eta: '6 MINS', price: 155, originalPrice: 180, discount: '14% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_od4', name: 'Oral-B Essential Dental Floss Unwaxed', weight: '50 m', eta: '6 MINS', price: 125, originalPrice: 150, discount: '16% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Infections & First Aid': [
+      ProductModel(id: 'hp_fa1', name: 'Handyplast Waterproof Washproof Bandages', weight: '10 Strips', eta: '6 MINS', price: 30, originalPrice: 35, discount: '14% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_fa2', name: 'Dettol Antiseptic Liquid Bottle', weight: '250 ml', eta: '6 MINS', price: 125, originalPrice: 140, discount: '10% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_fa3', name: 'Savlon Antiseptic Disinfectant Liquid', weight: '500 ml', eta: '6 MINS', price: 180, originalPrice: 210, discount: '14% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_fa4', name: 'Hansaplast Regular Fabric Bandages Pack', weight: '20 Strips', eta: '6 MINS', price: 50, originalPrice: 60, discount: '16% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Immunity & Energy': [
+      ProductModel(id: 'hp_ie1', name: 'Rasayanam Shilajit Gold Resin For Strength & Muscle', weight: '20 g', eta: '6 MINS', price: 1299, originalPrice: 1499, discount: '13% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_ie2', name: 'The Vital Co Ashwagandha Powder', weight: '100 g', eta: '6 MINS', price: 599, originalPrice: 699, discount: '14% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_ie3', name: 'Kapiva Him Foods Shilajit Gold Resin', weight: '20 g', eta: '6 MINS', price: 1399, originalPrice: 1549, discount: '9% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_ie4', name: 'Honitus Hot Sip Ayurvedic Kaadha Sachets', weight: '7 pieces', eta: '6 MINS', price: 76, originalPrice: 84, discount: '9% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Gummies': [
+      ProductModel(id: 'hp_gm1', name: 'Man Matters Biotin Hair Gummies | No Added Sugar', weight: '30 Gummies', eta: '6 MINS', price: 549, originalPrice: 650, discount: '15% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_gm2', name: 'What\'s Up Wellness Natural Biotin Gummies', weight: '30 pieces', eta: '6 MINS', price: 622, originalPrice: 799, discount: '22% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_gm3', name: 'Bodywise Multivitamin Gummies For Women', weight: '30 Gummies', eta: '6 MINS', price: 499, originalPrice: 599, discount: '16% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_gm4', name: 'Power Gummies Jawdropper Skin Vitamin Gummies', weight: '30 Gummies', eta: '6 MINS', price: 650, originalPrice: 800, discount: '18% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Heart & Blood Care': [
+      ProductModel(id: 'hp_hb1', name: 'Saffola Gold Omega 3 Heart Care Oil', weight: '1 Litre', eta: '6 MINS', price: 195, originalPrice: 230, discount: '15% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_hb2', name: 'Organic India Flaxseed Oil Capsules', weight: '60 Capsules', eta: '6 MINS', price: 345, originalPrice: 395, discount: '12% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_hb3', name: 'True Basics Omega 3 Fish Oil Triple Strength', weight: '60 Capsules', eta: '6 MINS', price: 899, originalPrice: 1099, discount: '18% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_hb4', name: 'Kapiva Garlic Juice Pure Heart Support', weight: '500 ml', eta: '6 MINS', price: 299, originalPrice: 350, discount: '14% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Weight Management': [
+      ProductModel(id: 'hp_wm1', name: 'The Baker\'s Dozen Elaichi Rusk, High Protein', weight: '80 g', eta: '6 MINS', price: 35, originalPrice: 40, discount: '12% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_wm2', name: 'Kellogg\'s Muesli 0% Added Sugar, High Protein', weight: '500 g', eta: '6 MINS', price: 247, originalPrice: 370, discount: '33% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_wm3', name: 'Supreme Harvest Cashew Split', weight: '100 g', eta: '6 MINS', price: 95, originalPrice: 120, discount: '20% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_wm4', name: 'Quaker Oats World\'s No.1 Oats Brand High Protein', weight: '400 g', eta: '6 MINS', price: 110, originalPrice: 130, discount: '15% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Superfoods': [
+      ProductModel(id: 'hp_sf1', name: 'Kapiva Amla Juice Pure Cold Pressed', weight: '1 Litre', eta: '6 MINS', price: 299, originalPrice: 350, discount: '14% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_sf2', name: 'Organic India Wheatgrass Powder', weight: '100 g', eta: '6 MINS', price: 220, originalPrice: 260, discount: '15% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_sf3', name: 'True Elements Chia Seeds Raw Superfood', weight: '250 g', eta: '6 MINS', price: 180, originalPrice: 225, discount: '20% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_sf4', name: 'Saffola FITTIFY Moringa Superfood Green Coffee', weight: '30 Sachets', eta: '6 MINS', price: 280, originalPrice: 350, discount: '20% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+    'Allergy, Cough & Cold': [
+      ProductModel(id: 'hp_ac1', name: 'Dabur Honitus Herbal Cough Syrup', weight: '100 ml', eta: '6 MINS', price: 95, originalPrice: 110, discount: '13% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_ac2', name: 'Vicks Vaporub Fast Relief Balm', weight: '50 g', eta: '6 MINS', price: 155, originalPrice: 175, discount: '11% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_ac3', name: 'Cofsils Lemon Lozenges Pack', weight: '10 Lozenges', eta: '6 MINS', price: 30, originalPrice: 35, discount: '14% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+      ProductModel(id: 'hp_ac4', name: 'Vicks Inhaler Portable Relief', weight: '0.5 ml', eta: '6 MINS', price: 65, originalPrice: 70, discount: '7% OFF', image: 'https://pngimg.com/uploads/pills/pills_PNG98.png'),
+    ],
+
+    // =========================================================================
+    // 7. BABY CARE CATALOG
+    // =========================================================================
+    'Baby Diapers': [
+      ProductModel(id: 'bc_bd1', name: 'Huggies Natural Soft Premium Pant Style Baby Diaper (Large)', weight: '50 Pieces', eta: '6 MINS', price: 777, originalPrice: 1299, discount: '40% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bd2', name: 'Huggies Natural Soft Premium Pant Style Baby Diaper (Medium)', weight: '60 Pieces', eta: '6 MINS', price: 747, originalPrice: 1299, discount: '42% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bd3', name: 'Pampers Premium Care Pants L 88', weight: '88 Pieces', eta: '6 MINS', price: 2393, originalPrice: 2849, discount: '16% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bd4', name: 'Pampers Premium Care Pants L 44 | No Marks Design', weight: '44 Pieces', eta: '6 MINS', price: 1049, originalPrice: 1499, discount: '30% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Food and Cereals': [
+      ProductModel(id: 'bc_bf1', name: 'Nestle Ceregrow Multigrain Milk & Fruits Cereal', weight: '300 g', eta: '6 MINS', price: 268, originalPrice: 299, discount: '10% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bf2', name: 'Nestle Lactogrow Nutritious Milk Drink For Growing Children', weight: '400 g', eta: '6 MINS', price: 337, originalPrice: 375, discount: '10% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bf3', name: 'Nestlé CERELAC Wheat Apple Carrot Baby Food Cereal', weight: '300 g', eta: '6 MINS', price: 260, originalPrice: 290, discount: '10% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bf4', name: 'Slurrp Farm Fruit and Vegetable Teething Puffs Combo', weight: '45 g', eta: '6 MINS', price: 147, originalPrice: 165, discount: '11% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Bathing': [
+      ProductModel(id: 'bc_bb1', name: 'Cetaphil Face and Body Baby Mild Bar (Shea Butter, Olive)', weight: '75 g', eta: '6 MINS', price: 191, originalPrice: 260, discount: '26% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bb2', name: 'Aveeno Baby Daily Moisture Wash & Shampoo (Oat)', weight: '354 ml', eta: '6 MINS', price: 685, originalPrice: 950, discount: '28% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bb3', name: 'Baby Sebamed Extra Soft Baby Wash', weight: '200 ml', eta: '6 MINS', price: 520, originalPrice: 590, discount: '11% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bb4', name: 'Johnson\'s Baby Shampoo', weight: '200 ml', eta: '6 MINS', price: 147, originalPrice: 240, discount: '38% OFF', badge: 'Price Drop', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Wipes': [
+      ProductModel(id: 'bc_bw1', name: 'Himalaya Gentle Baby Wipes Pack of 2', weight: '140 Wipes', eta: '6 MINS', price: 210, originalPrice: 280, discount: '25% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bw2', name: 'Johnson\'s Baby Skincare Wipes Lid Pack', weight: '80 Wipes', eta: '6 MINS', price: 185, originalPrice: 220, discount: '15% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bw3', name: 'Pampers Fresh Clean Baby Wipes', weight: '64 Wipes', eta: '6 MINS', price: 160, originalPrice: 199, discount: '19% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bw4', name: 'Mother Sparsh 99% Pure Water Baby Wipes', weight: '72 Wipes', eta: '6 MINS', price: 225, originalPrice: 299, discount: '24% OFF', badge: 'Price Drop', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Cream & Lotion': [
+      ProductModel(id: 'bc_bl1', name: 'Himalaya Baby Derma Cream With Pure Cow Ghee', weight: '50 g', eta: '6 MINS', price: 112, originalPrice: 125, discount: '10% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bl2', name: 'Atogla Baby Lotion 200ml', weight: '200 ml', eta: '6 MINS', price: 625, originalPrice: 666, discount: '6% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bl3', name: 'Mother Sparsh Milky Soft Baby Lotion - 400ml', weight: '400 ml', eta: '6 MINS', price: 235, originalPrice: 449, discount: '47% OFF', badge: 'Price Drop', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bl4', name: 'Johnson & Johnson Baby Lotion (Soft Skin, All Day Long)', weight: '200 ml', eta: '6 MINS', price: 201, originalPrice: 230, discount: '12% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Gifts & More': [
+      ProductModel(id: 'bc_gm1', name: 'Himalaya Baby Care Gift Basket Pack', weight: '1 Kit', eta: '6 MINS', price: 499, originalPrice: 650, discount: '23% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_gm2', name: 'Johnson\'s Baby Essential Gift Box Set', weight: '1 Kit', eta: '6 MINS', price: 550, originalPrice: 700, discount: '21% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_gm3', name: 'Sebamed Baby Welcome Gift Kit', weight: '1 Kit', eta: '6 MINS', price: 890, originalPrice: 1050, discount: '15% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_gm4', name: 'Mamaearth Welcome Baby Essential Gift Box', weight: '1 Kit', eta: '6 MINS', price: 799, originalPrice: 999, discount: '20% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Feeding and Teething': [
+      ProductModel(id: 'bc_ft1', name: 'Philips Avent Electric Breast Pump | No.1 Brand', weight: '1 Piece', eta: '6 MINS', price: 4885, originalPrice: 7495, discount: '34% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_ft2', name: 'Philips Avent Baby Bottle Sterilizer', weight: '1 Piece', eta: '6 MINS', price: 3199, originalPrice: 4995, discount: '35% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_ft3', name: 'Philips Natural Response Baby Bottle- 260ml', weight: '1 Piece', eta: '6 MINS', price: 585, originalPrice: 650, discount: '10% OFF', badge: 'TRENDING', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_ft4', name: 'Philips Avent Natural Response Baby Feeding Bottle | 125ml', weight: '1 Piece', eta: '6 MINS', price: 490, originalPrice: 550, discount: '10% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Oil and Talc': [
+      ProductModel(id: 'bc_ot1', name: 'Cetaphil Baby Massage Oil', weight: '200 ml', eta: '6 MINS', price: 638, originalPrice: 799, discount: '20% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_ot2', name: 'Johnson\'s Baby Powder Natural 400G', weight: '400 g', eta: '6 MINS', price: 281, originalPrice: 375, discount: '25% OFF', badge: 'Ad', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_ot3', name: 'Johnson & Johnson Baby Oil (Vitamin-E)', weight: '200 ml', eta: '6 MINS', price: 232, originalPrice: 270, discount: '14% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_ot4', name: 'Mee mee soft feel powder puff with box holder container', weight: '1 Piece', eta: '6 MINS', price: 224, originalPrice: 299, discount: '25% OFF', badge: 'BESTSELLER', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Hygiene': [
+      ProductModel(id: 'bc_bh1', name: 'Chicco Baby Liquid Laundry Detergent', weight: '1 Litre', eta: '6 MINS', price: 425, originalPrice: 499, discount: '14% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bh2', name: 'Pigeon Baby Bottle Cleanser Liquid', weight: '500 ml', eta: '6 MINS', price: 310, originalPrice: 375, discount: '17% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bh3', name: 'Mee Mee Anti-Bacterial Baby Liquid Cleanser', weight: '1.2 Litre', eta: '6 MINS', price: 380, originalPrice: 475, discount: '20% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bh4', name: 'Mother Sparsh Plant Powered Baby Laundry Detergent', weight: '1 Litre', eta: '6 MINS', price: 399, originalPrice: 499, discount: '20% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Books and Toys': [
+      ProductModel(id: 'bc_bt1', name: 'Fisher-Price High Contrast Black & White Flash Cards', weight: '1 Pack', eta: '6 MINS', price: 299, originalPrice: 399, discount: '25% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bt2', name: 'Shumee Soft Cloth Rattles Set For Infants', weight: '2 Pieces', eta: '6 MINS', price: 350, originalPrice: 450, discount: '22% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bt3', name: 'First 100 Board Books Set For Toddlers', weight: '4 Books', eta: '6 MINS', price: 280, originalPrice: 399, discount: '29% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_bt4', name: 'Skillmatics Soft Animal Touch & Feel Book', weight: '1 Book', eta: '6 MINS', price: 320, originalPrice: 420, discount: '23% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+    ],
+    'Baby Oral Care': [
+      ProductModel(id: 'bc_boc1', name: 'Mee Mee Gentle Silicone Finger Toothbrush', weight: '1 Piece', eta: '6 MINS', price: 95, originalPrice: 120, discount: '20% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_boc2', name: 'Chicco Fluoride Free Apple Banana Toothpaste', weight: '50 g', eta: '6 MINS', price: 165, originalPrice: 199, discount: '17% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_boc3', name: 'Colgate Kids Toothbrush Extra Soft 2+ Years', weight: '1 Piece', eta: '6 MINS', price: 45, originalPrice: 50, discount: '10% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
+      ProductModel(id: 'bc_boc4', name: 'Pigeon Training Toothbrush Lesson 1-2-3 Set', weight: '3 Pieces', eta: '6 MINS', price: 290, originalPrice: 350, discount: '17% OFF', image: 'https://pngimg.com/uploads/baby/baby_PNG52680.png'),
     ],
   };
 }
