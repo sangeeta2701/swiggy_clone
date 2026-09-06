@@ -34,19 +34,20 @@ void navigateToCategoryProducts(
       selectedSubCategory: 'Soft Drinks',
     );
   } 
-  // 3. Snacks & Drinks Router
+  // 3. Snacks & Drinks Router (UPDATED: Pass itemName to categoryName)
   else if (section.contains('snack') || 
            item.contains('chips') || 
            item.contains('chocolate') || 
            item.contains('biscuit') || 
            item.contains('tea') || 
-           item.contains('sweet')) {
+           item.contains('sweet') ||
+           item.contains('ice cream')) {
     targetScreen = SnacksCategoryProductsScreen(
-      categoryName: sectionTitle,
+      categoryName: itemName, // <--- Displays the exact item clicked (e.g. Chips and Namkeens)
       selectedSubCategory: itemName,
     );
   } 
-  // 4. Beauty & Wellness Router (Handles all personal care items)
+  // 4. Beauty & Wellness Router
   else if (section.contains('beauty') || 
            item.contains('bath') || 
            item.contains('body') || 
@@ -58,14 +59,13 @@ void navigateToCategoryProducts(
            item.contains('hygiene') || 
            item.contains('health') || 
            item.contains('pharma') || 
-           item.contains('baby') || 
-           item.contains('sexual')) {
+           item.contains('baby')) {
     targetScreen = BeautyCategoryProductsScreen(
       categoryName: itemName,
       selectedSubCategory: itemName,
     );
   } 
-  // 5. Fresh Items Router (Vegetables, Fruits, Dairy, Meat)
+  // 5. Fresh Items Router
   else {
     targetScreen = InstamartCategoryProductsScreen(
       categoryName: itemName,

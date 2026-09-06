@@ -39,7 +39,6 @@ class _SnacksCategoryProductsScreenState
     final String selected = widget.selectedSubCategory.trim().toLowerCase();
     final String category = widget.categoryName.trim().toLowerCase();
 
-    // 1. Resolve sidebar subcategories from SnacksMockData.categorySubCategories
     List<CategoryModel>? foundList;
     SnacksMockData.categorySubCategories.forEach((key, list) {
       final k = key.trim().toLowerCase();
@@ -51,7 +50,6 @@ class _SnacksCategoryProductsScreenState
     availableSidebarCategories =
         foundList ?? SnacksMockData.categorySubCategories.values.first;
 
-    // 2. Select initial active subcategory
     final matchingSub = availableSidebarCategories.firstWhere(
       (sub) {
         final subName = sub.name.trim().toLowerCase();
@@ -100,6 +98,11 @@ class _SnacksCategoryProductsScreenState
     final List<ProductModel> activeProducts =
         SnacksMockData.catalogProducts[activeSubCat] ?? const <ProductModel>[];
 
+    // Compute display title for the AppBar
+    final String appBarTitle = widget.selectedSubCategory.isNotEmpty
+        ? widget.selectedSubCategory
+        : widget.categoryName;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -113,7 +116,7 @@ class _SnacksCategoryProductsScreenState
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.categoryName, style: AppTextStyles.instamartSectionHeader),
+            Text(appBarTitle, style: AppTextStyles.instamartSectionHeader),
             Text(
               '${activeProducts.length} items available',
               style: TextStyle(
