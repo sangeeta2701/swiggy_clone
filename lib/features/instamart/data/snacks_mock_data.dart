@@ -96,7 +96,6 @@ class SnacksMockData {
     ],
 
     // --- 4. CHIPS AND NAMKEENS ---
-   
     'Chips and Namkeens': [
       CategoryModel(
         name: 'Chips and Crisps',
@@ -140,7 +139,7 @@ class SnacksMockData {
       ),
       CategoryModel(
         name: 'Popcorn',
-        image: 'hhttps://www.bbassets.com/media/uploads/p/l/189220_8-act-ii-instant-popcorn-classic-salted-hot-fresh-delicious.jpg',
+        image: 'https://www.bbassets.com/media/uploads/p/l/189220_8-act-ii-instant-popcorn-classic-salted-hot-fresh-delicious.jpg',
       ),
       CategoryModel(
         name: 'Fasting Snacks',
@@ -171,7 +170,7 @@ class SnacksMockData {
     // --- 6. BISCUITS AND CAKES ---
     'Biscuits and Cakes': [
       CategoryModel(
-        name: 'Cookies',
+        name: 'Cakes & Pies',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       CategoryModel(
@@ -179,17 +178,64 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       CategoryModel(
-        name: 'Rusks & Toast',
+        name: 'Cookies',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       CategoryModel(
-        name: 'Cakes & Rolls',
+        name: 'Marie & Digestive',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Salted & Plain',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Gift Boxes',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Regional Favourites',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Rusk',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Healthy Snacking',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Wafers',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Gourmet collection',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      CategoryModel(
+        name: 'Pancake Mixes',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      CategoryModel(
+        name: 'Dessert Mixes',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      CategoryModel(
+        name: 'Baking Ingredients',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      CategoryModel(
+        name: 'Flavouring Agents',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      CategoryModel(
+        name: 'Fresh Bakery',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
       ),
     ],
 
-    // --- 7. ICE CREAMS AND FROZEN... ---
-    // --- ICE CREAMS AND FROZEN DESSERTS (FULL SUBCATEGORY LIST) ---
+    // --- 7. ICE CREAMS AND FROZEN DESSERTS ---
     'Ice Creams and Frozen...': [
       CategoryModel(
         name: 'Tubs & Party Packs',
@@ -1064,49 +1110,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/candy/candy_PNG98.png',
       ),
     ],
-    'Cream Biscuits': [
-      ProductModel(
-        id: 'sc_cb1',
-        name: 'Oreo Dark Fantasy Bourbon',
-        weight: '120 g',
-        eta: '8 MINS',
-        price: 35,
-        originalPrice: 40,
-        discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/candy/candy_PNG98.png',
-      ),
-      ProductModel(
-        id: 'sc_cb2',
-        name: 'Sunfeast Dark Fantasy Choco Fills',
-        weight: '300 g',
-        eta: '8 MINS',
-        price: 120,
-        originalPrice: 150,
-        discount: '20% OFF',
-        badge: 'BESTSELLER',
-        image: 'https://pngimg.com/uploads/candy/candy_PNG98.png',
-      ),
-      ProductModel(
-        id: 'sc_cb3',
-        name: 'Hide & Seek Chocolate Chip Biscuits',
-        weight: '200 g',
-        eta: '8 MINS',
-        price: 50,
-        originalPrice: 50,
-        discount: 'MRP',
-        image: 'https://pngimg.com/uploads/candy/candy_PNG98.png',
-      ),
-      ProductModel(
-        id: 'sc_cb4',
-        name: 'Britannia Jim Jam Biscuits',
-        weight: '150 g',
-        eta: '8 MINS',
-        price: 35,
-        originalPrice: 40,
-        discount: '12% OFF',
-        image: 'https://pngimg.com/uploads/candy/candy_PNG98.png',
-      ),
-    ],
     'Mysore Pak': [
       ProductModel(
         id: 'mp_1',
@@ -1154,8 +1157,6 @@ class SnacksMockData {
     // -------------------------------------------------------------------------
     // 4. CHIPS AND NAMKEENS SUBCATEGORIES
     // -------------------------------------------------------------------------
-
-    // 1. CHIPS AND CRISPS
     'Chips and Crisps': [
       ProductModel(
         id: 'cn_cc1',
@@ -1222,8 +1223,6 @@ class SnacksMockData {
         image: 'https://www.starquik.com/cdn/shop/files/SQ157238_FOP_4162dcfd-c5e1-43de-bfa4-df77a339e224.jpg?v=1776847747',
       ),
     ],
-
-    // 2. BHUJIA AND NAMKEENS
     'Bhujia and Namkeens': [
       ProductModel(
         id: 'cn_bn1',
@@ -1291,8 +1290,6 @@ class SnacksMockData {
         image: 'https://www.bbassets.com/media/uploads/p/xl/20002427_3-haldirams-namkeen-khatta-meetha.jpg',
       ),
     ],
-
-    // 3. PALM OIL FREE
     'Palm Oil Free': [
       ProductModel(
         id: 'cn_po1',
@@ -1359,8 +1356,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 4. INDIAN SNACKS
     'Indian Snacks': [
       ProductModel(
         id: 'cn_is1',
@@ -1427,8 +1422,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 5. BAKED AND ROASTED
     'Baked and Roasted': [
       ProductModel(
         id: 'cn_br1',
@@ -1495,8 +1488,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 6. NUTS
     'Nuts': [
       ProductModel(
         id: 'cn_nt1',
@@ -1561,8 +1552,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 7. PUFFS AND CRUNCHIES
     'Puffs and Crunchies': [
       ProductModel(
         id: 'cn_pc1',
@@ -1628,8 +1617,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 8. MAKHANA & DRY FRUIT SNACKS
     'Makhana & Dry Fruit Snacks': [
       ProductModel(
         id: 'cn_mdf1',
@@ -1695,8 +1682,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 9. HEALTHY SNACKING
     'Healthy Snacking': [
       ProductModel(
         id: 'cn_hs1',
@@ -1762,8 +1747,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 10. NACHOS
     'Nachos': [
       ProductModel(
         id: 'cn_nc1',
@@ -1830,8 +1813,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 11. POPCORN
     'Popcorn': [
       ProductModel(
         id: 'cn_pp1',
@@ -1898,8 +1879,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
       ),
     ],
-
-    // 12. FASTING SNACKS
     'Fasting Snacks': [
       ProductModel(
         id: 'cn_fs1',
@@ -1966,7 +1945,7 @@ class SnacksMockData {
       ),
     ],
 
-    // 13. REGIONAL FAVOURITES
+    // --- MERGED CONSOLIDATED KEY FOR REGIONAL FAVOURITES / FAVORITES ---
     'Regional Favourites': [
       ProductModel(
         id: 'cn_rf1',
@@ -2003,34 +1982,34 @@ class SnacksMockData {
       ),
       ProductModel(
         id: 'cn_rf4',
-        name: 'Bikaji Bikaneri Bhujia Sev Pack',
-        weight: '200 g',
+        name: 'Karachi Bakery Hyderabad Fruit Biscuits',
+        weight: '400 g',
         eta: '11 MINS',
-        price: 49,
-        originalPrice: 60,
-        discount: '18% OFF',
-        badge: 'TRENDING',
-        image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
+        price: 210,
+        originalPrice: 250,
+        discount: '16% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
         id: 'cn_rf5',
-        name: 'Haldiram\'s Nagpur Murukku Pack',
-        weight: '200 g',
+        name: 'Karachi Bakery Osmania Salted Biscuits',
+        weight: '400 g',
         eta: '11 MINS',
-        price: 60,
-        originalPrice: 70,
-        discount: '14% OFF',
-        image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
+        price: 195,
+        originalPrice: 230,
+        discount: '15% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
         id: 'cn_rf6',
-        name: 'Lijjat Udad Dal Special Papad',
-        weight: '200 g',
+        name: 'Chitale Bandhu Bakarwadi Pack',
+        weight: '250 g',
         eta: '11 MINS',
-        price: 72,
-        originalPrice: 80,
-        discount: '10% OFF',
-        image: 'https://pngimg.com/uploads/potato_chips/potato_chips_PNG73.png',
+        price: 95,
+        originalPrice: 110,
+        discount: '13% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
     ],
 
@@ -2170,43 +2149,200 @@ class SnacksMockData {
     // -------------------------------------------------------------------------
     // 6. BISCUITS AND CAKES SUBCATEGORIES
     // -------------------------------------------------------------------------
-    'Cookies': [
+    'Cakes & Pies': [
       ProductModel(
-        id: 'ck_1',
-        name: 'Sunfeast Dark Fantasy Choco Fills',
-        weight: '300 g',
-        eta: '8 MINS',
-        price: 120,
-        originalPrice: 150,
-        discount: '20% OFF',
+        id: 'bc_cp1',
+        name: 'Cadbury Chocobakes Choc Layered Cakes',
+        weight: '114 g',
+        eta: '11 MINS',
+        price: 63,
+        originalPrice: 80,
+        discount: '21% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cp2',
+        name: 'The Baker\'s Dozen Vanilla Cake Zero Maida, Eggless',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 100,
+        originalPrice: 175,
+        discount: '42% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cp3',
+        name: 'The Baker\'s Dozen Banana Walnut Cake Eggless',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 139,
+        originalPrice: 190,
+        discount: '26% OFF',
+        badge: 'Price Drop',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cp4',
+        name: 'Orion Choco Pie Chocolate Coated Soft Biscuits',
+        weight: '336 g',
+        eta: '11 MINS',
+        price: 107,
+        originalPrice: 180,
+        discount: '40% OFF',
+        badge: 'Price Drop',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cp5',
+        name: 'Britannia Gobbles Chocolate Cake',
+        weight: '120 g',
+        eta: '11 MINS',
+        price: 30,
+        originalPrice: 35,
+        discount: '14% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cp6',
+        name: 'Lotte Choco Pie Multipack',
+        weight: '168 g',
+        eta: '11 MINS',
+        price: 90,
+        originalPrice: 100,
+        discount: '10% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+
+    // --- CONSOLIDATED SINGLE ENTRY FOR CREAM BISCUITS ---
+    'Cream Biscuits': [
+      ProductModel(
+        id: 'bc_cb1',
+        name: 'Sunfeast Dark Fantasy Choco Fills | Chocolate Biscuit',
+        weight: '230 g',
+        eta: '11 MINS',
+        price: 99,
+        originalPrice: 170,
+        discount: '41% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cb2',
+        name: 'UNIBIC COOKIZO White Choco Chip Lemon & Orange',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 126,
+        originalPrice: 135,
+        discount: '6% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_cb3',
+        name: 'Cadbury Oreo Vanilla Flavour Crème Sandwich Biscuit',
+        weight: '41.75 g',
+        eta: '11 MINS',
+        price: 10,
+        originalPrice: 10,
+        discount: 'MRP',
         badge: 'BESTSELLER',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'ck_2',
-        name: 'Unibic Butter Cookies Pack',
-        weight: '150 g',
-        eta: '8 MINS',
-        price: 50,
-        originalPrice: 60,
-        discount: '16% OFF',
+        id: 'bc_cb4',
+        name: 'Parle Milano Center Filled Regular Chocolate',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 96,
+        originalPrice: 170,
+        discount: '43% OFF',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'ck_3',
+        id: 'bc_cb5',
         name: 'Parle Hide & Seek Choco Chip Cookies',
         weight: '200 g',
-        eta: '8 MINS',
+        eta: '11 MINS',
         price: 50,
         originalPrice: 50,
         discount: 'MRP',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'ck_4',
+        id: 'bc_cb6',
+        name: 'Cremica Classic Bourbon Super Value Pack',
+        weight: '418 g',
+        eta: '11 MINS',
+        price: 102,
+        originalPrice: 150,
+        discount: '32% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+    'Cookies': [
+      ProductModel(
+        id: 'bc_ck1',
+        name: 'Right Shift Jaggery Atta Cookies | No Palm Oil, 0% Maida',
+        weight: '120 g',
+        eta: '11 MINS',
+        price: 56,
+        originalPrice: 100,
+        discount: '44% OFF',
+        badge: 'SWITCH',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_ck2',
+        name: 'Sunfeast Farmlite Sugar Free Hazelnut & Oat',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 72,
+        originalPrice: 100,
+        discount: '28% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_ck3',
+        name: 'AROMA Chocolate Biscotti Cookies',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 204,
+        originalPrice: 240,
+        discount: '15% OFF',
+        badge: 'SWITCH',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_ck4',
+        name: 'Parle Hide & Seek Daybreak Choco Chip Cookies',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 26,
+        originalPrice: 30,
+        discount: '13% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_ck5',
+        name: 'Unibic Butter Cookies Pack',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 50,
+        originalPrice: 60,
+        discount: '16% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_ck6',
         name: 'Britannia Good Day Cashew Cookies',
         weight: '200 g',
-        eta: '8 MINS',
+        eta: '11 MINS',
         price: 45,
         originalPrice: 50,
         discount: '10% OFF',
@@ -2214,12 +2350,12 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
     ],
-    'Rusks & Toast': [
+    'Marie & Digestive': [
       ProductModel(
-        id: 'rt_1',
-        name: 'Britannia Bake Rusk Toast',
-        weight: '200 g',
-        eta: '8 MINS',
+        id: 'bc_md1',
+        name: 'Britannia Marie Gold Biscuits',
+        weight: '250 g',
+        eta: '11 MINS',
         price: 35,
         originalPrice: 40,
         discount: '12% OFF',
@@ -2227,85 +2363,704 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'rt_2',
-        name: 'Parle Premium Elaichi Rusk',
+        id: 'bc_md2',
+        name: 'NutriChoice Digestive High Fibre Biscuits',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 25,
+        originalPrice: 30,
+        discount: '16% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_md3',
+        name: 'McVitie\'s Digestive Original Biscuits',
+        weight: '250 g',
+        eta: '11 MINS',
+        price: 65,
+        originalPrice: 75,
+        discount: '13% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_md4',
+        name: 'Sunfeast Marie Light Oats Biscuits',
         weight: '200 g',
-        eta: '8 MINS',
+        eta: '11 MINS',
         price: 30,
         originalPrice: 35,
         discount: '14% OFF',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'rt_3',
-        name: 'Sunfeast Milk Rusk Extra Crunchy',
-        weight: '200 g',
-        eta: '8 MINS',
-        price: 32,
-        originalPrice: 38,
-        discount: '15% OFF',
+        id: 'bc_md5',
+        name: 'Parle Marie Biscuits Family Pack',
+        weight: '300 g',
+        eta: '11 MINS',
+        price: 40,
+        originalPrice: 45,
+        discount: '11% OFF',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'rt_4',
-        name: 'MTR Butter Rusk Sliced Toast',
-        weight: '200 g',
-        eta: '8 MINS',
-        price: 45,
-        originalPrice: 50,
-        discount: '10% OFF',
+        id: 'bc_md6',
+        name: 'McVitie\'s Wholewheat Marie Biscuits',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 28,
+        originalPrice: 35,
+        discount: '20% OFF',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
     ],
-    'Cakes & Rolls': [
+    'Salted & Plain': [
       ProductModel(
-        id: 'cr_1',
-        name: 'Britannia Gobbles Chocolate Cake',
-        weight: '120 g',
-        eta: '8 MINS',
-        price: 30,
-        originalPrice: 35,
-        discount: '14% OFF',
+        id: 'bc_sp1',
+        name: 'Parle Monaco Crispy Light Salty Snack',
+        weight: '185.6 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 40,
+        discount: '12% OFF',
+        badge: 'Ad',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'cr_2',
-        name: 'Lotte Choco Pie Multipack',
-        weight: '168 g',
-        eta: '8 MINS',
-        price: 90,
-        originalPrice: 100,
+        id: 'bc_sp2',
+        name: 'Parle Monaco Classic Salty Biscuits',
+        weight: '371.2 g',
+        eta: '11 MINS',
+        price: 59,
+        originalPrice: 70,
+        discount: '15% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_sp3',
+        name: 'Parle Krack Jack Sweet & Salty Crackers',
+        weight: '176.4 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 40,
+        discount: '12% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_sp4',
+        name: 'Britannia 5050 Maska Chaska Biscuits',
+        weight: '110 g',
+        eta: '11 MINS',
+        price: 20,
+        originalPrice: 30,
+        discount: '33% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_sp5',
+        name: 'Britannia 5050 Sweet & Salty Biscuits',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 20,
+        originalPrice: 25,
+        discount: '20% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_sp6',
+        name: 'Parle Cheeslings Salty Crackers Box',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 65,
+        originalPrice: 75,
+        discount: '13% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+    'Gift Boxes': [
+      ProductModel(
+        id: 'bc_gb1',
+        name: 'Cadbury Celebrations Rich Dry Fruit Gift Box',
+        weight: '177 g',
+        eta: '11 MINS',
+        price: 450,
+        originalPrice: 500,
         discount: '10% OFF',
         badge: 'BESTSELLER',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'cr_3',
-        name: 'Winkies Vanilla Swiss Roll Pack',
-        weight: '150 g',
-        eta: '8 MINS',
-        price: 50,
-        originalPrice: 60,
+        id: 'bc_gb2',
+        name: 'Unibic Assorted Cookies Premium Gift Tin',
+        weight: '500 g',
+        eta: '11 MINS',
+        price: 299,
+        originalPrice: 350,
+        discount: '14% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gb3',
+        name: 'Ferrero Rocher Premium Chocolates Gift Box',
+        weight: '16 Pieces',
+        eta: '11 MINS',
+        price: 499,
+        originalPrice: 550,
+        discount: '9% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gb4',
+        name: 'Parle Milano Assorted Cookies Luxury Box',
+        weight: '300 g',
+        eta: '11 MINS',
+        price: 250,
+        originalPrice: 300,
         discount: '16% OFF',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
       ),
       ProductModel(
-        id: 'cr_4',
-        name: 'Elite Plum Cake Slice Pack',
-        weight: '200 g',
-        eta: '8 MINS',
-        price: 80,
-        originalPrice: 95,
-        discount: '15% OFF',
+        id: 'bc_gb5',
+        name: 'Loacker Quadratini Wafer Gift Box',
+        weight: '250 g',
+        eta: '11 MINS',
+        price: 399,
+        originalPrice: 450,
+        discount: '11% OFF',
         image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gb6',
+        name: 'Walkers Shortbread Festive Cookie Tin',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 599,
+        originalPrice: 700,
+        discount: '14% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+    'Rusk': [
+      ProductModel(
+        id: 'bc_rk1',
+        name: 'Parle Premium Milk Rusk',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 40,
+        discount: '12% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_rk2',
+        name: 'Parle Premium Real Elaichi Rusk',
+        weight: '291.2 g',
+        eta: '11 MINS',
+        price: 51,
+        originalPrice: 60,
+        discount: '15% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_rk3',
+        name: 'Modern Milk Rusk Extra Crispy',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 29,
+        originalPrice: 35,
+        discount: '17% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_rk4',
+        name: 'Karachi Bakery Milk Rusk',
+        weight: '250 g',
+        eta: '11 MINS',
+        price: 152,
+        originalPrice: 155,
+        discount: '1% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_rk5',
+        name: 'The Baker\'s Dozen Elaichi Rusk, High Protein',
+        weight: '80 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 40,
+        discount: '12% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_rk6',
+        name: 'Britannia Bake Rusk Toast Elaichi',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 40,
+        discount: '12% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+    'Wafers': [
+      ProductModel(
+        id: 'bc_wf1',
+        name: 'BRB Shortcuts - Protein Wafer Bites 16g Protein',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 69,
+        originalPrice: 115,
+        discount: '40% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_wf2',
+        name: 'Dukes Waffy Choco Roll',
+        weight: '250 g',
+        eta: '11 MINS',
+        price: 94,
+        originalPrice: 180,
+        discount: '47% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_wf3',
+        name: 'Loacker Quadratini Dark Chocolate Italy',
+        weight: '125 g',
+        eta: '11 MINS',
+        price: 239,
+        originalPrice: 299,
+        discount: '20% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_wf4',
+        name: 'Loacker Classic Wafer Vanilla',
+        weight: '45 g',
+        eta: '11 MINS',
+        price: 100,
+        originalPrice: 149,
+        discount: '32% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_wf5',
+        name: 'Loacker Quadratini Napolitaner Hazelnut Italy',
+        weight: '125 g',
+        eta: '11 MINS',
+        price: 199,
+        originalPrice: 299,
+        discount: '33% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_wf6',
+        name: 'Loacker Quadratini Vanilla Italy',
+        weight: '125 g',
+        eta: '11 MINS',
+        price: 209,
+        originalPrice: 299,
+        discount: '30% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+    'Gourmet collection': [
+      ProductModel(
+        id: 'bc_gc1',
+        name: 'Loacker Quadratini Dark Chocolate Italy',
+        weight: '125 g',
+        eta: '11 MINS',
+        price: 239,
+        originalPrice: 299,
+        discount: '20% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gc2',
+        name: 'Loacker Classic Wafer Vanilla',
+        weight: '45 g',
+        eta: '11 MINS',
+        price: 100,
+        originalPrice: 149,
+        discount: '32% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gc3',
+        name: 'Loacker Quadratini Napolitaner Hazelnut Italy',
+        weight: '125 g',
+        eta: '11 MINS',
+        price: 199,
+        originalPrice: 299,
+        discount: '33% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gc4',
+        name: 'Loacker Quadratini Vanilla Italy',
+        weight: '125 g',
+        eta: '11 MINS',
+        price: 209,
+        originalPrice: 299,
+        discount: '30% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gc5',
+        name: 'Walkers Shortbread Pure Butter Fingers',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 349,
+        originalPrice: 399,
+        discount: '12% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+      ProductModel(
+        id: 'bc_gc6',
+        name: 'Jules Destrooper Butter Crisps',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 450,
+        originalPrice: 520,
+        discount: '13% OFF',
+        image: 'https://pngimg.com/uploads/biscuit/biscuit_PNG122.png',
+      ),
+    ],
+    'Pancake Mixes': [
+      ProductModel(
+        id: 'bc_pm1',
+        name: 'Pillsbury Chocolate Flavour Pancake Mix',
+        weight: '80 g',
+        eta: '11 MINS',
+        price: 28,
+        originalPrice: 59,
+        discount: '52% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_pm2',
+        name: 'Slurrp Farm Eggless Chocolate Millet Pancake Mix',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 199,
+        originalPrice: 199,
+        discount: 'MRP',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_pm3',
+        name: 'Pillsbury Butterscotch Flavour Pancake Mix',
+        weight: '80 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 59,
+        discount: '40% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_pm4',
+        name: 'Pillsbury Classic Flavour Pancake Mix',
+        weight: '80 g',
+        eta: '11 MINS',
+        price: 35,
+        originalPrice: 59,
+        discount: '40% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_pm5',
+        name: 'Betty Crocker Classic Pancake Mix',
+        weight: '400 g',
+        eta: '11 MINS',
+        price: 180,
+        originalPrice: 220,
+        discount: '18% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_pm6',
+        name: 'Slurrp Farm Blueberry Pancake Mix',
+        weight: '150 g',
+        eta: '11 MINS',
+        price: 199,
+        originalPrice: 225,
+        discount: '11% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+    ],
+    'Dessert Mixes': [
+      ProductModel(
+        id: 'bc_dm1',
+        name: 'Gits Gulab Jamun Instant Mix',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 118,
+        originalPrice: 135,
+        discount: '12% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_dm2',
+        name: 'MTR Gulab Jamun Mix',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 110,
+        originalPrice: 125,
+        discount: '12% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_dm3',
+        name: 'Gits Rasogolla Dessert Mix Pack',
+        weight: '200 g',
+        eta: '11 MINS',
+        price: 120,
+        originalPrice: 140,
+        discount: '14% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_dm4',
+        name: 'Weikfield Caramel Pudding Mix',
+        weight: '65 g',
+        eta: '11 MINS',
+        price: 45,
+        originalPrice: 50,
+        discount: '10% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_dm5',
+        name: 'Weikfield Custard Powder Vanilla Flavour',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 40,
+        originalPrice: 45,
+        discount: '11% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_dm6',
+        name: 'MTR Rabri Instant Dessert Mix',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 85,
+        originalPrice: 100,
+        discount: '15% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+    ],
+    'Baking Ingredients': [
+      ProductModel(
+        id: 'bc_bi1',
+        name: 'Weikfield Baking Powder Double Action',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 39,
+        originalPrice: 40,
+        discount: '2% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_bi2',
+        name: 'Weikfield Corn Starch Gluten Free',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 30,
+        originalPrice: 33,
+        discount: '9% OFF',
+        badge: 'Ad',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_bi3',
+        name: 'The Select Aisle Vanilla Flavour Essence',
+        weight: '30 ml',
+        eta: '11 MINS',
+        price: 48,
+        originalPrice: 49,
+        discount: '2% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_bi4',
+        name: 'Hershey\'s Cocoa Powder - 100% Natural Unsweetened',
+        weight: '70 g',
+        eta: '11 MINS',
+        price: 135,
+        originalPrice: 165,
+        discount: '18% OFF',
+        badge: 'Price Drop',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_bi5',
+        name: 'Blue Bird Baking Soda Powder',
+        weight: '100 g',
+        eta: '11 MINS',
+        price: 25,
+        originalPrice: 30,
+        discount: '16% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_bi6',
+        name: 'Weikfield Active Dry Yeast Powder',
+        weight: '50 g',
+        eta: '11 MINS',
+        price: 55,
+        originalPrice: 65,
+        discount: '15% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+    ],
+    'Flavouring Agents': [
+      ProductModel(
+        id: 'bc_fa1',
+        name: 'The Select Aisle Vanilla Flavour Essence',
+        weight: '30 ml',
+        eta: '11 MINS',
+        price: 48,
+        originalPrice: 49,
+        discount: '2% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_fa2',
+        name: 'Harveys Vanilla Flavor Essence',
+        weight: '28 ml',
+        eta: '11 MINS',
+        price: 59,
+        originalPrice: 70,
+        discount: '15% OFF',
+        badge: 'IMPORTED',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_fa3',
+        name: 'Sprig Natural Bourbon Madagascar Vanilla Extract',
+        weight: '50 ml',
+        eta: '11 MINS',
+        price: 549,
+        originalPrice: 600,
+        discount: '8% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_fa4',
+        name: 'Harveys Essence Kewra',
+        weight: '28 ml',
+        eta: '11 MINS',
+        price: 59,
+        originalPrice: 70,
+        discount: '15% OFF',
+        badge: 'IMPORTED',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_fa5',
+        name: 'Ossoro Pineapple Food Flavouring Essence',
+        weight: '30 ml',
+        eta: '11 MINS',
+        price: 199,
+        originalPrice: 250,
+        discount: '20% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+      ProductModel(
+        id: 'bc_fa6',
+        name: 'Flying Bird Rose Food Flavouring Essence',
+        weight: '20 ml',
+        eta: '11 MINS',
+        price: 40,
+        originalPrice: 50,
+        discount: '20% OFF',
+        image: 'https://pngimg.com/uploads/cornflakes/cornflakes_PNG31.png',
+      ),
+    ],
+    'Fresh Bakery': [
+      ProductModel(
+        id: 'bc_fb1',
+        name: 'Freshly Baked Whole Wheat Sliced Bread',
+        weight: '400 g',
+        eta: '11 MINS',
+        price: 45,
+        originalPrice: 50,
+        discount: '10% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+      ),
+      ProductModel(
+        id: 'bc_fb2',
+        name: 'Freshly Baked Garlic Bread Loaf',
+        weight: '250 g',
+        eta: '11 MINS',
+        price: 65,
+        originalPrice: 80,
+        discount: '18% OFF',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+      ),
+      ProductModel(
+        id: 'bc_fb3',
+        name: 'Freshly Baked Butter Croissant',
+        weight: '2 Pieces',
+        eta: '11 MINS',
+        price: 99,
+        originalPrice: 120,
+        discount: '17% OFF',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+      ),
+      ProductModel(
+        id: 'bc_fb4',
+        name: 'Freshly Baked Soft Pav Buns',
+        weight: '6 Pieces',
+        eta: '11 MINS',
+        price: 25,
+        originalPrice: 30,
+        discount: '16% OFF',
+        badge: 'BESTSELLER',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+      ),
+      ProductModel(
+        id: 'bc_fb5',
+        name: 'Freshly Baked Multigrain Bread Slices',
+        weight: '400 g',
+        eta: '11 MINS',
+        price: 55,
+        originalPrice: 65,
+        discount: '15% OFF',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
+      ),
+      ProductModel(
+        id: 'bc_fb6',
+        name: 'Freshly Baked Chocolate Muffin',
+        weight: '2 Pieces',
+        eta: '11 MINS',
+        price: 79,
+        originalPrice: 99,
+        discount: '20% OFF',
+        image: 'https://pngimg.com/uploads/bread/bread_PNG2288.png',
       ),
     ],
 
     // -------------------------------------------------------------------------
     // 7. ICE CREAMS SUBCATEGORIES
     // -------------------------------------------------------------------------
-
-    // 1. TUBS & PARTY PACKS
     'Tubs & Party Packs': [
       ProductModel(
         id: 'ic_tb1',
@@ -2373,8 +3128,6 @@ class SnacksMockData {
         image: 'https://www.bbassets.com/media/uploads/p/xl/40212483_1-baskin-robbins-belgium-bliss.jpg',
       ),
     ],
-
-    // 2. CONES
     'Cones': [
       ProductModel(
         id: 'ic_cn1',
@@ -2440,8 +3193,6 @@ class SnacksMockData {
         image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/bsgpi2s2to5wlw3zf9t4',
       ),
     ],
-
-    // 3. STICKS
     'Sticks': [
       ProductModel(
         id: 'ic_st1',
@@ -2509,8 +3260,6 @@ class SnacksMockData {
         image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/ciw/2026/5/19/6d221ffc-fab0-4f74-bc7e-ed13ab6458c4_1_ccd9fa8d-683d-4856-b495-3c4e1682bfff.png',
       ),
     ],
-
-    // 4. TOP DEALS
     'Top Deals': [
       ProductModel(
         id: 'ic_td1',
@@ -2577,8 +3326,6 @@ class SnacksMockData {
         image: 'https://cdn.grofers.com/da/cms-assets/cms/product/fa58ed63c6cc43eb912420f533c6df92.jpg',
       ),
     ],
-
-    // 5. CUPS
     'Cups': [
       ProductModel(
         id: 'ic_cp1',
@@ -2644,8 +3391,6 @@ class SnacksMockData {
         image: 'https://www.havmor.com/sites/default/files/styles/502x375/public/gallery/butter-scotch-85ml.jpg?itok=MLD2o720',
       ),
     ],
-
-    // 6. GUILTFREE
     'Guiltfree': [
       ProductModel(
         id: 'ic_gf1',
@@ -2711,8 +3456,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/ice_cream/ice_cream_PNG5097.png',
       ),
     ],
-
-    // 7. REAL FRUIT
     'Real Fruit': [
       ProductModel(
         id: 'ic_rf1',
@@ -2764,8 +3507,7 @@ class SnacksMockData {
         price: 91,
         originalPrice: 130,
         discount: '30% OFF',
-                image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/CIW/2026/2/14/1314e86d-eb5b-40b2-9641-4aceef71ef76_NPI-099765_1.png',
-
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/CIW/2026/2/14/1314e86d-eb5b-40b2-9641-4aceef71ef76_NPI-099765_1.png',
       ),
       ProductModel(
         id: 'ic_rf6',
@@ -2778,8 +3520,6 @@ class SnacksMockData {
         image: 'https://m.media-amazon.com/images/I/516VZeWwafL.jpg',
       ),
     ],
-
-    // 8. GOURMET
     'Gourmet': [
       ProductModel(
         id: 'ic_gm1',
@@ -2790,7 +3530,7 @@ class SnacksMockData {
         originalPrice: 390,
         discount: '2% OFF',
         badge: 'BESTSELLER',
-         image: 'https://www.bbassets.com/media/uploads/p/xxl/40126056_4-baskin-robbins-ice-cream-mississippi-mud.jpg',
+        image: 'https://www.bbassets.com/media/uploads/p/xxl/40126056_4-baskin-robbins-ice-cream-mississippi-mud.jpg',
       ),
       ProductModel(
         id: 'ic_gm2',
@@ -2801,8 +3541,7 @@ class SnacksMockData {
         originalPrice: 199,
         discount: '45% OFF',
         badge: 'SWITCH',
-                image: 'https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/bf316c1c-4332-4bad-a17e-b71a7a886b2c/Minus-Thirty-Sicilian-Pistachio-Mini-Ice-Cream-Stick.jpeg',
-
+        image: 'https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/bf316c1c-4332-4bad-a17e-b71a7a886b2c/Minus-Thirty-Sicilian-Pistachio-Mini-Ice-Cream-Stick.jpeg',
       ),
       ProductModel(
         id: 'ic_gm3',
@@ -2822,8 +3561,7 @@ class SnacksMockData {
         price: 399,
         originalPrice: 450,
         discount: '11% OFF',
-                image: 'https://freshlee.in/cdn/shop/files/1006593_9ea17e39-d993-41f2-9523-f29c3a585277_grande.jpg?v=1756738232',
-
+        image: 'https://freshlee.in/cdn/shop/files/1006593_9ea17e39-d993-41f2-9523-f29c3a585277_grande.jpg?v=1756738232',
       ),
       ProductModel(
         id: 'ic_gm5',
@@ -2846,8 +3584,6 @@ class SnacksMockData {
         image: 'https://pngimg.com/uploads/ice_cream/ice_cream_PNG5097.png',
       ),
     ],
-
-    // 9. KULFI
     'Kulfi': [
       ProductModel(
         id: 'ic_kf1',
@@ -2911,8 +3647,6 @@ class SnacksMockData {
         image: 'https://www.bbassets.com/media/uploads/p/xl/40344407_1-amul-raj-bhog-kulfi-ice-cream-stick.jpg',
       ),
     ],
-
-    // 10. CAKES & SANDWICHES
     'Cakes & Sandwiches': [
       ProductModel(
         id: 'ic_cs1',
@@ -2978,8 +3712,6 @@ class SnacksMockData {
         image: 'https://m.media-amazon.com/images/I/71oZIi2AHaL.jpg',
       ),
     ],
-
-    // 11. RARE FINDS
     'Rare Finds': [
       ProductModel(
         id: 'ic_rf_1',
@@ -3044,8 +3776,6 @@ class SnacksMockData {
         image: 'https://www.bbassets.com/media/uploads/p/l/40212485_3-baskin-robbins-hop-scotch-butterscotch-ribbon-ice-cream.jpg',
       ),
     ],
-
-    // 12. PREMIUM
     'Premium': [
       ProductModel(
         id: 'ic_pr1',
@@ -3109,8 +3839,6 @@ class SnacksMockData {
         image: 'https://naturalicecreams.in/wp-content/uploads/2023/11/500GM_Ice-Cream-Container_Anjeer_Lid.jpg',
       ),
     ],
-
-    // 13. REGIONAL FAVORITES
     'Regional Favorites': [
       ProductModel(
         id: 'ic_rg1',
@@ -3132,7 +3860,6 @@ class SnacksMockData {
         originalPrice: 60,
         discount: '16% OFF',
         image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2026/1/16/28a7b90c-f796-4bc1-b7e6-1fe0d8fa563e_66967_1.png',
-
       ),
       ProductModel(
         id: 'ic_rg3',
@@ -3143,7 +3870,6 @@ class SnacksMockData {
         originalPrice: 60,
         discount: 'MRP',
         image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2026/3/11/0054b083-a37f-4832-9600-93d4488bab3f_7628_1.png',
-
       ),
       ProductModel(
         id: 'ic_rg4',
@@ -3153,8 +3879,7 @@ class SnacksMockData {
         price: 29,
         originalPrice: 40,
         discount: '27% OFF',
-            image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2026/4/3/b31963cc-1a11-4306-835e-97e1da8dc571_88994_1.png',
-
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2026/4/3/b31963cc-1a11-4306-835e-97e1da8dc571_88994_1.png',
       ),
       ProductModel(
         id: 'ic_rg5',
@@ -3164,8 +3889,7 @@ class SnacksMockData {
         price: 40,
         originalPrice: 45,
         discount: '11% OFF',
-         image: 'https://cdn.zeptonow.com/production/tr:w-640,ar-1080-1080,pr-true,f-auto,q-40/cms/product_variant/f85942c7-87c2-4863-a5ad-9fac867fa07d.jpeg',
-
+        image: 'https://cdn.zeptonow.com/production/tr:w-640,ar-1080-1080,pr-true,f-auto,q-40/cms/product_variant/f85942c7-87c2-4863-a5ad-9fac867fa07d.jpeg',
       ),
       ProductModel(
         id: 'ic_rg6',
@@ -3175,12 +3899,9 @@ class SnacksMockData {
         price: 91,
         originalPrice: 130,
         discount: '30% OFF',
-               image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/CIW/2026/2/14/1314e86d-eb5b-40b2-9641-4aceef71ef76_NPI-099765_1.png',
-
+        image: 'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/CIW/2026/2/14/1314e86d-eb5b-40b2-9641-4aceef71ef76_NPI-099765_1.png',
       ),
     ],
-
-    // 14. BROWNIES & CAKES
     'Brownies & Cakes': [
       ProductModel(
         id: 'ic_bc1',
@@ -3245,8 +3966,6 @@ class SnacksMockData {
         image: 'https://www.bbassets.com/media/uploads/groot/images/222023-4cb70c34-04-2.jpg',
       ),
     ],
-
-    // 15. SYRUPS
     'Syrups': [
       ProductModel(
         id: 'ic_sy1',
