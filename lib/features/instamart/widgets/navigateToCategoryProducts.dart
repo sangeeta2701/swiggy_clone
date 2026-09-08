@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:swiggy_clone/features/instamart/print%20store/screen/InstaprintsScreen.dart';
 import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
 import 'package:swiggy_clone/features/instamart/screens/beauty_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/cold_drinks_juices_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/grocery_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/snacks_category_products_screen.dart';
+
 
 void navigateToCategoryProducts(
   BuildContext context,
@@ -15,8 +17,12 @@ void navigateToCategoryProducts(
 
   Widget targetScreen;
 
+  // 0. Print Store Dedicated Router
+  if (item.contains('print') || section.contains('print')) {
+    targetScreen = const InstaprintsScreen();
+  }
   // 1. Grocery & Kitchen Router
-  if (section.contains('grocery') || 
+  else if (section.contains('grocery') || 
       item.contains('atta') || 
       item.contains('rice') || 
       item.contains('dal') || 
@@ -34,7 +40,7 @@ void navigateToCategoryProducts(
       selectedSubCategory: 'Soft Drinks',
     );
   } 
-  // 3. Snacks & Drinks Router (UPDATED: Pass itemName to categoryName)
+  // 3. Snacks & Drinks Router
   else if (section.contains('snack') || 
            item.contains('chips') || 
            item.contains('chocolate') || 
@@ -43,7 +49,7 @@ void navigateToCategoryProducts(
            item.contains('sweet') ||
            item.contains('ice cream')) {
     targetScreen = SnacksCategoryProductsScreen(
-      categoryName: itemName, // <--- Displays the exact item clicked (e.g. Chips and Namkeens)
+      categoryName: itemName,
       selectedSubCategory: itemName,
     );
   } 

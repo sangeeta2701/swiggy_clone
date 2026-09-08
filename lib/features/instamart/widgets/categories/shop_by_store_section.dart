@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/instamart/print%20store/screen/InstaprintsScreen.dart';
 
 class ShopByStoreSection extends StatelessWidget {
   const ShopByStoreSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Direct working URLs hosted on open CDNs
     final stores = [
       {
         'name': 'Print\nStore',
@@ -45,45 +45,60 @@ class ShopByStoreSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: stores.map((store) {
+              final String storeName = store['name'] as String;
+
               return Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  child: Column(
-                    children: [
-                      AspectRatio(
-                        aspectRatio: 1.1,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: store['bgColor'] as Color,
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(46.r),
-                              bottom: Radius.circular(16.r),
-                            ),
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      if (storeName.contains('Print')) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const InstaprintsScreen(),
                           ),
-                          padding: EdgeInsets.all(14.r),
-                          child: Center(
-                            child: Image.network(
-                              store['image'] as String,
-                              fit: BoxFit.contain,
-                              errorBuilder: (_, __, ___) => Icon(
-                                Icons.storefront_rounded,
-                                size: 32.sp,
-                                color: AppColors.textSecondary,
+                        );
+                      }
+                    },
+                    child: Column(
+                      children: [
+                        AspectRatio(
+                          aspectRatio: 1.1,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: store['bgColor'] as Color,
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(46.r),
+                                bottom: Radius.circular(16.r),
+                              ),
+                            ),
+                            padding: EdgeInsets.all(14.r),
+                            child: Center(
+                              child: Image.network(
+                                store['image'] as String,
+                                fit: BoxFit.contain,
+                                errorBuilder: (_, __, ___) => Icon(
+                                  Icons.storefront_rounded,
+                                  size: 32.sp,
+                                  color: AppColors.textSecondary,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      height8,
-                      Text(
-                        store['name'] as String,
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        style: AppTextStyles.storeTitle?.copyWith(
-                          height: 1.15,
+                        height8,
+                        Text(
+                          storeName,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          style: AppTextStyles.storeTitle.copyWith(
+                            height: 1.15,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               );
