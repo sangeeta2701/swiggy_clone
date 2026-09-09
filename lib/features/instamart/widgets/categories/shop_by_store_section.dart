@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/instamart/book%20store/screen/book_store_screen.dart';
 import 'package:swiggy_clone/features/instamart/print%20store/screen/InstaprintsScreen.dart';
 
 class ShopByStoreSection extends StatelessWidget {
@@ -52,16 +53,23 @@ class ShopByStoreSection extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 4.w),
                   child: GestureDetector(
                     behavior: HitTestBehavior.opaque,
-                    onTap: () {
-                      if (storeName.contains('Print')) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const InstaprintsScreen(),
-                          ),
-                        );
-                      }
-                    },
+                   onTap: () {
+  if (storeName.contains('Print')) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const InstaprintsScreen(),
+      ),
+    );
+  } else if (storeName.contains('Book')) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const BookStoreScreen(),
+      ),
+    );
+  }
+},
                     child: Column(
                       children: [
                         AspectRatio(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:swiggy_clone/features/instamart/book%20store/screen/book_store_screen.dart';
 import 'package:swiggy_clone/features/instamart/print%20store/screen/InstaprintsScreen.dart';
 import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
 import 'package:swiggy_clone/features/instamart/screens/beauty_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/cold_drinks_juices_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/grocery_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/snacks_category_products_screen.dart';
-
 
 void navigateToCategoryProducts(
   BuildContext context,
@@ -21,7 +21,11 @@ void navigateToCategoryProducts(
   if (item.contains('print') || section.contains('print')) {
     targetScreen = const InstaprintsScreen();
   }
-  // 1. Grocery & Kitchen Router
+  // 1. Book Store Dedicated Router
+  else if (item.contains('book') || section.contains('book')) {
+    targetScreen = const BookStoreScreen();
+  }
+  // 2. Grocery & Kitchen Router
   else if (section.contains('grocery') || 
       item.contains('atta') || 
       item.contains('rice') || 
@@ -33,14 +37,14 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 2. Cold Drinks & Juices Router
+  // 3. Cold Drinks & Juices Router
   else if (item.contains('cold drinks') || item.contains('juices')) {
     targetScreen = ColdDrinksJuicesScreen(
       categoryName: itemName,
       selectedSubCategory: 'Soft Drinks',
     );
   } 
-  // 3. Snacks & Drinks Router
+  // 4. Snacks & Drinks Router
   else if (section.contains('snack') || 
            item.contains('chips') || 
            item.contains('chocolate') || 
@@ -53,7 +57,7 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 4. Beauty & Wellness Router
+  // 5. Beauty & Wellness Router (Bath & Body, Hair Care, Skincare, Makeup, Hygiene, Pharma, Baby Care)
   else if (section.contains('beauty') || 
            item.contains('bath') || 
            item.contains('body') || 
@@ -65,13 +69,17 @@ void navigateToCategoryProducts(
            item.contains('hygiene') || 
            item.contains('health') || 
            item.contains('pharma') || 
-           item.contains('baby')) {
+           item.contains('baby') ||
+           item.contains('lips') ||
+           item.contains('eyes') ||
+           item.contains('face') ||
+           item.contains('nails')) {
     targetScreen = BeautyCategoryProductsScreen(
       categoryName: itemName,
       selectedSubCategory: itemName,
     );
   } 
-  // 5. Fresh Items Router
+  // 6. Fresh Items Router (Vegetables, Fruits, Dairy, Meat)
   else {
     targetScreen = InstamartCategoryProductsScreen(
       categoryName: itemName,
