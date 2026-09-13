@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swiggy_clone/features/instamart/book%20store/screen/book_store_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/book%20store/screen/book_store_screen.dart';
 import 'package:swiggy_clone/features/instamart/print%20store/screen/InstaprintsScreen.dart';
 import 'package:swiggy_clone/features/instamart/screens/InstamartCategoryProductsScreen.dart';
@@ -6,6 +7,7 @@ import 'package:swiggy_clone/features/instamart/screens/beauty_category_products
 import 'package:swiggy_clone/features/instamart/screens/cold_drinks_juices_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/grocery_category_products_screen.dart';
 import 'package:swiggy_clone/features/instamart/screens/snacks_category_products_screen.dart';
+
 
 void navigateToCategoryProducts(
   BuildContext context,
@@ -21,11 +23,30 @@ void navigateToCategoryProducts(
   if (item.contains('print') || section.contains('print')) {
     targetScreen = const InstaprintsScreen();
   }
-  // 1. Book Store Dedicated Router
-  else if (item.contains('book') || section.contains('book')) {
+  // 1. Main Book Store Landing Page Router (Tapping "Book Store" card from Home)
+  else if (item == 'book store' || item == 'book\nstore' || section == 'book store') {
     targetScreen = const BookStoreScreen();
   }
-  // 2. Grocery & Kitchen Router
+  // 2. Book Store Catalog/Subcategories Router (Tapping specific book genres/subcategories)
+  else if (section.contains('book') || 
+           item.contains('fiction') || 
+           item.contains('comic') || 
+           item.contains('manga') || 
+           item.contains('novel') || 
+           item.contains('poetry') || 
+           item.contains('biography') || 
+           item.contains('mythology') || 
+           item.contains('story') || 
+           item.contains('thriller') || 
+           item.contains('mystery') || 
+           item.contains('young adult') || 
+           item.contains('deals')) {
+    targetScreen = BookStoreCategoryProductsScreen(
+      categoryName: itemName,
+      selectedSubCategory: itemName,
+    );
+  }
+  // 3. Grocery & Kitchen Router
   else if (section.contains('grocery') || 
       item.contains('atta') || 
       item.contains('rice') || 
@@ -37,14 +58,14 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 3. Cold Drinks & Juices Router
+  // 4. Cold Drinks & Juices Router
   else if (item.contains('cold drinks') || item.contains('juices')) {
     targetScreen = ColdDrinksJuicesScreen(
       categoryName: itemName,
       selectedSubCategory: 'Soft Drinks',
     );
   } 
-  // 4. Snacks & Drinks Router
+  // 5. Snacks & Drinks Router
   else if (section.contains('snack') || 
            item.contains('chips') || 
            item.contains('chocolate') || 
@@ -57,7 +78,7 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 5. Beauty & Wellness Router (Bath & Body, Hair Care, Skincare, Makeup, Hygiene, Pharma, Baby Care)
+  // 6. Beauty & Wellness Router (Bath & Body, Hair Care, Skincare, Makeup, Hygiene, Pharma, Baby Care)
   else if (section.contains('beauty') || 
            item.contains('bath') || 
            item.contains('body') || 
@@ -79,7 +100,7 @@ void navigateToCategoryProducts(
       selectedSubCategory: itemName,
     );
   } 
-  // 6. Fresh Items Router (Vegetables, Fruits, Dairy, Meat)
+  // 7. Fresh Items Router (Vegetables, Fruits, Dairy, Meat)
   else {
     targetScreen = InstamartCategoryProductsScreen(
       categoryName: itemName,

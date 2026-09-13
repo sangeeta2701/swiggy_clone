@@ -157,14 +157,17 @@ class _BookStoreScreenState extends State<BookStoreScreen> {
         separatorBuilder: (_, __) => width12,
         itemBuilder: (context, index) {
           final product = products[index];
-          return SizedBox(
-            width: 150.w,
-            child: ProductCard(
-              product: product,
-              quantity: _cartItems[product.id] ?? 0,
-              onIncrement: () => _incrementCart(product.id),
-              onDecrement: () => _decrementCart(product.id),
-              onTap: () => ProductDetailSheet.show(context, product),
+          return Padding(
+            padding: EdgeInsets.only(right: 8.w),
+            child: SizedBox(
+              width: 150.w,
+              child: ProductCard(
+                product: product,
+                quantity: _cartItems[product.id] ?? 0,
+                onIncrement: () => _incrementCart(product.id),
+                onDecrement: () => _decrementCart(product.id),
+                onTap: () => ProductDetailSheet.show(context, product),
+              ),
             ),
           );
         },

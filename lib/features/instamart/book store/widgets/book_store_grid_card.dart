@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/instamart/book%20store/data/book_store_mock_data.dart';
+import 'package:swiggy_clone/features/instamart/book%20store/screen/book_store_category_products_screen.dart';
+
 
 class BookStoreGridCard extends StatelessWidget {
   final BookCategoryModel category;
@@ -16,8 +18,21 @@ class BookStoreGridCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String cleanTitle = category.title.replaceAll('\n', ' ');
+
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap ??
+          () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BookStoreCategoryProductsScreen(
+                  categoryName: cleanTitle,
+                  selectedSubCategory: cleanTitle,
+                ),
+              ),
+            );
+          },
       child: Container(
         padding: EdgeInsets.all(12.r),
         decoration: BoxDecoration(
