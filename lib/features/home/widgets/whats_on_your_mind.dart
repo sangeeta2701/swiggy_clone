@@ -10,25 +10,82 @@ class WhatsOnYourMindSection extends StatelessWidget {
 
   final List<Map<String, String>> categories = const [
     {
-      'title': 'Idli',
-      'image': 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300',
+      'title': 'Biryani',
+      'image': 'https://png.pngtree.com/png-clipart/20230522/original/pngtree-chicken-biryani-front-view-png-image_9167532.png',
     },
     {
-      'title': 'Dosa',
-      'image': 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300',
+      'title': 'Pizzas',
+      'image': 'https://png.pngtree.com/png-vector/20241211/ourmid/pngtree-authentic-italian-pizza-with-cheese-and-fresh-vegetable-toppings-png-image_14714611.png',
     },
     {
-      'title': 'Vada',
-      'image': 'https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=300',
+      'title': 'Cakes',
+      'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5x-EJyHBgieb1z3YLPzvauR7n57gWZ81C4dvph3B1vw&s=10',
     },
     {
-      'title': 'Bath',
-      'image': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300',
+      'title': 'Burgers',
+      'image': 'https://png.pngtree.com/png-clipart/20231017/original/pngtree-burger-food-png-free-download-png-image_13329458.png',
+    },
+    {
+      'title': 'Samosa',
+      'image': 'https://png.pngtree.com/png-clipart/20230508/original/pngtree-indian-samosa-png-image_9151772.png',
+    },
+    {
+      'title': 'Ice Cream',
+      'image': 'https://png.pngtree.com/png-clipart/20250128/original/pngtree-four-flavour-ice-cream-in-bowl-png-image_19782937.png',
+    },
+    {
+      'title': 'Rolls',
+      'image': 'https://png.pngtree.com/png-clipart/20250222/original/pngtree-high-quality-roti-roll-with-paneer-kathi-chicken-veg-and-egg-png-image_20493597.png',
+    },
+    {
+      'title': 'Tea',
+      'image': 'https://png.pngtree.com/png-clipart/20250128/original/pngtree-tea-cup-png-image_19735035.png',
     },
     {
       'title': 'Sandwich',
+      'image': 'https://png.pngtree.com/png-clipart/20241121/original/pngtree-sandwich-png-image_17279490.png',
+    },
+    {
+      'title': 'Pastry',
+      'image': 'https://png.pngtree.com/png-clipart/20231008/original/pngtree-realistic-transparent-pastry-cake-for-food-menu-or-restaurant-png-image_13291147.png',
+    },
+    {
+      'title': 'Fries',
+      'image': 'https://png.pngtree.com/png-clipart/20250429/original/pngtree-hot-and-crispy-french-fries-in-red-box-png-image_20891964.png',
+    },
+    {
+      'title': 'Momos',
+      'image': 'https://png.pngtree.com/png-clipart/20250206/original/pngtree-traditional-newari-momos-on-white-background-png-image_20372781.png',
+    },
+    {
+      'title': 'Pasta',
+      'image': 'https://png.pngtree.com/png-clipart/20250516/original/pngtree-bowl-of-tricolor-pasta-with-vegetables-and-basil-for-italian-food-png-image_21001498.png',
+    },
+    {
+      'title': 'Noodles',
+      'image': 'https://freepngimg.com/thumb/noodle/105440-noodle.png',
+    },
+    {
+      'title': 'Salad',
+      'image': 'https://png.pngtree.com/png-clipart/20250303/original/pngtree-delicious-green-salad-with-healthy-ingredients-png-image_20557958.png',
+    },
+    {
+      'title': 'Idli',
       'image': 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=300',
     },
+    {
+      'title': 'Soup',
+      'image': 'https://png.pngtree.com/png-vector/20240822/ourmid/pngtree-vegetable-soup-mastery-tips-and-tricks-for-a-perfectly-balanced-png-image_13581187.png',
+    },
+    {
+      'title': 'Fried Rice',
+      'image': 'https://png.pngtree.com/png-clipart/20250111/original/pngtree-pan-of-chinese-fried-rice-on-transparent-background-png-image_19048184.png',
+    },
+    {
+      'title': 'Kebab',
+      'image': 'https://png.pngtree.com/png-clipart/20240628/original/pngtree-healthy-and-delicious-modern-takes-on-seekh-kababs-grill-like-a-png-image_15428527.png',
+    },
+    
   ];
 
   @override
