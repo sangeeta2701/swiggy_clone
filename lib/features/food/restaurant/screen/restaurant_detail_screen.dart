@@ -7,6 +7,7 @@ import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/food/restaurant/widget/build_Chip_Filter.dart';
 import 'package:swiggy_clone/features/food/restaurant/widget/build_Compact_Toggle.dart';
 import 'package:swiggy_clone/features/food/restaurant/widget/build_Restaurant_Header_Card.dart';
+import 'package:swiggy_clone/features/food/restaurant/widget/item_detail_sheets.dart';
 import 'package:swiggy_clone/features/food/restaurant/widget/menu_item_card.dart';
 import '../data/restaurant_mock_data.dart';
 import '../models/restaurant_menu_model.dart';
@@ -14,18 +15,13 @@ import '../models/restaurant_menu_model.dart';
 class RestaurantDetailScreen extends StatefulWidget {
   final String restaurantName;
 
-  const RestaurantDetailScreen({
-    super.key,
-    required this.restaurantName,
-  });
+  const RestaurantDetailScreen({super.key, required this.restaurantName});
 
   @override
   State<RestaurantDetailScreen> createState() => _RestaurantDetailScreenState();
 }
 
 class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
-  /// Extra padding so the category header lands slightly below the top edge
-  /// of the scroll viewport (feels more natural than slamming into 0.0).
   static const double _scrollOffsetPadding = 12.0;
 
   final Map<String, int> _cart = {};
@@ -38,7 +34,6 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
   OverlayEntry? _menuOverlayEntry;
   bool _isMenuOpen = false;
 
-  /// Category currently being "flashed" after a jump-to-section tap.
   String? _highlightedCategory;
 
   @override
@@ -56,17 +51,12 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
     super.dispose();
   }
 
-  /// Scrolls the selected category to the top of the viewport with a brief
-  /// highlight pulse so the user always gets visual feedback — even when the
-  /// section is already visible.
   void _scrollToCategory(String categoryName) {
     final key = _categoryKeys[categoryName];
     final ctx = key?.currentContext;
 
-    // 1) Close the overlay first so it doesn't fight for the next frame.
     _removeMenuOverlay();
 
-    // 2) Trigger highlight immediately (visual feedback).
     setState(() => _highlightedCategory = categoryName);
     Future.delayed(const Duration(milliseconds: 900), () {
       if (mounted && _highlightedCategory == categoryName) {
@@ -76,23 +66,19 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
 
     if (ctx == null) return;
 
-    // 3) Wait for the next frame so layout settles after overlay removal.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
 
       final box = ctx.findRenderObject() as RenderBox?;
       if (box == null || !_scrollController.hasClients) return;
 
-      // 4) Compute absolute offset of the category inside the scrollable.
       final viewport = RenderAbstractViewport.of(box);
       final double targetOffset =
           viewport.getOffsetToReveal(box, 0.0).offset - _scrollOffsetPadding;
 
-      // 5) Clamp so we never overshoot.
       final double maxOffset = _scrollController.position.maxScrollExtent;
       final double finalOffset = targetOffset.clamp(0.0, maxOffset);
 
-      // 6) Smooth scroll.
       _scrollController.animateTo(
         finalOffset,
         duration: const Duration(milliseconds: 450),
@@ -119,31 +105,29 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
 
   void _showMenuOverlay() {
     final overlay = Overlay.of(context);
+    final int totalCartCount = _cart.values.fold(0, (sum, val) => sum + val);
 
     _menuOverlayEntry = OverlayEntry(
       builder: (context) {
         return Stack(
           children: [
-            // Outside Tap Barrier
             GestureDetector(
               onTap: _removeMenuOverlay,
               behavior: HitTestBehavior.translucent,
-              child: Container(
-                color: Colors.black38,
-              ),
+              child: Container(color: Colors.black38),
             ),
-
-            // Floating Popup Positioned Above Bottom-Right Menu Button
             Positioned(
               right: 16.w,
-              bottom: 95.h,
+              bottom: totalCartCount > 0 ? 150.h : 95.h,
               child: Material(
                 color: Colors.transparent,
                 child: Container(
                   width: 220.w,
                   constraints: BoxConstraints(maxHeight: 280.h),
-                  padding:
-                      EdgeInsets.symmetric(vertical: 12.h, horizontal: 14.w),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 12.h,
+                    horizontal: 14.w,
+                  ),
                   decoration: BoxDecoration(
                     color: const Color(0xFF11141A),
                     borderRadius: BorderRadius.circular(16.r),
@@ -165,7 +149,9 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                           borderRadius: BorderRadius.circular(8.r),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
-                                vertical: 8.h, horizontal: 6.w),
+                              vertical: 8.h,
+                              horizontal: 6.w,
+                            ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -207,8 +193,16 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
     setState(() => _isMenuOpen = true);
   }
 
+  void _handleAddToCart(MenuItem item, int count, double price) {
+    setState(() {
+      _cart[item.id] = (_cart[item.id] ?? 0) + count;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final int totalCartCount = _cart.values.fold(0, (sum, val) => sum + val);
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -229,7 +223,7 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
           ),
           child: Center(
             child: Text(
-              widget.restaurantName[0],
+              widget.restaurantName.isNotEmpty ? widget.restaurantName[0] : 'R',
               style: TextStyle(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
@@ -240,8 +234,11 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.person_add_outlined,
-                color: AppColors.white, size: 22.sp),
+            icon: Icon(
+              Icons.person_add_outlined,
+              color: AppColors.white,
+              size: 22.sp,
+            ),
             onPressed: () {},
           ),
           IconButton(
@@ -257,12 +254,12 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 1. Top Restaurant Details Header Container
-                buildRestaurantHeaderCard(restaurantName: widget.restaurantName),
-
+                buildRestaurantHeaderCard(
+                  restaurantName: widget.restaurantName,
+                ),
                 height12,
 
-                // 2. Search Dishes Bar
+                // Search Dishes Bar
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Container(
@@ -277,23 +274,29 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                         Expanded(
                           child: Text(
                             'Search for dishes',
-                            style: AppTextStyles.subtitle
-                                .copyWith(fontSize: 13.sp),
+                            style: AppTextStyles.subtitle.copyWith(
+                              fontSize: 13.sp,
+                            ),
                           ),
                         ),
-                        Icon(Icons.search,
-                            size: 20.sp, color: AppColors.textSecondary),
+                        Icon(
+                          Icons.search,
+                          size: 20.sp,
+                          color: AppColors.textSecondary,
+                        ),
                         width12,
-                        Icon(Icons.mic,
-                            size: 20.sp, color: AppColors.primaryOrange),
+                        Icon(
+                          Icons.mic,
+                          size: 20.sp,
+                          color: AppColors.primaryOrange,
+                        ),
                       ],
                     ),
                   ),
                 ),
-
                 height12,
 
-                // 3. Compact Filter Row
+                // Compact Filter Row
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -322,7 +325,7 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
 
                 height16,
 
-                // 4. Menu Accordions
+                // Menu Accordions
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -353,8 +356,9 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: Theme(
-                        data: Theme.of(context)
-                            .copyWith(dividerColor: Colors.transparent),
+                        data: Theme.of(
+                          context,
+                        ).copyWith(dividerColor: Colors.transparent),
                         child: ExpansionTile(
                           initiallyExpanded: true,
                           title: Text(
@@ -365,24 +369,88 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                             ),
                           ),
                           children: filteredItems.map((item) {
-                            return MenuItemCard(
-                              item: item,
-                              count: _cart[item.id] ?? 0,
-                              onAdd: () {
-                                setState(() =>
-                                    _cart[item.id] = (_cart[item.id] ?? 0) + 1);
+                            // return InkWell(
+                            //   onTap: () {
+                            //     ItemDetailSheets.showItemDetail(
+                            //       context: context,
+                            //       item: item,
+                            //       currentQuantity: _cart[item.id] ?? 0,
+                            //       onAddToCart: (count, price) =>
+                            //           _handleAddToCart(item, count, price),
+                            //     );
+                            //   },
+                            //   child: MenuItemCard(
+                            //     item: item,
+                            //     count: _cart[item.id] ?? 0,
+                            //     onAdd: () {
+                            //       if (item.isCustomisable &&
+                            //           item.options != null &&
+                            //           item.options!.isNotEmpty) {
+                            //         ItemDetailSheets.showCustomisationSheet(
+                            //           context: context,
+                            //           item: item,
+                            //           onAddToCart: (count, price) =>
+                            //               _handleAddToCart(item, count, price),
+                            //         );
+                            //       } else {
+                            //         _handleAddToCart(item, 1, item.price);
+                            //       }
+                            //     },
+                            //     onRemove: () {
+                            //       setState(() {
+                            //         if (_cart.containsKey(item.id)) {
+                            //           if (_cart[item.id]! > 1) {
+                            //             _cart[item.id] = _cart[item.id]! - 1;
+                            //           } else {
+                            //             _cart.remove(item.id);
+                            //           }
+                            //         }
+                            //       });
+                            //     },
+                            //   ),
+                            // );
+                            return InkWell(
+                              onTap: () {
+                                ItemDetailSheets.showItemDetail(
+                                  context: context,
+                                  item: item,
+                                  currentQuantity: _cart[item.id] ?? 0,
+                                  onAddToCart: (count, price) =>
+                                      _handleAddToCart(item, count, price),
+                                );
                               },
-                              onRemove: () {
-                                setState(() {
-                                  if (_cart.containsKey(item.id)) {
-                                    if (_cart[item.id]! > 1) {
-                                      _cart[item.id] = _cart[item.id]! - 1;
-                                    } else {
-                                      _cart.remove(item.id);
-                                    }
+                              child: MenuItemCard(
+                                item: item,
+                                count: _cart[item.id] ?? 0,
+                                onAdd: () {
+                                  final bool canCustomise =
+                                      item.isCustomisable == true &&
+                                      item.options != null &&
+                                      item.options!.isNotEmpty;
+
+                                  if (canCustomise) {
+                                    ItemDetailSheets.showCustomisationSheet(
+                                      context: context,
+                                      item: item,
+                                      onAddToCart: (count, price) =>
+                                          _handleAddToCart(item, count, price),
+                                    );
+                                  } else {
+                                    _handleAddToCart(item, 1, item.price);
                                   }
-                                });
-                              },
+                                },
+                                onRemove: () {
+                                  setState(() {
+                                    if (_cart.containsKey(item.id)) {
+                                      if (_cart[item.id]! > 1) {
+                                        _cart[item.id] = _cart[item.id]! - 1;
+                                      } else {
+                                        _cart.remove(item.id);
+                                      }
+                                    }
+                                  });
+                                },
+                              ),
                             );
                           }).toList(),
                         ),
@@ -396,10 +464,57 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
             ),
           ),
 
-          // 5. Floating MENU Button (Toggles Popup Directly Above It)
+          // Floating Green Cart Bottom Bar (Image 2)
+          if (totalCartCount > 0)
+            Positioned(
+              left: 16.w,
+              right: 16.w,
+              bottom: 16.h,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: AppColors.successGreen,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.15),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '$totalCartCount ${totalCartCount == 1 ? 'Item' : 'Items'} added',
+                      style: AppTextStyles.buttonText.copyWith(fontSize: 15.sp),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'View Cart',
+                          style: AppTextStyles.buttonText.copyWith(
+                            fontSize: 15.sp,
+                          ),
+                        ),
+                        width4,
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: AppColors.white,
+                          size: 14.sp,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+          // Floating MENU Button
           Positioned(
             right: 16.w,
-            bottom: 24.h,
+            bottom: totalCartCount > 0 ? 80.h : 24.h,
             child: GestureDetector(
               onTap: _toggleMenuOverlay,
               child: Container(
@@ -436,9 +551,4 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
       ),
     );
   }
-
- 
-
-
-  
 }

@@ -1,3 +1,14 @@
+class MenuOption {
+  final String title;
+  final double price;
+
+  // Added const constructor for immutability and const list support
+  const MenuOption({
+    required this.title,
+    required this.price,
+  });
+}
+
 class MenuItem {
   final String id;
   final String name;
@@ -9,6 +20,8 @@ class MenuItem {
   final double rating;
   final int ratingCount;
   final String? calories;
+  final bool isCustomisable;
+  final List<MenuOption>? options;
 
   MenuItem({
     required this.id,
@@ -21,6 +34,8 @@ class MenuItem {
     required this.rating,
     required this.ratingCount,
     this.calories,
+    this.isCustomisable = false, // Guarantees non-null boolean
+    this.options,
   });
 }
 
