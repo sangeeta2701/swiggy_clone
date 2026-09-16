@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+
 class MenuOption {
   final String title;
   final double price;
 
-  // Added const constructor for immutability and const list support
   const MenuOption({
     required this.title,
     required this.price,
@@ -22,8 +23,10 @@ class MenuItem {
   final String? calories;
   final bool isCustomisable;
   final List<MenuOption>? options;
+  final bool isGourmet;
+  final bool isBolt;
 
-  MenuItem({
+  const MenuItem({
     required this.id,
     required this.name,
     required this.price,
@@ -34,8 +37,10 @@ class MenuItem {
     required this.rating,
     required this.ratingCount,
     this.calories,
-    this.isCustomisable = false, // Guarantees non-null boolean
+    this.isCustomisable = false,
     this.options,
+    this.isGourmet = false,
+    this.isBolt = false,
   });
 }
 
@@ -43,7 +48,7 @@ class MenuCategory {
   final String categoryName;
   final List<MenuItem> items;
 
-  MenuCategory({
+  const MenuCategory({
     required this.categoryName,
     required this.items,
   });
