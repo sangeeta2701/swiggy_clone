@@ -3,12 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
-import 'package:swiggy_clone/features/home/widgets/home_location_header.dart';
 import 'package:swiggy_clone/features/home/widgets/home_search_bar.dart';
 import 'package:swiggy_clone/features/home/widgets/jain_vegan_section.dart';
 import 'package:swiggy_clone/features/home/widgets/offer_promos_scroll.dart';
 import 'package:swiggy_clone/features/home/widgets/restaurant_horizontal_list.dart';
-import 'package:swiggy_clone/features/home/widgets/top_services_bar.dart';
 import 'package:swiggy_clone/features/home/widgets/whats_on_your_mind.dart';
 
 class HomeScreen extends ConsumerWidget {
