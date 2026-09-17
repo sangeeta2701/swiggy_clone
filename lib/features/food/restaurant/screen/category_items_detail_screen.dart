@@ -1,12 +1,16 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/food/restaurant/widget/Category%20Widgets/category_auto_scroll_banner.dart';
+import 'package:swiggy_clone/features/food/restaurant/widget/Category%20Widgets/category_carousel_selector.dart';
+import 'package:swiggy_clone/features/food/restaurant/widget/Category%20Widgets/category_filter_chips_row.dart';
+import 'package:swiggy_clone/features/food/restaurant/widget/Category%20Widgets/category_header_top_bar.dart';
 import 'package:swiggy_clone/features/food/restaurant/widget/Category%20Widgets/category_restaurant_card.dart';
+import 'package:swiggy_clone/features/food/restaurant/widget/Category%20Widgets/category_veg_toggle.dart';
 import '../data/category_restaurants_mock_data.dart';
-
 
 class CategoryItemsDetailScreen extends StatefulWidget {
   final String selectedCategory;
@@ -72,7 +76,10 @@ class _CategoryItemsDetailScreenState extends State<CategoryItemsDetailScreen> {
           ),
         ),
         actions: [
-          _buildVegToggle(),
+          CategoryVegToggle(
+            isVegOnly: _isVegOnly,
+            onToggle: (val) => setState(() => _isVegOnly = val),
+          ),
           width12,
         ],
       ),
@@ -81,23 +88,31 @@ class _CategoryItemsDetailScreenState extends State<CategoryItemsDetailScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // 1. Top Subcategory Navigation Pills Bar
-            _buildTopPillsBar(),
+            CategoryHeaderTopBar(
+              topPills: _topPills,
+              activeIndex: _activeTopFilterIndex,
+              onPillSelected: (index) => setState(() => _activeTopFilterIndex = index),
+            ),
 
             height12,
 
-            // 2. Horizontal WhatsInYourMind Category Selector
-            _buildCategoryCarousel(),
+            // 2. Horizontal Category Selector Carousel
+            CategoryCarouselSelector(
+              categoriesList: widget.categoriesList,
+              activeCategory: _activeCategory,
+              onCategorySelected: (category) => setState(() => _activeCategory = category),
+            ),
 
             height16,
 
-            // 3. Auto-Scrolling Horizontal Banners
+            // 3. Auto-Scrolling Banners
             if (banners.isNotEmpty) ...[
               CategoryAutoScrollBanner(banners: banners),
               height20,
             ],
 
             // 4. Filter Chips Row
-            _buildFilterChipsRow(),
+            const CategoryFilterChipsRow(),
 
             height20,
 
@@ -133,187 +148,6 @@ class _CategoryItemsDetailScreenState extends State<CategoryItemsDetailScreen> {
             ),
 
             height30,
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTopPillsBar() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 8.h),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Row(
-          children: List.generate(_topPills.length, (index) {
-            final isSelected = _activeTopFilterIndex == index;
-            return GestureDetector(
-              onTap: () => setState(() => _activeTopFilterIndex = index),
-              child: Container(
-                margin: EdgeInsets.only(right: 16.w),
-                padding: EdgeInsets.only(bottom: 4.h),
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: isSelected ? AppColors.primaryOrange : Colors.transparent,
-                      width: 2.5,
-                    ),
-                  ),
-                ),
-                child: Text(
-                  _topPills[index],
-                  style: TextStyle(
-                    fontSize: 13.sp,
-                    fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                    color: isSelected ? AppColors.primaryOrange : AppColors.textSecondary,
-                  ),
-                ),
-              ),
-            );
-          }),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCategoryCarousel() {
-    return SizedBox(
-      height: 95.h,
-      child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        scrollDirection: Axis.horizontal,
-        itemCount: widget.categoriesList.length,
-        separatorBuilder: (_, __) => width16,
-        itemBuilder: (context, index) {
-          final cat = widget.categoriesList[index];
-          final String title = cat['title'] ?? '';
-          final bool isSelected = title.toLowerCase() == _activeCategory.toLowerCase();
-
-          return GestureDetector(
-            onTap: () => setState(() => _activeCategory = title),
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      width: 58.w,
-                      height: 58.h,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: isSelected ? AppColors.primaryOrange : Colors.transparent,
-                          width: 2,
-                        ),
-                        image: DecorationImage(
-                          image: NetworkImage(cat['image'] ?? ''),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    if (isSelected)
-                      Positioned(
-                        right: 0,
-                        top: 0,
-                        child: CircleAvatar(
-                          radius: 8.r,
-                          backgroundColor: AppColors.primaryOrange,
-                          child: Icon(Icons.check, size: 10.sp, color: AppColors.white),
-                        ),
-                      ),
-                  ],
-                ),
-                height4,
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 11.sp,
-                    fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                    color: isSelected ? AppColors.primaryOrange : AppColors.textPrimary,
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
-
-  Widget _buildFilterChipsRow() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Row(
-        children: [
-          _buildChip(label: 'Filter', icon: Icons.tune),
-          width8,
-          _buildChip(label: 'Sort by', icon: Icons.keyboard_arrow_down),
-          width8,
-          _buildChip(label: '99 Store'),
-          width8,
-          _buildChip(label: 'Bolt 15 Mins', icon: Icons.bolt, iconColor: AppColors.primaryOrange),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildChip({required String label, IconData? icon, Color? iconColor}) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: AppColors.borderGrey),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (icon != null) ...[
-            Icon(icon, size: 14.sp, color: iconColor ?? AppColors.textPrimary),
-            width4,
-          ],
-          Text(
-            label,
-            style: AppTextStyles.caption.copyWith(
-              fontWeight: FontWeight.bold,
-              color: AppColors.textPrimary,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildVegToggle() {
-    return GestureDetector(
-      onTap: () => setState(() => _isVegOnly = !_isVegOnly),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: AppColors.borderGrey),
-        ),
-        child: Row(
-          children: [
-            Text(
-              'VEG',
-              style: TextStyle(
-                fontSize: 9.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.vegGreen,
-              ),
-            ),
-            width4,
-            Container(
-              padding: EdgeInsets.all(1.r),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.vegGreen, width: 1.2),
-                borderRadius: BorderRadius.circular(3.r),
-              ),
-              child: Icon(Icons.circle, size: 5.sp, color: AppColors.vegGreen),
-            ),
           ],
         ),
       ),
