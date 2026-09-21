@@ -14,4 +14,7 @@ final isVegOnlyProvider = StateProvider<bool>((ref) => false);
 final topPillTabProvider = StateProvider<int>((ref) => 0);
 
 // Special Dietary Tab Toggle State (0: JAIN FOOD, 1: VEGAN FOOD)
-final dietaryTabProvider = StateProvider<int>((ref) => 0);
+final dietaryTabProvider = StateProvider<int>((ref) => 0); 
+
+
+final homeCategoryFilterProvider = StateProvider<int>((ref) => 0);

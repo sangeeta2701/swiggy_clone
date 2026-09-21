@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
-import 'features/auth/screens/auth_onboarding_screen.dart';
+import 'package:swiggy_clone/features/home/screen/main_container_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +41,8 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const AuthOnboardingScreen(),
+      // child: const AuthOnboardingScreen(),
+      child: MainContainerScreen(),
     );
   }
 }
