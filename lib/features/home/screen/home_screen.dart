@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +12,6 @@ import 'package:swiggy_clone/features/home/widgets/restaurant_horizontal_list.da
 import 'package:swiggy_clone/features/home/widgets/store_99_view.dart';
 import 'package:swiggy_clone/features/home/widgets/whats_on_your_mind.dart';
 
-
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -27,10 +24,9 @@ class HomeScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Top Purple Header
+            // Top Purple Section for Food Tab
             Container(
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).padding.top + 10.h,
                 left: 16.w,
                 right: 16.w,
                 bottom: 16.h,
@@ -48,11 +44,9 @@ class HomeScreen extends ConsumerWidget {
               ),
               child: Column(
                 children: [
-                  height12,
+                  height8,
                   const HomeSearchBar(),
                   height16,
-
-                  // Category Navigation Tab Bar (All, 99 Store, Offers, etc.)
                   const HomeCategoryTabBar(),
 
                   if (activeFilterIndex == 0) ...[
@@ -64,15 +58,14 @@ class HomeScreen extends ConsumerWidget {
             ),
             height20,
 
-            // Lower Dynamic Section
+            // Lower Body Content
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: activeFilterIndex == 1
-                  ? const Store99View() // 99 Store tab content
+                  ? const Store99View()
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // All Tab Default Content
                         const RestaurantHorizontalList(),
                         height24,
                         const WhatsOnYourMindSection(),

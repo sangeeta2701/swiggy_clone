@@ -6,7 +6,6 @@ import 'package:swiggy_clone/core/contsnts/app_text_styles.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/home/providers/home_providers.dart';
 
-
 class HomeSearchBar extends ConsumerWidget {
   const HomeSearchBar({super.key});
 
@@ -18,7 +17,7 @@ class HomeSearchBar extends ConsumerWidget {
       height: 48.h,
       child: Row(
         children: [
-          //Search Box
+          // Search Box
           Expanded(
             child: Container(
               height: double.infinity,
@@ -51,7 +50,8 @@ class HomeSearchBar extends ConsumerWidget {
             ),
           ),
 
-          width16,
+          // Proper horizontal spacing between search bar and VEG button
+          width12,
 
           // VEG Toggle Box
           GestureDetector(
@@ -59,7 +59,7 @@ class HomeSearchBar extends ConsumerWidget {
                 ref.read(isVegOnlyProvider.notifier).state = !isVeg,
             child: Container(
               height: double.infinity,
-              width: 52.w, // Fixed width prevents collapsing
+              width: 52.w,
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.circular(14.r),
