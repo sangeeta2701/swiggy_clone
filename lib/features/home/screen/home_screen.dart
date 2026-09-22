@@ -9,7 +9,7 @@ import 'package:swiggy_clone/features/home/widgets/home_search_bar.dart';
 import 'package:swiggy_clone/features/home/widgets/jain_vegan_section.dart';
 import 'package:swiggy_clone/features/home/widgets/offer_promos_scroll.dart';
 import 'package:swiggy_clone/features/home/widgets/restaurant_horizontal_list.dart';
-import 'package:swiggy_clone/features/home/widgets/store_99_view.dart';
+import 'package:swiggy_clone/features/food/restaurant/99%20store/screen/store_99_view.dart';
 import 'package:swiggy_clone/features/home/widgets/whats_on_your_mind.dart';
 
 class HomeScreen extends ConsumerWidget {
