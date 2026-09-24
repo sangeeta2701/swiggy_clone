@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:swiggy_clone/core/contsnts/app_colors.dart';
 import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
+import 'package:swiggy_clone/features/home/widgets/home_location_header.dart';
+import 'package:swiggy_clone/features/home/widgets/top_services_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_grid_section.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_search_bar.dart';
 import 'package:swiggy_clone/features/instamart/widgets/instamart_sub_categories_bar.dart';
@@ -59,74 +61,75 @@ class InstamartHomeContent extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Stack(
-      children: [
-        SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                color: AppColors.homePurple,
-                child: Column(
-                  children: [
-                    height12,
-                    const InstamartSearchBar(),
-                    height12,
-                    const InstamartSubCategoriesBar(),
-                    height12,
-                  ],
-                ),
-              ),
-              height16,
-
-              InstamartGridSection(
-                sectionTitle: 'Fresh items',
-                items: freshItems,
-                onItemTap: (sectionTitle, item) {
-                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-                },
-              ),
-              height20,
-
-              InstamartGridSection(
-                sectionTitle: 'Grocery & Kitchen',
-                items: groceryItems,
-                onItemTap: (sectionTitle, item) {
-                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-                },
-              ),
-              height20,
-
-              InstamartGridSection(
-                sectionTitle: 'Snacks & drinks',
-                items: snacksItems,
-                onItemTap: (sectionTitle, item) {
-                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-                },
-              ),
-              height20,
-
-              InstamartGridSection(
-                sectionTitle: 'Beauty & Wellness',
-                items: beautyItems,
-                onItemTap: (sectionTitle, item) {
-                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-                },
-              ),
-              height20,
-
-              InstamartGridSection(
-                sectionTitle: 'Household & Lifestyle',
-                items: householdItems,
-                onItemTap: (sectionTitle, item) {
-                  navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
-                },
-              ),
-              height90,
-            ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Top Purple Container featuring Global Service Navigation Tabs
+          Container(
+            color: AppColors.homePurple,
+            child: Column(
+              children: [
+                height12,
+                const HomeLocationHeader(),
+                height12,
+                const TopServicesBar(), // Food, Instamart, Dineout, etc.
+                height12,
+                const InstamartSearchBar(),
+                height12,
+                const InstamartSubCategoriesBar(), // Fresh, Electronics, 50% Off, etc.
+                height12,
+              ],
+            ),
           ),
-        ),
-      ],
+          height16,
+
+          InstamartGridSection(
+            sectionTitle: 'Fresh items',
+            items: freshItems,
+            onItemTap: (sectionTitle, item) {
+              navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+            },
+          ),
+          height20,
+
+          InstamartGridSection(
+            sectionTitle: 'Grocery & Kitchen',
+            items: groceryItems,
+            onItemTap: (sectionTitle, item) {
+              navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+            },
+          ),
+          height20,
+
+          InstamartGridSection(
+            sectionTitle: 'Snacks & drinks',
+            items: snacksItems,
+            onItemTap: (sectionTitle, item) {
+              navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+            },
+          ),
+          height20,
+
+          InstamartGridSection(
+            sectionTitle: 'Beauty & Wellness',
+            items: beautyItems,
+            onItemTap: (sectionTitle, item) {
+              navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+            },
+          ),
+          height20,
+
+          InstamartGridSection(
+            sectionTitle: 'Household & Lifestyle',
+            items: householdItems,
+            onItemTap: (sectionTitle, item) {
+              navigateToCategoryProducts(context, sectionTitle, item['name'] ?? '');
+            },
+          ),
+          height90,
+        ],
+      ),
     );
   }
 }
