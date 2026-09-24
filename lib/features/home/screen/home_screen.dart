@@ -6,11 +6,13 @@ import 'package:swiggy_clone/core/contsnts/sizedbox.dart';
 import 'package:swiggy_clone/features/food/restaurant/99%20store/screen/store_99_view.dart';
 import 'package:swiggy_clone/features/home/providers/home_providers.dart';
 import 'package:swiggy_clone/features/home/widgets/home_category_tab_bar.dart';
+import 'package:swiggy_clone/features/home/widgets/home_location_header.dart';
 import 'package:swiggy_clone/features/home/widgets/home_search_bar.dart';
 import 'package:swiggy_clone/features/home/widgets/jain_vegan_section.dart';
 import 'package:swiggy_clone/features/home/widgets/offer_promos_scroll.dart';
 import 'package:swiggy_clone/features/home/widgets/restaurant_horizontal_list.dart';
 import 'package:swiggy_clone/features/home/widgets/sticky_tab_bar_delegate.dart';
+import 'package:swiggy_clone/features/home/widgets/top_services_bar.dart';
 import 'package:swiggy_clone/features/home/widgets/whats_on_your_mind.dart';
 
 
@@ -25,7 +27,7 @@ class HomeScreen extends ConsumerWidget {
       backgroundColor: AppColors.white,
       body: CustomScrollView(
         slivers: [
-          // 1. Purple Header Section for Search Bar & Offers (Scrolls Up)
+          // Unpinned Header Content (Location + Top Services + Search Bar + Promos)
           SliverToBoxAdapter(
             child: Container(
               color: AppColors.homePurple,
@@ -36,6 +38,10 @@ class HomeScreen extends ConsumerWidget {
               ),
               child: Column(
                 children: [
+                  const HomeLocationHeader(),
+                  height12,
+                  const TopServicesBar(),
+                  height12,
                   const HomeSearchBar(),
                   if (activeFilterIndex == 0) ...[
                     height16,
@@ -46,20 +52,20 @@ class HomeScreen extends ConsumerWidget {
             ),
           ),
 
-          // 2. Sticky Category Tab Bar (Pins when scrolled up)
+          //  Sticky Category Tab Bar (Pins below status bar when scrolled up)
           SliverPersistentHeader(
             pinned: true,
             delegate: StickyTabBarDelegate(
-              height: 52.h,
-              child: Container(
-                color: AppColors.homePurpleDark,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+              height: 56.h,
+              backgroundColor: AppColors.homePurple,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
                 child: const HomeCategoryTabBar(),
               ),
             ),
           ),
 
-          // 3. Page Content Feed / 99 Store View
+          //  Scrollable Main Feed / 99 Store View
           SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             sliver: SliverToBoxAdapter(

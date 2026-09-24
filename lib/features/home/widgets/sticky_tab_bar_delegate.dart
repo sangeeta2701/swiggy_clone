@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   final Widget child;
   final double height;
+  final Color backgroundColor;
 
   StickyTabBarDelegate({
     required this.child,
     required this.height,
+    required this.backgroundColor,
   });
 
   @override
@@ -14,18 +16,7 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       height: height,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: shrinkOffset > 0
-            ? [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.08),
-                  blurRadius: 4,
-                  offset: const Offset(0, 2),
-                ),
-              ]
-            : [],
-      ),
+      color: backgroundColor,
       child: child,
     );
   }
@@ -38,6 +29,8 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(covariant StickyTabBarDelegate oldDelegate) {
-    return oldDelegate.height != height || oldDelegate.child != child;
+    return oldDelegate.height != height ||
+        oldDelegate.child != child ||
+        oldDelegate.backgroundColor != backgroundColor;
   }
 }

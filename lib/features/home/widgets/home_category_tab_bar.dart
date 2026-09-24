@@ -31,29 +31,35 @@ class HomeCategoryTabBar extends ConsumerWidget {
             ref.read(homeCategoryFilterProvider.notifier).state = index;
           },
           child: Container(
-            padding: EdgeInsets.only(bottom: 6.h),
+            padding: EdgeInsets.only(bottom: 2.h),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
                   color: isSelected ? AppColors.white : Colors.transparent,
-                  width: 3.w,
+                  width: 2.5.w,
                 ),
               ),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
                   tab['icon'] as IconData,
-                  size: 22.sp,
-                  color: isSelected ? AppColors.white : AppColors.white.withOpacity(0.7),
+                  size: 20.sp,
+                  color: isSelected
+                      ? AppColors.white
+                      : AppColors.white.withOpacity(0.7),
                 ),
-                height4,
+                height2,
                 Text(
                   tab['title'] as String,
                   style: TextStyle(
-                    fontSize: 12.sp,
+                    fontSize: 11.sp,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                    color: isSelected ? AppColors.white : AppColors.white.withOpacity(0.7),
+                    color: isSelected
+                        ? AppColors.white
+                        : AppColors.white.withOpacity(0.7),
                   ),
                 ),
               ],
